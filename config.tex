@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 %% encodings                                        
 \usepackage[T1]{fontenc}                            
 \usepackage[utf8]{inputenc}                         
@@ -157,3 +158,160 @@
 %%% End:
 
 
+=======
+%% encodings                                        
+\usepackage[T1]{fontenc}                            
+\usepackage[utf8]{inputenc}                         
+\usepackage[shorthands=off]{babel}                  
+\usepackage{lmodern}                                
+\usepackage{microtype}                              
+\usepackage{scrlayer-scrpage}                       
+\usepackage{enumerate}                              
+%\usepackage{enumitem}
+\usepackage{csquotes}                               
+\usepackage[backend=biber,style=numeric-comp]{biblatex}
+\bibliography{literatur.bib}
+
+
+% for fancy colors
+\usepackage{xcolor}
+
+% %maths                                            
+\usepackage{amsmath, amsthm, amssymb, bm, bbm, mathtools, dsfont, mathrsfs}
+
+%zum spielen
+\usepackage{verbatim}
+
+%commutative diagramms
+\usepackage{tikz}
+
+% links, TODO
+%\usepackage[pdftitle={Bachelorarbeit: "titel"},pdfauthor={Julian Seipel}, pdfsubject={Bachelorarbeit}]{hyperref}
+%TODO: abschluss-projekt von tex-kurs heranziehen
+
+%\renewenvironment{proof}{{\bfseries Proof}}{*something*}
+% \newenvironment{myproof}[1][\proofname]{%
+%   \proof[\ttfamily \scshape \large #1 (yes, ``#1'')]%
+% }{\endproof}
+
+%must be loaded as lastest
+\usepackage{cleveref}
+% out of lemma 1.1 to Lemma 1.1
+\let\cref=\Cref                                                    
+%special mathsymbols                                
+
+\newcommand{\C}{\mathds{C}}                         
+\newcommand{\R}{\mathds{R}}                         
+\newcommand{\N}{\mathds{N}}                         
+\newcommand{\Z}{\mathds{Z}}                         
+\newcommand{\Q}{\mathds{Q}}
+
+% TODO alternativ, funktioniert aber nicht
+%\defmathbbsymbols{Z Q C}
+%\defmathbbsymbolsubs{N R}
+
+
+\newcommand{\pma}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\A}{\mathscr{A}}
+\newcommand{\F}{\mathbb{F}}                                            
+\newcommand{\gs}{$\{a_0,\ldots ,a_n\}$ }
+\newcommand{\gr}[1]{\left| #1 \right|}
+% TODO: schreibe newcommand, das #2 als optional nimmt, und somit kein
+% \Big| setzt
+\newcommand{\set}[2]{\bigl\{ #1 \;  | \; #2 \bigr\}}
+\newcommand{\sset}[1]{\bigl\{ #1 \bigr\}}
+\renewcommand{\sp}[2]{\sum\limits_{i=#1}^{#2}}
+
+\newcommand{\nn}[1][\,\bullet\,]{\left\| #1 \right\|}	% norm       
+\newcommand{\foo}[2][]{#1 und #2 }
+
+\newcommand{\ch}{\conv(\sset{a_0,\ldots , a_n})}
+
+%\newcommand{\SS}{\mathbb{S}}
+                    
+%%%%%%%%%%%%%%%%%%%%                                
+%theoremstyle                                       
+\newtheoremstyle{mythms}
+ {15pt}% space above
+ {12pt}% space below 
+ {\mdseries}% body font
+ {}% indent amount
+ {\bfseries}% theorem head font
+ {:}% punctuation after theorem head
+ {0.6cm plus 0.25cm minus 0.1cm}% space after theorem head (\newline possible)
+ {}% theorem head spec 
+
+
+                          
+% math (theorems)                     
+%\theoremstyle{Definition}             
+%\newtheorem{Def}{Definition}[section] 
+\theoremstyle{mythms}             
+\newtheorem{Def}{Definition}[section] 
+\newtheorem{Bsp}[Def]{Beispiel}       
+
+%\theoremstyle{remark}               
+\newtheorem{Bem}[Def]{Bemerkung}      
+\newtheorem{Wdh}[Def]{Wiederholung}   
+
+%\theoremstyle{plain}                  
+\newtheorem{Satz}[Def]{Satz}          
+\newtheorem*{satz}{Satz}              
+\newtheorem*{Beh}{Behauptung}
+\newtheorem{Lem}[Def]{Lemma}          
+\newtheorem{Kor}[Def]{Korollar}       
+\newtheorem{Fol}[Def]{Folgerung}      
+
+%own color for proof environment
+\definecolor{mygray}{rgb}{0.2,0.2,0.2}
+
+%\renewenvironment{center}{\begin{quote}\bfseries}{\end{quote}}
+% use for font, [slshape,mdseries]
+
+\renewenvironment{proof}{{ \vspace{0.5cm} \bfseries ~\newline Beweis:\newline}\slshape\color{mygray}}{\hfill$\blacksquare$}
+
+
+%\renewenvironment{proof}{{ \vspace{0.5cm} \bfseries ~\newline Pr$\infty$f:\newline}\slshape\color{mygray}}{\hfill$\blacksquare$}
+
+
+%TODO: schrift soll geändert werden,
+%\renewenvironment*{proof}{\bfseries}{}
+
+%stuff used only a few times                        
+\DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\pow}{P} 
+\DeclareMathOperator{\f}{\varphi} 
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\K}{K_1}
+\DeclareMathOperator{\SK}{SK_1}
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\B}{B}
+\DeclareMathOperator{\Bn}{\overline{\B_{n}(0)}}
+\DeclareMathOperator{\Sp}{S} 
+\DeclareMathOperator{\V}{V}
+\DeclareMathOperator{\conv}{conv}
+
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+%\newcommand{\LLeftrightarrow}{~\Leftrightarrow ~}
+%\let\Leftrightarrow=\LLeftrightarrow
+
+
+%\DeclareMathOperator{\E}{E}
+% \newcommand{\exxp}[1]{\exp \left( #1 \right)}       
+% \renewcommand{\sin}[1]{\sin \left( #1 \right)}      
+
+%stuff, sometimes needed
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:
+
+
+>>>>>>> 447a26e46689f24340bc480245d8515c50881e15
