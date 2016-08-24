@@ -7,6 +7,8 @@
 %zur unterscheidung von top räumen
 
 
+
+
 % schlagwort verzeichnis
 %TODO: folgende begriffe müssen definiert, verwendet und verstanden sein: simplex, seite, eckmenge, dimension, simplizialkomplex, n-skelett, geometrischer simplizialkomplex, geometrische realisierung, schwache topologie, triangulierbar, simpliziale abbildung, baryzentrische koordinaten, 
 
@@ -33,6 +35,36 @@ Die verwendete Quelle ist \cite{baum09}
 \begin{Bsp}
 	blub%TODO: zweifache Überlagerung der S^1 und Rahmenbündel, beides wird später bei der erklärung der spinstruktur gebraucht, die zweifache Überlagerung als nichtriviales beispiel einer spinstruktur und rahmenbündel aufgrund des spinorbündels bzw der assoziiertenbündel konstruktion
 \end{Bsp}
+
+
+Im folgenden wird der Begriff der Spinstruktur benötigt, es 
+hierzu lediglich die Defintion und zwei Beispiele angegeben.
+Die verwendete Quelle hierzu ist \cite{BHMMM15}.
+
+%TODO: ist es klar dass das paar (\phi...) eine mfg ist? soll das diagramm größer gemacht werden?
+\begin{Def}[Spinstruktur]
+	Sei $(M,g)$ eine \RMF der Dimension $m$, dann heißt
+	 ($\Ph{\spin{n}}{M}$,$\eta : \Ph{\spin{n}}{M} \rightarrow \Ph{\so{n}}{M}$) eine Spinstruktur auf $(M,g)$, falls folgndes gilt:
+	 \begin{itemize}
+	 	\item Die \mfg $\Ph{\spin{n}}{M}$ ist ein $\spin{n}$ Hauptfaserbündel.
+	 	\item Die Abbildung $\eta$ ist eine doppelte Überlagerung.
+	 	\item Folgendes Diagramm kommutiert\\
+		 	\begin{center}
+		 		% das zeichen ' nach "\chi" ändert die position bzgl pfeil
+		 	\begin{tikzcd}
+		 		\spin{n} \ar[rr, "a \mapsto ua"] \ar[dd, "\chi"'] & &  \Ph{\spin{n}}{M}  \arrow[rd] \arrow[dd, "\eta"] & \\
+		 		&&& M \\
+		 		\so{n} \arrow[rr , "A \mapsto \eta(u)A"] & & 
+		 		\Ph{\so{n}}{M} \arrow[ur] &
+		 	\end{tikzcd}
+			 \end{center}
+			wobei $\chi$ die doppelte Überlagerungsabbildung von $\so{n}$ ist.
+	 \end{itemize}
+	
+	
+
+\end{Def}
+
 
 %
 %
