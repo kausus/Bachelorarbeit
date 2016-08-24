@@ -94,7 +94,8 @@
 \newtheorem{Wdh}[Def]{Wiederholung}   
 
 %\theoremstyle{plain}                  
-\newtheorem{Satz}[Def]{Satz}          
+\newtheorem{Satz}[Def]{Satz}     
+\newtheorem{Thm}[Def]{Theorem}     
 \newtheorem*{satz}{Satz}              
 \newtheorem*{Beh}{Behauptung}
 \newtheorem{Lem}[Def]{Lemma}          
@@ -133,12 +134,14 @@
 \DeclareMathOperator{\Sp}{S} 
 \DeclareMathOperator{\V}{V}
 \DeclareMathOperator{\conv}{conv}
-\DeclareMathOperator{\Imm}{Imm}
-\DeclareMathOperator{\Immf}{\Imm^{form}}
+\DeclareMathOperator{\imm}{Imm}
+\DeclareMathOperator{\immf}{\Imm^{form}}
 % spinOp and soOP are the Operators for the principial bundles
 \DeclareMathOperator{\spinOp}{Spin}
 \DeclareMathOperator{\soOp}{SO}
-
+\DeclareMathOperator{\diff}{d}
+\DeclareMathOperator{\map}{Abb}
+\DeclareMathOperator{\T}{T}
 
 \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
 
@@ -156,12 +159,19 @@
 \newcommand{\RMF}{riemannische Mannigfaltigkeit }
 \newcommand{\RMFen}{riemannischen Mannigfaltigkeiten }
 \newcommand{\mfg}{Mannigfaltigkeit }
+\newcommand{\mfgen}{Mannigfaltigkeiten }
 \newcommand{\Ph}[2]{P_{#1}#2}
 \newcommand{\spin}[1]{\spinOp_{ #1 }}
 \newcommand{\so}[1]{\soOp_{ #1 } }
 \newcommand{\scalar}[2]{\langle #1 {,} #2 \rangle}
 \newcommand{\scdots}{\scalar{\cdot}{\cdot}}%{$\langle\cdot{,}\cdot\rangle$}
 \newcommand{\CP}{\C P}
+\newcommand{\abb}[3]{#1 : #2 \rightarrow #3}
+\newcommand{\Imm}[2]{\imm(#1,#2)}
+\newcommand{\Immf}[2]{\imm^{form}(#1,#2)}
+\newcommand{\Immfi}[2]{\imm^{form}_{iso}(#1,#2)}
+%\newcommand{\Gl}[1]{\GL(#1)}
+\newcommand{\tang}[2]{\T_{#1}{#2}}
 
 %%% Local Variables:
 %%% mode: latex

@@ -24,16 +24,37 @@ formuliert wird.
 Die verwendete Quelle ist \cite{baum09}
 
 \begin{Def}[Hauptfaserbündel]
-	Ein \textsf{Hauptfaserbündel} $(P,\pi,M,G)$ ist ein tupel das
-	aus folgenden Daten besteht
+	Ein \textit{Hauptfaserbündel} $(P,\pi,M,G)$ ist ein Tupel das aus folgenden Daten besteht
 	\begin{enumerate}
-		\item $P,M$ sind Mannigfaltigkeiten und $\pi : P \rightarrow M$ ist eine lokale Trivialiserung, d.h. 
-		%TODO: definition vervollständigen und zwei beispiel anfügen
+		\item Die Mengen $P,M$ sind \mfgen, die Abbildung $\pi$ ist eine lokale Trivialiserung und $G$ ist eine Liegruppe
+		die auf $P$ von rechts, fasertreu, transitiv und frei wirkt.
+		\item Es gibt einen Bündelatlas $\sset{(U_i,\phi_i)}$ aus $G$-äquivarianten Bündelkarten. 
 	\end{enumerate}		
 \end{Def}
 
+
 \begin{Bsp}
-	blub%TODO: zweifache Überlagerung der S^1 und Rahmenbündel, beides wird später bei der erklärung der spinstruktur gebraucht, die zweifache Überlagerung als nichtriviales beispiel einer spinstruktur und rahmenbündel aufgrund des spinorbündels bzw der assoziiertenbündel konstruktion
+	\begin{enumerate}[1)]
+		\item Sei $G$ eine Liegruppe und $M$ eine \mfg, dann heißt das Tupel $(M \times G, \pi, M, G)$ das triviale Bündel, wobei die Abbildung
+		durch die Projektion $\abb{\pi}{M \times G}{M}$ , $(p,g) \mapsto p$ 
+		gegeben ist.
+		\item Das wichtigste Beispiel für ein Hauptfaserbündel in dieser
+		Arbeit ist das \textit{Rahmen- oder Reperebündel}. Sei $M$ eine \mfg und $p \in M$,dann definere $\GL_p(M)$ als die Menge aller Basen von
+		$\tang{p}{M}$ und $\GL(M) \coloneqq \amalg_{p \in M} \GL_p(M)$. 
+		Betrachte nun das Tupel $(\GL(M),\pi,M,\GL_n)$, wobei die Abbildung
+		durch $\abb{\pi}{\GL(M)}{M}$ , $((v_i),p) \mapsto p$ gegeben ist
+		und die Liegruppe $\GL_n$ von rechts auf die \mfg $\GL(M)$ wie  folgt
+		wirkt:
+		\begin{center}
+			\begin{tikzcd}
+				\GL(M) \times \GL_n \arrow[r]  & \GL(M) \\
+				(((v_1,\ldots,v_m),p),A) \arrow[r,mapsto] & ((v_1 A,\ldots,v_n A),p)
+			\end{tikzcd}
+		\end{center}
+		
+		%TODO:  beispiel der zweifache Überlagerung der S^1
+		
+	\end{enumerate}
 \end{Bsp}
 
 
@@ -60,11 +81,92 @@ Die verwendete Quelle hierzu ist \cite{BHMMM15}.
 			 \end{center}
 			wobei $\chi$ die doppelte Überlagerungsabbildung von $\so{n}$ ist.
 	 \end{itemize}
-	
+	 Falls eine \RMF eine Spinstruktur besitzt sagen wir die \mfg ist \textit{spin}.
 	
 
 \end{Def}
 
+\begin{Bsp}
+	\begin{enumerate}[(1)]
+		\item Das erste Beispiel ist das Triviale. Für die \RMF $(\R^n, \scdots_{\R^n})$ ist 
+		%TODO: finde spinstruktur von R^n
+		\item Ein erstes nichttriviales Beispiel sind zwei Spinstrukturen
+		der $\Sp^1$. Diese sind $(\Sp^1 , \eta_0)$ und $(\Sp^1 \times \Z_2 , \eta_1)$, wobei die Abbildungen durch $\eta_0 : \Sp^1 \rightarrow \Sp^1 , z \mapsto z^2$ und $\eta_1 : \Sp^1 \times \Z_2 \rightarrow \Sp^1 , (z,[0]) \mapsto z , (z,[1]) \mapsto -z$ gegeben sind.
+		Diese sind auch die Repräsentaten aller Spinstrukturen bis auf 
+		Isomorphie. 
+		%todo: suche verweis auf hijazi
+		\item Der $\CP^{2n}$ ist ein Beispiel für eine Familie von
+		\RMFen die nicht spin sind.
+		\item Ein wichtiges Beispiel für eine \RMF mit deren Spinstruktur ist die $\Sp^2$. Diese
+		besitzt genau eine Spinstruktur bis auf Isomorphie. 
+	\end{enumerate}
+\end{Bsp}
+
+%def von immersionen und formalen immersionen
+% bemerkung über die topologie auf diesen räumen, einmal kompakt-offen topologie
+% und das dies der C^1 topologie entspricht
+
+\begin{Def}[Immersionen,formale Immersionen]
+	Eine Abbildung $\abb{f}{M}{N}$ zwischen zwei Mannigfaltigkeiten
+	heißt \textit{Immersion}, falls das Differential $\abb{\diff f}{TM}{TN}$ 
+	injektiv ist.
+	Ein Paar von Abbildungen $\abb{(f,F)}{M \times TM}{N \times TN} ,%
+	(p,v) \mapsto (f(p),F(v)$ heißt \textit{formale Immersion} falls folgendes
+	Diagramm kommutiert:
+	\begin{center}
+		
+		\begin{tikzcd}
+			TM \arrow[rr, "F"] \arrow[dd, "\pi^M"'] & & TN \arrow[dd ,"\pi^N"] \\
+			&& \\
+			M \arrow[rr, "f"] & & N  
+		\end{tikzcd}
+		
+	\end{center}
+	
+	Definiere nun $\Imm{M}{N},\Immf{M}{N}$ als Menge aller (formalen) Immersionen. Die Topologie für diese Mengen ist gegeben als Teilraumtopologie des Raumes $\map(M,N)$ der die Basis der Topologie 
+	trägt mit folgenden Erzeugern. Die Menge aller Mengen der Form $\set{f \in \map}{ f(K) \subset U}$
+	für alle Paare $(K,U)$ von kompakten Teilmengen $K \subset M$ und
+	offenen Teilmengen $U \subset N$ erzeugt die Topologie auf $\map(M,N)$.
+\end{Def}
+
+%bsp für formale immersion die keine immersion von der form (f,df) ist
+%streckung?
+
+%satz von smale hirsch als black box, aus intro to the h-principle
+%finde gute referenz für dieses Theorem
+\begin{Thm}[Smale-Hirsch-Theorem]
+	Seien $M^m,N^n$ \mfgen, $m<n$ und M sei geschlossen. Dann ist die Abbildung
+	$\abb{\theta}{\Imm{M}{N}}{\Immf{M}{N}}, f \mapsto (f,\diff f)$ eine Homotophieäquivalenz.
+\end{Thm}
+
+%lemma darüber das eine kompakte, orientierte 2dim riem mfg stets spin ist
+\begin{Satz}
+	Jede geschlossene, orientierte, \RMF  $(M,g)$ der Dimension $2$ ist spin.
+	\begin{proof}
+		%todo: beweis
+	\end{proof}
+\end{Satz}
+% satz das die imm und form-imm homotop sind
+
+\section{Zusammenhang von Immersionen und Spinstrukturen}
+
+Im folgenden ist $(M,g)$ eine geschlossene, kompakte, orientierte \mfg.
+In der Notation wird die Metrik $g$ unterdrückt.
+
+
+\begin{Satz}
+	Seien die isometrischen, formalen Immersionen gegeben durch
+	\begin{gather*}
+	\Immfi{M}{\R^3} \coloneqq \set{(f,F \in \Immf{M}{\R^3})}{F \text{ ist isometrisch }}
+	\end{gather*}
+	Dann gilt das $\Immf{M}{\R^3}$ und $\Immfi{M}{\R^3}$ homotopieäquivalent sind.
+	\begin{proof}
+		Betrachte für $t \in [0,1]$ die Abbildung $\abb{\psi_t}{\Immf{M}{\R^3}}{\Immf{M}{\R^3}}$ mit 
+		$\psi : (f,F) \mapsto (f,F \circ (F^{\ast}F)^{-\frac{t}{2}})$.
+		Dann liefert dies die gewünschte Homotopieäquivalenz.
+		%TODO: warum liefert sie das, genauer.
+	\end{proof}
+\end{Satz}
 
 %
 %
