@@ -17,15 +17,13 @@
 \section{Hauptfaserbündel und Spinstruktur}
 
 In diesem ersten Abschnitt soll die grundlegenden Strukturen eingeführt 
-werden. Der Begriff des Hauptfaserbündel hat sich als der Richtige
-herausgebildet indem die Sprache von Spinstrukturen bzw. Spinoren
-formuliert wird.
+werden die für diese Arbeit notwendig sind. Der Begriff des Hauptfaserbündel hat sich als der Richtige herausgebildet indem die Sprache von Spinstrukturen bzw. Spinoren formuliert wird.
 
 Die verwendete Quelle ist \cite{baum09}
 
 \begin{Def}[Hauptfaserbündel]
-	Ein \textit{Hauptfaserbündel} $(P,\pi,M,G)$ ist ein Tupel das aus folgenden Daten besteht
-	\begin{enumerate}
+	Ein \textit{Hauptfaserbündel} ist ein Tupel $(P,\pi,M,G)$ mit folgenden Daten besteht
+	\begin{enumerate}[1)]
 		\item Die Mengen $P,M$ sind \mfgen, die Abbildung $\pi$ ist eine lokale Trivialiserung und $G$ ist eine Liegruppe
 		die auf $P$ von rechts, fasertreu, transitiv und frei wirkt.
 		\item Es gibt einen Bündelatlas $\sset{(U_i,\phi_i)}$ aus $G$-äquivarianten Bündelkarten. 
@@ -58,16 +56,16 @@ Die verwendete Quelle ist \cite{baum09}
 \end{Bsp}
 
 
-Im folgenden wird der Begriff der Spinstruktur benötigt, es 
-hierzu lediglich die Defintion und zwei Beispiele angegeben.
-Die verwendete Quelle hierzu ist \cite{BHMMM15}.
+Im folgenden wird der Begriff der Spinstruktur benötigt, es wird
+hierzu lediglich die Defintion und zwei weitere Beispiele angegeben.
+Die verwendete Quelle ist \cite{BHMMM15}.
 
 %TODO: ist es klar dass das paar (\phi...) eine mfg ist? soll das diagramm größer gemacht werden?
 \begin{Def}[Spinstruktur]
-	Sei $(M,g)$ eine \RMF der Dimension $m$, dann heißt
+	Sei $(M,g)$ eine \RMF der Dimension $m$, dann sei
 	 ($\Ph{\spin{n}}{M}$,$\eta : \Ph{\spin{n}}{M} \rightarrow \Ph{\so{n}}{M}$) eine Spinstruktur auf $(M,g)$, falls folgndes gilt:
 	 \begin{itemize}
-	 	\item Die \mfg $\Ph{\spin{n}}{M}$ ist ein $\spin{n}$ Hauptfaserbündel.
+	 	\item Die \mfg $\Ph{\spin{n}}{M}$ ist ein $\spin{n}$-Hauptfaserbündel.
 	 	\item Die Abbildung $\eta$ ist eine doppelte Überlagerung.
 	 	\item Folgendes Diagramm kommutiert\\
 		 	\begin{center}
@@ -79,7 +77,8 @@ Die verwendete Quelle hierzu ist \cite{BHMMM15}.
 		 		\Ph{\so{n}}{M} \arrow[ur] &
 		 	\end{tikzcd}
 			 \end{center}
-			wobei $\chi$ die doppelte Überlagerungsabbildung von $\so{n}$ ist.
+			wobei $\chi$ die doppelte Überlagerungsabbildung von $\so{n}$ ist
+			und dies für alle $u \in \spin{n}$ gilt.
 	 \end{itemize}
 	 Falls eine \RMF eine Spinstruktur besitzt sagen wir die \mfg ist \textit{spin}.
 	
@@ -90,13 +89,13 @@ Die verwendete Quelle hierzu ist \cite{BHMMM15}.
 	\begin{enumerate}[(1)]
 		\item Das erste Beispiel ist das Triviale. Für die \RMF $(\R^n, \scdots_{\R^n})$ ist 
 		%TODO: finde spinstruktur von R^n
-		\item Ein erstes nichttriviales Beispiel sind zwei Spinstrukturen
-		der $\Sp^1$. Diese sind $(\Sp^1 , \eta_0)$ und $(\Sp^1 \times \Z_2 , \eta_1)$, wobei die Abbildungen durch $\eta_0 : \Sp^1 \rightarrow \Sp^1 , z \mapsto z^2$ und $\eta_1 : \Sp^1 \times \Z_2 \rightarrow \Sp^1 , (z,[0]) \mapsto z , (z,[1]) \mapsto -z$ gegeben sind.
-		Diese sind auch die Repräsentaten aller Spinstrukturen bis auf 
+		\item Ein erstes nichttriviales Beispiel sind zwei nicht
+		isomorphie Spinstrukturen der $\Sp^1$. Diese sind $(\Sp^1 , \eta_0)$ und $(\Sp^1 \times \Z_2 , \eta_1)$, wobei die Abbildungen durch $\eta_0 : \Sp^1 \rightarrow \Sp^1 , z \mapsto z^2$ und $\eta_1 : \Sp^1 \times \Z_2 \rightarrow \Sp^1 , (z,[0]) \mapsto z , (z,[1]) \mapsto -z$ gegeben sind. Diese sind auch die Repräsentaten aller Spinstrukturen bis auf 
 		Isomorphie. 
 		%todo: suche verweis auf hijazi
 		\item Der $\CP^{2n}$ ist ein Beispiel für eine Familie von
-		\RMFen die nicht spin sind.
+		\RMFen die nicht spin sind. 
+%TODO: Quelle einfügen
 		\item Ein wichtiges Beispiel für eine \RMF mit deren Spinstruktur ist die $\Sp^2$. Diese
 		besitzt genau eine Spinstruktur bis auf Isomorphie. 
 	\end{enumerate}
@@ -105,6 +104,9 @@ Die verwendete Quelle hierzu ist \cite{BHMMM15}.
 %def von immersionen und formalen immersionen
 % bemerkung über die topologie auf diesen räumen, einmal kompakt-offen topologie
 % und das dies der C^1 topologie entspricht
+
+Neben der Spinstruktur ist es noch notwendig den Begriff der Immersion 
+einzuführen.
 
 \begin{Def}[Immersionen,formale Immersionen]
 	Eine Abbildung $\abb{f}{M}{N}$ zwischen zwei Mannigfaltigkeiten
@@ -132,12 +134,79 @@ Die verwendete Quelle hierzu ist \cite{BHMMM15}.
 %bsp für formale immersion die keine immersion von der form (f,df) ist
 %streckung?
 
+\begin{Bsp}
+	Betrachte die beiden Abbildungen 
+	\begin{gather*}
+		\abb{f}{\Sp^1}{\R^2}, \exp(i\phi)%
+		\mapsto (\cos(\phi),\sin(\phi)),\\
+		\abb{g}{\Sp^1}{\R^2}, \exp(i\phi)%
+		\mapsto (\cos(2\phi),\sin(2\phi)),\\
+		\abb{h}{\Sp^1}{\R^2}, \exp(i\phi)%
+		\mapsto (\cos(2\phi),\sin(\phi)).
+	\end{gather*}
+	Diese sehen wie folgt aus.\\
+%TODO: bilder der beiden Immersionen
+	
+	Die Abbildungen $f,h$ sind Immersionen, aber $g$ nicht wie sich leicht
+	anhand der Definition erkennen lässt. Das interessante Beispiel ist
+	das der Abbildung $h$, den diese ist nicht injektiv aber ihr Differential
+	ist es.
+\end{Bsp}
+
+\section{Zusammenhang von Immersionen und Spinstrukturen}
+
+Im folgenden ist $(M,g)$ eine geschlossene, kompakte, orientierte \mfg.
+In der Notation wird die Metrik $g$ unterdrückt.
+
+
+Um einen Zusammenhang zwischen den Immersionen und den Spinstrukturen
+herzustellen ist es notwendig den Raum der Immersionen zu vereinfachen.
+Wichtig ist hierbei das wir nur an den Zusammenhangskomponenten interessiert
+sind, also können wir den Raum beliebig homotopieren. Das folgende Theorem
+liefert uns eine erste Vereinfachung des Raumes.
 %satz von smale hirsch als black box, aus intro to the h-principle
 %finde gute referenz für dieses Theorem
 \begin{Thm}[Smale-Hirsch-Theorem]
 	Seien $M^m,N^n$ \mfgen, $m<n$ und M sei geschlossen. Dann ist die Abbildung
 	$\abb{\theta}{\Imm{M}{N}}{\Immf{M}{N}}, f \mapsto (f,\diff f)$ eine Homotophieäquivalenz.
 \end{Thm}
+
+Der Raum der formalen Immersionen lässt sich noch weiter vereinfachen, denn
+wir anstatt von nur formalen Immersionen auch diese betrachte bei denen
+die Abbildungen zwischen den Tangentialräumen auch noch eine Isometrie ist,
+erhalten wir folgendes Resultat.
+
+
+\begin{Satz}
+	Seien die isometrischen, formalen Immersionen gegeben durch
+	\begin{gather*}
+	\Immfi{M}{\R^3} \coloneqq \set{(f,F) \in \Immf{M}{\R^3}}{F \text{ ist isometrisch }}
+	\end{gather*}
+	Dann gilt das $\Immf{M}{\R^3}$ und $\Immfi{M}{\R^3}$ homotopieäquivalent sind.
+	\begin{proof}
+		Betrachte für $t \in [0,1]$ die Abbildung $\abb{\psi_t}{\Immf{M}{\R^3}}{\Immf{M}{\R^3}}$ mit 
+		$\psi : (f,F) \mapsto (f,F \circ (F^{\ast}F)^{-\frac{t}{2}})$.
+		Dann liefert dies die gewünschte Homotopieäquivalenz.
+		%TODO: warum liefert sie das, genauer.
+	\end{proof}
+\end{Satz}
+
+Für den Tangentialraum des $\R^n$ gilt:
+\begin{align*}
+	\T \R^n &\simeq \R^n \times \R^n \\
+	(p,v) &\mapsto (p,v)
+\end{align*}
+Damit gilt nun folgendes Resultat
+
+\begin{Lemm}
+	Die folgende Abbildung ist eine Bijektion
+%TODO: bijektion oder homotopieäquivelante räume?
+	\begin{align*}
+		\Immfi{M}{\R^3} &\rightarrow \sset{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }\\
+		()
+	\end{align*}
+\end{Lemm}
+
 
 %lemma darüber das eine kompakte, orientierte 2dim riem mfg stets spin ist
 \begin{Satz}
@@ -148,25 +217,6 @@ Die verwendete Quelle hierzu ist \cite{BHMMM15}.
 \end{Satz}
 % satz das die imm und form-imm homotop sind
 
-\section{Zusammenhang von Immersionen und Spinstrukturen}
-
-Im folgenden ist $(M,g)$ eine geschlossene, kompakte, orientierte \mfg.
-In der Notation wird die Metrik $g$ unterdrückt.
-
-
-\begin{Satz}
-	Seien die isometrischen, formalen Immersionen gegeben durch
-	\begin{gather*}
-	\Immfi{M}{\R^3} \coloneqq \set{(f,F \in \Immf{M}{\R^3})}{F \text{ ist isometrisch }}
-	\end{gather*}
-	Dann gilt das $\Immf{M}{\R^3}$ und $\Immfi{M}{\R^3}$ homotopieäquivalent sind.
-	\begin{proof}
-		Betrachte für $t \in [0,1]$ die Abbildung $\abb{\psi_t}{\Immf{M}{\R^3}}{\Immf{M}{\R^3}}$ mit 
-		$\psi : (f,F) \mapsto (f,F \circ (F^{\ast}F)^{-\frac{t}{2}})$.
-		Dann liefert dies die gewünschte Homotopieäquivalenz.
-		%TODO: warum liefert sie das, genauer.
-	\end{proof}
-\end{Satz}
 
 %
 %
