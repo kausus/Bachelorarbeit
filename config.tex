@@ -24,6 +24,7 @@
 %commutative diagramms
 \usepackage{tikz}
 \usepackage{tikz-cd}
+\usetikzlibrary{babel}
 % links, TODO
 %\usepackage[pdftitle={Seminar: "K1 von Ringen"},pdfauthor={Julian Seipel}, pdfsubject={Seminararbeit}]{hyperref}
 %TODO: abschluss-projekt von tex-kurs heranziehen
@@ -139,9 +140,10 @@
 % spinOp and soOP are the Operators for the principial bundles
 \DeclareMathOperator{\spinOp}{Spin}
 \DeclareMathOperator{\soOp}{SO}
-\DeclareMathOperator{\diff}{d}
 \DeclareMathOperator{\map}{Abb}
 \DeclareMathOperator{\T}{T}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\id}{id}
 
 \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
 
@@ -166,12 +168,16 @@
 \newcommand{\scalar}[2]{\langle #1 {,} #2 \rangle}
 \newcommand{\scdots}{\scalar{\cdot}{\cdot}}%{$\langle\cdot{,}\cdot\rangle$}
 \newcommand{\CP}{\C P}
-\newcommand{\abb}[3]{#1 : #2 \rightarrow #3}
+\newcommand{\abb}[3]{#1 \colon #2 \rightarrow #3} % f\colon D \to Z$
 \newcommand{\Imm}[2]{\imm(#1,#2)}
 \newcommand{\Immf}[2]{\imm^{form}(#1,#2)}
 \newcommand{\Immfi}[2]{\imm^{form}_{iso}(#1,#2)}
 %\newcommand{\Gl}[1]{\GL(#1)}
-\newcommand{\tang}[2]{\T_{#1}{#2}}
+\newcommand{\tang}[2]{\T_{#1}#2}
+
+\newcommand*{\pd}[2][]{\frac{\partial #1}{\partial #2}}
+
+%\wr liefert für diagramme eine tilde<
 
 %%% Local Variables:
 %%% mode: latex

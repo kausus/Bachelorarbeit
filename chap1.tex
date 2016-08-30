@@ -19,7 +19,7 @@
 In diesem ersten Abschnitt soll die grundlegenden Strukturen eingeführt 
 werden die für diese Arbeit notwendig sind. Der Begriff des Hauptfaserbündel hat sich als der Richtige herausgebildet indem die Sprache von Spinstrukturen bzw. Spinoren formuliert wird.
 
-Die verwendete Quelle ist \cite{baum09}
+Die verwendete Quelle ist \cite[vgl]{baum09}
 
 \begin{Def}[Hauptfaserbündel]
 	Ein \textit{Hauptfaserbündel} ist ein Tupel $(P,\pi,M,G)$ mit folgenden Daten besteht
@@ -33,10 +33,10 @@ Die verwendete Quelle ist \cite{baum09}
 
 \begin{Bsp}
 	\begin{enumerate}[1)]
-		\item Sei $G$ eine Liegruppe und $M$ eine \mfg, dann heißt das Tupel $(M \times G, \pi, M, G)$ das triviale Bündel, wobei die Abbildung
+		\item Sei $G$ eine Liegruppe und $M$ eine Mannigfaltigkeit, dann heißt das Tupel $(M \times G, \pi, M, G)$ das triviale Hauptfaserbündel zu $M$ und $G$, wobei die Abbildung
 		durch die Projektion $\abb{\pi}{M \times G}{M}$ , $(p,g) \mapsto p$ 
 		gegeben ist.
-		\item Das wichtigste Beispiel für ein Hauptfaserbündel in dieser
+		\item Das wohl wichtigste Beispiel für ein Hauptfaserbündel in dieser
 		Arbeit ist das \textit{Rahmen- oder Reperebündel}. Sei $M$ eine \mfg und $p \in M$,dann definere $\GL_p(M)$ als die Menge aller Basen von
 		$\tang{p}{M}$ und $\GL(M) \coloneqq \amalg_{p \in M} \GL_p(M)$. 
 		Betrachte nun das Tupel $(\GL(M),\pi,M,\GL_n)$, wobei die Abbildung
@@ -57,19 +57,20 @@ Die verwendete Quelle ist \cite{baum09}
 
 
 Im folgenden wird der Begriff der Spinstruktur benötigt, es wird
-hierzu lediglich die Defintion und zwei weitere Beispiele angegeben.
+hierzu lediglich die Defintion und weitere Beispiele angegeben.
 Die verwendete Quelle ist \cite{BHMMM15}.
 
 %TODO: ist es klar dass das paar (\phi...) eine mfg ist? soll das diagramm größer gemacht werden?
 \begin{Def}[Spinstruktur]
-	Sei $(M,g)$ eine \RMF der Dimension $m$, dann sei
+	Sei $(M,g)$ eine \RMF der Dimension $m$, dann ist
 	 ($\Ph{\spin{n}}{M}$,$\eta : \Ph{\spin{n}}{M} \rightarrow \Ph{\so{n}}{M}$) eine Spinstruktur auf $(M,g)$, falls folgndes gilt:
 	 \begin{itemize}
 	 	\item Die \mfg $\Ph{\spin{n}}{M}$ ist ein $\spin{n}$-Hauptfaserbündel.
 	 	\item Die Abbildung $\eta$ ist eine doppelte Überlagerung.
 	 	\item Folgendes Diagramm kommutiert\\
 		 	\begin{center}
-		 		% das zeichen ' nach "\chi" ändert die position bzgl pfeil
+		 		% das zeichen ' nach "
+		 		" ändert die position bzgl pfeil
 		 	\begin{tikzcd}
 		 		\spin{n} \ar[rr, "a \mapsto ua"] \ar[dd, "\chi"'] & &  \Ph{\spin{n}}{M}  \arrow[rd] \arrow[dd, "\eta"] & \\
 		 		&&& M \\
@@ -77,7 +78,7 @@ Die verwendete Quelle ist \cite{BHMMM15}.
 		 		\Ph{\so{n}}{M} \arrow[ur] &
 		 	\end{tikzcd}
 			 \end{center}
-			wobei $\chi$ die doppelte Überlagerungsabbildung von $\so{n}$ ist
+			wobei $\Ad$ die doppelte Überlagerungsabbildung von $\so{n}$ ist
 			und dies für alle $u \in \spin{n}$ gilt.
 	 \end{itemize}
 	 Falls eine \RMF eine Spinstruktur besitzt sagen wir die \mfg ist \textit{spin}.
@@ -87,17 +88,21 @@ Die verwendete Quelle ist \cite{BHMMM15}.
 
 \begin{Bsp}
 	\begin{enumerate}[(1)]
-		\item Das erste Beispiel ist das Triviale. Für die \RMF $(\R^n, \scdots_{\R^n})$ ist 
-		%TODO: finde spinstruktur von R^n
+		\item Das erste Beispiel ist das Triviale. Für die \RMF $(\R^n, \scdots_{\R^n})$ ist $(\R^n \times \spin{n},\id \times \Ad)$ 
+		die einzige Spinstruktur auf dieser riemannischen 
+		Mannigfaltigkeit.
 		\item Ein erstes nichttriviales Beispiel sind zwei nicht
-		isomorphie Spinstrukturen der $\Sp^1$. Diese sind $(\Sp^1 , \eta_0)$ und $(\Sp^1 \times \Z_2 , \eta_1)$, wobei die Abbildungen durch $\eta_0 : \Sp^1 \rightarrow \Sp^1 , z \mapsto z^2$ und $\eta_1 : \Sp^1 \times \Z_2 \rightarrow \Sp^1 , (z,[0]) \mapsto z , (z,[1]) \mapsto -z$ gegeben sind. Diese sind auch die Repräsentaten aller Spinstrukturen bis auf 
+		isomorphie Spinstrukturen der $\Sp^1$. Diese sind $(\Sp^1 , \eta_0)$ und $(\Sp^1 \times \Z_2 , \eta_1)$, wobei die Abbildungen durch $\eta_0 : \Sp^1 \rightarrow \Sp^1 , z \mapsto z^2$ und $\eta_1 : \Sp^1 \times \Z_2 \rightarrow \Sp^1 , (z,\alpha) \mapsto z$ gegeben sind. Diese sind auch die Repräsentaten aller Spinstrukturen bis auf 
 		Isomorphie. 
 		%todo: suche verweis auf hijazi
-		\item Der $\CP^{2n}$ ist ein Beispiel für eine Familie von
-		\RMFen die nicht spin sind. 
+		\item Die $(\CP^{2n},g)$ ist ein Beispiel für eine Familie von
+		\RMFen die nicht spin sind, wobei
+		hier $g$ eine riemannische Metrik
+		auf $\CP^{2n}$ ist. 
 %TODO: Quelle einfügen
 		\item Ein wichtiges Beispiel für eine \RMF mit deren Spinstruktur ist die $\Sp^2$. Diese
 		besitzt genau eine Spinstruktur bis auf Isomorphie. 
+%TODO: angabe dieser spinstruktur
 	\end{enumerate}
 \end{Bsp}
 
@@ -110,7 +115,7 @@ einzuführen.
 
 \begin{Def}[Immersionen,formale Immersionen]
 	Eine Abbildung $\abb{f}{M}{N}$ zwischen zwei Mannigfaltigkeiten
-	heißt \textit{Immersion}, falls das Differential $\abb{\diff f}{TM}{TN}$ 
+	heißt \textit{Immersion}, falls das Differential $\abb{\mathrm{d} f}{TM}{TN}$ 
 	injektiv ist.
 	Ein Paar von Abbildungen $\abb{(f,F)}{M \times TM}{N \times TN} ,%
 	(p,v) \mapsto (f(p),F(v)$ heißt \textit{formale Immersion} falls folgendes
@@ -168,10 +173,10 @@ liefert uns eine erste Vereinfachung des Raumes.
 %finde gute referenz für dieses Theorem
 \begin{Thm}[Smale-Hirsch-Theorem]
 	Seien $M^m,N^n$ \mfgen, $m<n$ und M sei geschlossen. Dann ist die Abbildung
-	$\abb{\theta}{\Imm{M}{N}}{\Immf{M}{N}}, f \mapsto (f,\diff f)$ eine Homotophieäquivalenz.
+	$\abb{\theta}{\Imm{M}{N}}{\Immf{M}{N}}, f \mapsto (f,\mathrm{d} f)$ eine Homotophieäquivalenz.
 \end{Thm}
 
-Der Raum der formalen Immersionen lässt sich noch weiter vereinfachen, denn
+Der Raum von formalen Immersionen lässt sich noch weiter vereinfachen, denn wenn
 wir anstatt von nur formalen Immersionen auch diese betrachte bei denen
 die Abbildungen zwischen den Tangentialräumen auch noch eine Isometrie ist,
 erhalten wir folgendes Resultat.
@@ -198,14 +203,14 @@ Für den Tangentialraum des $\R^n$ gilt:
 \end{align*}
 Damit gilt nun folgendes Resultat
 
-\begin{Lemm}
+\begin{Lem}
 	Die folgende Abbildung ist eine Bijektion
 %TODO: bijektion oder homotopieäquivelante räume?
 	\begin{align*}
-		\Immfi{M}{\R^3} &\rightarrow \sset{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }\\
+		\Immfi{M}{\R^3} &\rightarrow \set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{\text{ isometrisch}}\\
 		()
 	\end{align*}
-\end{Lemm}
+\end{Lem}
 
 
 %lemma darüber das eine kompakte, orientierte 2dim riem mfg stets spin ist
@@ -216,6 +221,59 @@ Damit gilt nun folgendes Resultat
 	\end{proof}
 \end{Satz}
 % satz das die imm und form-imm homotop sind
+
+Sei $\Sp M$ definiert als $\set{v \in \T M}{ \norm{v} = 1}$, dann
+gilt folgender Satz
+
+\begin{Satz}
+	Es existiert eine Bijektion
+\begin{center}
+\begin{tikzcd}
+	\set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{\text{ isometrisch}} \arrow[rr,"\vartheta"] && \set{ \abb{H}{\Sp M}{\so{3}}}{\Sp^1 \text{-invariant}} \\
+\end{tikzcd}
+\end{center}
+\begin{proof}
+	Sei eine Familie $(\abb{F_p}{\T_pM}{\R^3})_{p\in M}$ von 
+	isometrischen Abbildungen gegeben.
+	Da es sich bei $M$ um eine zweidimensionale, orientierte riemannische Mannigfaltigkeit handelt, gilt das zu jedem normierten Tangentialvektor $v \in \Sp_p M$ genau ein Tangentialvektor $w \in \Sp_p M$
+	existiert, sodass $(v,w)$ eine positiv orientierte Orthonormalbasis für	$\tang{p}{M}$ ist. Betrachte nun die Abbildung $\abb{H}{\Sp_p%
+		M}{\so{3}}, v \mapsto (F_p(v),F_p(w),F_p(v)\times F_p(w))$. 
+	Diese Abbildung ist wohldefiniert aufgrund der Eigenschaften
+	der Basis $(v,w)$ und dass das Kreuzprodukt der beiden
+	Basiselemente in Matrixform ein Element der $\so{3}$ liefert.
+	Die $\Sp^1$ Invarianz dieser Abbildung folgt direkt
+	aus der Isometrie der Abbildungen $F_p$.
+	%TODO: genauer diesen Teil
+	
+	Zeige nun das es sich bei dieser Abbildung um eine Bijektion handelt. 
+	\begin{description}
+		\item[Injektivität:] Seien zwei Familien $(F_p)_p,(G_p)_p$ von
+		isometrischen Abbildungen gegeben und sei $\vartheta((F_p)_p)=\vartheta((G_p)_p)$. Dann gilt aufgrund
+		der Abbildungsvorschrift von $\vartheta$ das $F_p(v)=G_p(v)$
+		für alle $v \in \Sp_p M$ gilt und somit die Abbildungen gleich
+		sind.
+		\item[Surjektivität:] Sei eine $\Sp^1$-invariante Abbildung
+		$\abb{H}{\Sp M}{\so{3}}$ gegeben. Für einen normierten
+		Tangentialvektor $v \in \Sp_p M$ gilt das $H_p(v)$ ein
+		Element der $\so{3}$ ist. Betrachte nun die erste Spalte
+		der Matrix $w(v)=(H_p(v)_{i,1})_{i=1,2,3}$. Definiere nun eine
+		Abbildung $\abb{F_p}{\tang{p}{M}}{\R^3}$ durch 
+		$v \mapsto \begin{cases}%TODO: frac und norm vertragen sich nicht
+		w(\frac{v}{\norm{v}}) & v \neq 0 \\
+		0 & v=0.
+		\end{cases}$
+		
+		Diese Abbildung liefert uns nun das gewünschte Urbild zur
+		anfangs gewählten Abbildung $H$. 
+	\end{description}
+	Der Nachweis der Bijektion liefert die Behauptung.
+\end{proof}
+
+\end{Satz}
+
+Nach dieser weiteren Vereinfachung des Raums der Immersionen folgt
+nun der letzte Schritt. Wir können nun folgenden Satz zeigen.
+
 
 
 %
