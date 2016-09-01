@@ -2,45 +2,40 @@
 fontsize=10pt, titlepage=false, parskip=half,%
 abstract=false,toc=flat,left,listof,indent]%
 {scrartcl}
-
-%\makeindex
-
+%{scrrprt}
+%{amsart}  
+%\documentclass[reqno]{amsart}  
 %TODO: vll den Seitenkopf/fuss noch bearbeiten
 %\pagestyle{scrheadings}
 %\ofoot[{\includegraphics[height=10ex]{unilogo.pdf}}]{\includegraphics[height=10ex]{unilogo.pdf}}
 
+%title stuff
+%	\title{Zusammenhang von Immersionen und Spinstruktur}
+%	\author{Julian Seipel}
 \input{config}
 
 \begin{document}
 
 
 %% titlepage
-\input{titlepage}
-
-%\renewcommand{\theenumi}{\alpha{enumi}}
-%\renewcommand{\thepage}{\Roman{\page}}
-%\addtokomafont{part}{\itshape}
-%\setkomafont{section}{\normalfont\Large}
-%\setkomafont{subsection}{\normalfont\Large}
-%\pagenumbering{Roman}
-
+%\input{titlepage}
 
 
 %inhaltsverzeichnis
-%TODO: inhaltsverzeichnis auf eigener seite
+%\todo{inhaltsverzeichnis auf eigener seite}
 \tableofcontents
 %\pagebreak
 
 %gesamt content
 
 % konventionen
-\input{chap0.tex}
+%\input{konventionen.tex}
 
 
 % Erste Definition
 %\input{chap1.tex}
 
-\input{building}
+\input{trash.tex}
 
 %% kapitel über geometrische simplizialkomplexe und simplizialabbildunge
 %\input{chap2.tex}
@@ -53,8 +48,8 @@ abstract=false,toc=flat,left,listof,indent]%
 
 
 %Literatur
-\nocite{*}
-\printbibliography
+%\nocite{*}
+%\printbibliography
 
 
 \end{document}

@@ -10,7 +10,7 @@
 
 
 % schlagwort verzeichnis
-%TODO: folgende begriffe müssen definiert, verwendet und verstanden sein: simplex, seite, eckmenge, dimension, simplizialkomplex, n-skelett, geometrischer simplizialkomplex, geometrische realisierung, schwache topologie, triangulierbar, simpliziale abbildung, baryzentrische koordinaten, 
+\todo{folgende begriffe müssen definiert, verwendet und verstanden sein: simplex, seite, eckmenge, dimension, simplizialkomplex, n-skelett, geometrischer simplizialkomplex, geometrische realisierung, schwache topologie, triangulierbar, simpliziale abbildung, baryzentrische koordinaten,}
 
 %warum simpliziale komplexe bzw mengen gebraucht werden, selbe homotophietheorie und selbe homotopiegruppen, einfachere berechnung der homotopiegruppen.
 %
@@ -19,7 +19,7 @@
 In diesem ersten Abschnitt soll die grundlegenden Strukturen eingeführt 
 werden die für diese Arbeit notwendig sind. Der Begriff des Hauptfaserbündel hat sich als der Richtige herausgebildet indem die Sprache von Spinstrukturen bzw. Spinoren formuliert wird.
 
-Die verwendete Quelle ist \cite[vgl]{baum09}
+Die verwendete Quelle ist \cite{baum09}
 
 \begin{Def}[Hauptfaserbündel]
 	Ein \textit{Hauptfaserbündel} ist ein Tupel $(P,\pi,M,G)$ mit folgenden Daten besteht
@@ -50,7 +50,7 @@ Die verwendete Quelle ist \cite[vgl]{baum09}
 			\end{tikzcd}
 		\end{center}
 		
-		%TODO:  beispiel der zweifache Überlagerung der S^1
+		\todo{beispiel der zweifache Überlagerung der $S^1$}
 		
 	\end{enumerate}
 \end{Bsp}
@@ -60,7 +60,7 @@ Im folgenden wird der Begriff der Spinstruktur benötigt, es wird
 hierzu lediglich die Defintion und weitere Beispiele angegeben.
 Die verwendete Quelle ist \cite{BHMMM15}.
 
-%TODO: ist es klar dass das paar (\phi...) eine mfg ist? soll das diagramm größer gemacht werden?
+\todo{ist es klar dass das paar $(\phi...)$ eine mfg ist? soll das diagramm größer gemacht werden?}
 \begin{Def}[Spinstruktur]
 	Sei $(M,g)$ eine \RMF der Dimension $m$, dann ist
 	 ($\Ph{\spin{n}}{M}$,$\eta : \Ph{\spin{n}}{M} \rightarrow \Ph{\so{n}}{M}$) eine Spinstruktur auf $(M,g)$, falls folgndes gilt:
@@ -92,17 +92,17 @@ Die verwendete Quelle ist \cite{BHMMM15}.
 		die einzige Spinstruktur auf dieser riemannischen 
 		Mannigfaltigkeit.
 		\item Ein erstes nichttriviales Beispiel sind zwei nicht
-		isomorphie Spinstrukturen der $\Sp^1$. Diese sind $(\Sp^1 , \eta_0)$ und $(\Sp^1 \times \Z_2 , \eta_1)$, wobei die Abbildungen durch $\eta_0 : \Sp^1 \rightarrow \Sp^1 , z \mapsto z^2$ und $\eta_1 : \Sp^1 \times \Z_2 \rightarrow \Sp^1 , (z,\alpha) \mapsto z$ gegeben sind. Diese sind auch die Repräsentaten aller Spinstrukturen bis auf 
+		isomorphie Spinstrukturen der $\S^1$. Diese sind $(\S^1 , \eta_0)$ und $(\S^1 \times \Z_2 , \eta_1)$, wobei die Abbildungen durch $\eta_0 : \S^1 \rightarrow \S^1 , z \mapsto z^2$ und $\eta_1 : \S^1 \times \Z_2 \rightarrow \S^1 , (z,\alpha) \mapsto z$ gegeben sind. Diese sind auch die Repräsentaten aller Spinstrukturen bis auf 
 		Isomorphie. 
-		%todo: suche verweis auf hijazi
+		\todo{suche verweis auf hijazi}
 		\item Die $(\CP^{2n},g)$ ist ein Beispiel für eine Familie von
 		\RMFen die nicht spin sind, wobei
 		hier $g$ eine riemannische Metrik
 		auf $\CP^{2n}$ ist. 
-%TODO: Quelle einfügen
-		\item Ein wichtiges Beispiel für eine \RMF mit deren Spinstruktur ist die $\Sp^2$. Diese
+\todo{Quelle einfügen}
+		\item Ein wichtiges Beispiel für eine \RMF mit deren Spinstruktur ist die $\S^2$. Diese
 		besitzt genau eine Spinstruktur bis auf Isomorphie. 
-%TODO: angabe dieser spinstruktur
+\todo{angabe dieser spinstruktur}
 	\end{enumerate}
 \end{Bsp}
 
@@ -142,15 +142,15 @@ einzuführen.
 \begin{Bsp}
 	Betrachte die beiden Abbildungen 
 	\begin{gather*}
-		\abb{f}{\Sp^1}{\R^2}, \exp(i\phi)%
+		\abb{f}{\S^1}{\R^2}, \exp(i\phi)%
 		\mapsto (\cos(\phi),\sin(\phi)),\\
-		\abb{g}{\Sp^1}{\R^2}, \exp(i\phi)%
+		\abb{g}{\S^1}{\R^2}, \exp(i\phi)%
 		\mapsto (\cos(2\phi),\sin(2\phi)),\\
-		\abb{h}{\Sp^1}{\R^2}, \exp(i\phi)%
+		\abb{h}{\S^1}{\R^2}, \exp(i\phi)%
 		\mapsto (\cos(2\phi),\sin(\phi)).
 	\end{gather*}
 	Diese sehen wie folgt aus.\\
-%TODO: bilder der beiden Immersionen
+\todo{bilder der beiden Immersionen}
 	
 	Die Abbildungen $f,h$ sind Immersionen, aber $g$ nicht wie sich leicht
 	anhand der Definition erkennen lässt. Das interessante Beispiel ist
@@ -192,7 +192,7 @@ erhalten wir folgendes Resultat.
 		Betrachte für $t \in [0,1]$ die Abbildung $\abb{\psi_t}{\Immf{M}{\R^3}}{\Immf{M}{\R^3}}$ mit 
 		$\psi : (f,F) \mapsto (f,F \circ (F^{\ast}F)^{-\frac{t}{2}})$.
 		Dann liefert dies die gewünschte Homotopieäquivalenz.
-		%TODO: warum liefert sie das, genauer.
+		\todo{warum liefert sie das, genauer.}
 	\end{proof}
 \end{Satz}
 
@@ -205,7 +205,7 @@ Damit gilt nun folgendes Resultat
 
 \begin{Lem}
 	Die folgende Abbildung ist eine Bijektion
-%TODO: bijektion oder homotopieäquivelante räume?
+\todo{bijektion oder homotopieäquivelante räume?}
 	\begin{align*}
 		\Immfi{M}{\R^3} &\rightarrow \set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{\text{ isometrisch}}\\
 		()
@@ -222,43 +222,46 @@ Damit gilt nun folgendes Resultat
 \end{Satz}
 % satz das die imm und form-imm homotop sind
 
-Sei $\Sp M$ definiert als $\set{v \in \T M}{ \norm{v} = 1}$, dann
+Sei $\S M$ definiert als $\set{v \in \T M}{ \norm{v} = 1}$, dann
 gilt folgender Satz
 
 \begin{Satz}
 	Es existiert eine Bijektion
 \begin{center}
 \begin{tikzcd}
-	\set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{\text{ isometrisch}} \arrow[rr,"\vartheta"] && \set{ \abb{H}{\Sp M}{\so{3}}}{\Sp^1 \text{-invariant}} \\
+	\set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{\text{ isometrisch}} \arrow[rr,"\vartheta"] && \set{ \abb{H}{\S M}{\so{3}}}{\S^1 \text{-invariant}} \\
 \end{tikzcd}
 \end{center}
+
+
 \begin{proof}
 	Sei eine Familie $(\abb{F_p}{\T_pM}{\R^3})_{p\in M}$ von 
 	isometrischen Abbildungen gegeben.
-	Da es sich bei $M$ um eine zweidimensionale, orientierte riemannische Mannigfaltigkeit handelt, gilt das zu jedem normierten Tangentialvektor $v \in \Sp_p M$ genau ein Tangentialvektor $w \in \Sp_p M$
-	existiert, sodass $(v,w)$ eine positiv orientierte Orthonormalbasis für	$\tang{p}{M}$ ist. Betrachte nun die Abbildung $\abb{H}{\Sp_p%
-		M}{\so{3}}, v \mapsto (F_p(v),F_p(w),F_p(v)\times F_p(w))$. 
+	Da es sich bei $M$ um eine zweidimensionale, orientierte riemannische Mannigfaltigkeit handelt, gilt das zu jedem normierten Tangentialvektor $v \in \S_p M$ genau einen Tangentialvektor $J(v) \in \S_p M$
+	existiert, sodass $(v,J(v))$ eine positive, orientierte Orthonormalbasis für	$\tang{p}{M}$ ist. Betrachte nun die Abbildung $\abb{H}{\S_p%
+		M}{\so{3}}, v \mapsto (F_p(v),F_p(J(v)),F_p(v)\times F_p(J(v)))$. 
 	Diese Abbildung ist wohldefiniert aufgrund der Eigenschaften
-	der Basis $(v,w)$ und dass das Kreuzprodukt der beiden
+	der Basis $(v,J(v))$ und dass das Kreuzprodukt der beiden
 	Basiselemente in Matrixform ein Element der $\so{3}$ liefert.
-	Die $\Sp^1$ Invarianz dieser Abbildung folgt direkt
+	Die $\S^1$ Invarianz dieser Abbildung folgt direkt
 	aus der Isometrie der Abbildungen $F_p$.
-	%TODO: genauer diesen Teil
+	\todo{genauer diesen Teil}
 	
 	Zeige nun das es sich bei dieser Abbildung um eine Bijektion handelt. 
 	\begin{description}
 		\item[Injektivität:] Seien zwei Familien $(F_p)_p,(G_p)_p$ von
 		isometrischen Abbildungen gegeben und sei $\vartheta((F_p)_p)=\vartheta((G_p)_p)$. Dann gilt aufgrund
 		der Abbildungsvorschrift von $\vartheta$ das $F_p(v)=G_p(v)$
-		für alle $v \in \Sp_p M$ gilt und somit die Abbildungen gleich
+		für alle $v \in \S_p M$ gilt und somit die Abbildungen gleich
 		sind.
-		\item[Surjektivität:] Sei eine $\Sp^1$-invariante Abbildung
-		$\abb{H}{\Sp M}{\so{3}}$ gegeben. Für einen normierten
-		Tangentialvektor $v \in \Sp_p M$ gilt das $H_p(v)$ ein
+		\item[Surjektivität:] Sei eine $\S^1$-invariante Abbildung
+		$\abb{H}{\S M}{\so{3}}$ gegeben. Für einen normierten
+		Tangentialvektor $v \in \S_p M$ gilt das $H_p(v)$ ein
 		Element der $\so{3}$ ist. Betrachte nun die erste Spalte
 		der Matrix $w(v)=(H_p(v)_{i,1})_{i=1,2,3}$. Definiere nun eine
 		Abbildung $\abb{F_p}{\tang{p}{M}}{\R^3}$ durch 
-		$v \mapsto \begin{cases}%TODO: frac und norm vertragen sich nicht
+		\todo{frac und norm vertragen sich nicht}
+		$v \mapsto \begin{cases}
 		w(\frac{v}{\norm{v}}) & v \neq 0 \\
 		0 & v=0.
 		\end{cases}$
@@ -270,6 +273,30 @@ gilt folgender Satz
 \end{proof}
 
 \end{Satz}
+
+Für den schlussendlichen Satz dieser Arbeit benötigen wir
+noch einige Homotopiegruppen der $\so{3}$ und $\spin{3}$.
+\begin{Lem}\label{hgroups}
+	Für die beiden Liegruppen $\spin{3}$ und $\so{3}$ gelten
+	folgende Isomorphien als Mannigfaltigkeiten:
+	\begin{align*}
+	\spin{3} &\simeq \su(2) \simeq \S^3 \\
+	\so{3} &\simeq \RP^3
+	\end{align*}
+	Damit gelten auch folgende Isomorphien der Homotopiegruppen
+	der beide Liegruppen.
+	\begin{align*}
+	\pi_k(\spin{3}) &\simeq \begin{cases}
+	1 & ,k=0,1,2 \\
+	\Z & ,k=3
+	\end{cases}
+	&{\pi_k(\so{3}) \simeq \begin{cases}
+		1 & ,k=0,2 \\
+		\Z_2 & ,k=1 \\
+		\Z & ,k=3
+		\end{cases}}
+	\end{align*}
+\end{Lem}
 
 Nach dieser weiteren Vereinfachung des Raums der Immersionen folgt
 nun der letzte Schritt. Wir können nun folgenden Satz zeigen.
@@ -588,7 +615,7 @@ nun der letzte Schritt. Wir können nun folgenden Satz zeigen.
 %  \item Das Innere $\Int(\sigma)$ ist konvex und offen in $\sigma$.
 %  \item Zwei Simplexe der selben Dimension sind homöomorph.
 %  \item Es gibt einen Homöomorphismus $\sigma \simeq \overline{\D^n}$, der den
-%    Rand $\partial\sigma$ auf die $\Sp^{n-1}$ abbildet.
+%    Rand $\partial\sigma$ auf die $\S^{n-1}$ abbildet.
 %  \end{enumerate}
 %  \begin{proof}
 %    \begin{enumerate}[(a):]
@@ -725,7 +752,7 @@ nun der letzte Schritt. Wir können nun folgenden Satz zeigen.
 %
 %      %   e)
 %      \item Wir betrachten die stetige Abbildung
-%        $f : \R^{n+1} \setminus \sset{0} \rightarrow \Sp^{n}, f(x) =
+%        $f : \R^{n+1} \setminus \sset{0} \rightarrow \S^{n}, f(x) =
 %        \frac{x}{\nn[x]}$.
 %        Sei mit $a \in \Int(\sigma), p \in \R^N \setminus \{ 0 \}$ die
 %        Halbgerade
@@ -768,12 +795,12 @@ nun der letzte Schritt. Wir können nun folgenden Satz zeigen.
 %
 %      Die Einschränkung der Abbildung $f$ auf die Menge
 %      $\partial\sigma$ ein. Nach obiger Behauptung ist die Abbildung
-%      $f_{| \partial\sigma} : \partial\sigma \rightarrow \Sp^{n-1}$
-%      bijektiv und stetig. Da $\partial\sigma$ und $\Sp^{n-1}$ kompakt
+%      $f_{| \partial\sigma} : \partial\sigma \rightarrow \S^{n-1}$
+%      bijektiv und stetig. Da $\partial\sigma$ und $\S^{n-1}$ kompakt
 %      und hausdorffsch sind, ist die Abbildung auch ein
 %      Homöomorphismus.
 %      
-%      Setze nun als Umkehrabbildung $g : \Sp^{n-1} \rightarrow \partial\sigma$ 
+%      Setze nun als Umkehrabbildung $g : \S^{n-1} \rightarrow \partial\sigma$ 
 %      und erweitere diese zu einem Homöomorphismus der Form
 %      \begin{gather*}
 %        G : \overline{\D^n} \rightarrow \sigma , \hspace{0.5cm}
