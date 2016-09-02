@@ -15,7 +15,23 @@
 \usepackage{placeins}   
 %	\usepackage{fancyhdr}				%includes a fancy header on each page
 
-                 
+              
+% Nomenklatur, d.h. Symbolverzeichnis
+% Eintrag wird erstellt durch:
+% \nomenclature[<prefix for sorting>]{<symbol>}{<description>}
+% !! keine neuen Zeilen im Befehl und alle außen herum auskommentieren !!
+%
+% Ausgabe mit:
+% \printnomenclature
+% 
+% Erzeugt .nlo Datei mit dem Programmaufruf (Terminal):
+% makeindex OptikSkriptWS1516.nlo -s nomencl.ist -o OptikSkriptWS1516.nls
+\usepackage[intoc, refpage]{nomencl}              
+%\makenomenclature
+%\printnomenclature
+
+              
+%bibliography                 
 %\usepackage[backend=biber,style=numeric-comp]{biblatex}
 %\bibliography{literatur.bib}
 \usepackage[backend=bibtex, style=numeric-comp, sorting=nty]{biblatex}
@@ -66,6 +82,9 @@
 %		\renewcommand{\headrulewidth}{0pt}% Line at the header invisible
 %		\renewcommand{\footrulewidth}{0pt}% Line at the footer invisible
 %	}	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Definitions and macros
 
 \newcommand{\C}{\mathds{C}}                         
 \newcommand{\R}{\mathds{R}}                         
@@ -280,7 +299,7 @@
 % use for font, [slshape,mdseries]
 
 \renewenvironment{proof}{{ \vspace{0.5cm} \bfseries ~\newline Beweis:\newline}\slshape\color{mygray}}{\hfill$\blacksquare$}
-
+\newenvironment{smallproof}{{ \vspace{0.5cm} \bfseries ~\newline Beweis:}\slshape\color{mygray}}{\hfill$\blacksquare$}
 
 %\renewenvironment{proof}{{ \vspace{0.5cm} \bfseries ~\newline Pr$\infty$f:\newline}\slshape\color{mygray}}{\hfill$\blacksquare$}
 
@@ -304,8 +323,8 @@
 \DeclareMathOperator{\Bn}{\overline{\B_{n}(0)}}
 %\DeclareMathOperator{\Sp}{S} 
 %better
-	\renewcommand{\S}{\operatorname{S}}	
-	\renewcommand{\d}{\operatorname{d}}	%or use \mathrm{d}
+\renewcommand{\S}{\operatorname{S}}	
+\renewcommand{\d}{\operatorname{d}}	%or use \mathrm{d}
 \DeclareMathOperator{\V}{V}
 \DeclareMathOperator{\conv}{conv}
 \DeclareMathOperator{\imm}{Imm}
@@ -326,87 +345,6 @@
                       
              	                  
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% from foreign sources
-{
-
-%\newcommand*{\largecdot}{\raisebox{-0.25ex}{\scalebox{1.2}{$\cdot$}}}
-
-
-%%%%%%%%%%%% interesting manipulation
-%\makeatletter% Damit man Footnotes ohne Nummer machen kann.
-%\def\blfootnote{\gdef\@thefnmark{}\@footnotetext}
-%\makeatother
-
-% what does providecommand
-%\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
-%\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
-
-%%%%%%%%%%%%%%%%%%%%%%
-%collection of all mathical formation
-%\begin{gather*}
-%\mathbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
-%\mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
-%\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
-%\mathds{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
-%\mathfrak{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
-%\mathit{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
-%\mathrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
-%\mathsf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
-%\mathtt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\ 
-%\end{gather*}
-
-
-%\newcommand{\mnote}[1]{\marginpar{\tiny\em #1}} 
-
-% fancy sum macro
-%\newcommand{\suma}[2]{\overset{\left[\frac{#2}{2}\right]}{\underset{\ell=#1}{\sum}}}
-	
-% nice macros
-%\newcommand{\FE}{F\hspace{-0.8mm}E}
-%\newcommand{\gc}{\check g}	
-	
-
-%%	these two macros does the same thing
-%\def\Ric{{\mathrm{Ric}}}
-%\DeclareMathOperator{\Ric}{Ric}
-
-
-
-%%	equivalent macros
-%	\newcommand{\definedas}{\mathrel{\raise.095ex\hbox{\rm:}\mkern-5.2mu=}}
-%	\coloneqq
-%
-
-
-
-
-%\DeclareMathOperator{\Cst}{{\sf C}\,\text{\raisebox{-.1em}{${}^*$}}}
-%\DeclareMathOperator{\Set}{{\sf Set}}
-%\DeclareMathOperator{\Sett}{{Set}}
-%\DeclareMathOperator{\Top}{{\sf Top}}
-%\DeclareMathOperator{\Toppt}{{\sf Top}_*}
-%\DeclareMathOperator{\Toppth}{{\sf Top}_{* \sf h}}
-%\DeclareMathOperator{\Toph}{{\sf Top}_{\sf h}}
-%\DeclareMathOperator{\Group}{{\sf Group}}
-%\DeclareMathOperator{\Vect}{{\sf Vect}}
-%\DeclareMathOperator{\sn}{{\sf sn}}
-%\DeclareMathOperator{\Ab}{{\sf Ab}}
-%\DeclareMathOperator{\CW}{{\sf CW}}
-%\DeclareMathOperator{\CWh}{{\sf CW}_{{\sf h}}}
-%\DeclareMathOperator{\CWpt}{{\sf CW}_*}
-%\DeclareMathOperator{\snAb}{{\sf snAb}}
-%\DeclareMathOperator{\snAbfin}{{\sf snAb}^{{\sf fin}}}
-%\DeclareMathOperator{\Ch}{{\sf Ch}}
-%\DeclareMathOperator{\CoCh}{{\sf CoCh}}
-%%TODO: what are this def are doing
-%\def\LCh#1{{}_{#1}\!\Ch}
-%\def\RCh#1{\Ch_{#1}}
-%%%
-%\DeclareMathOperator{\Ob}{Ob}
-%\DeclareMathOperator{\Mor}{Mor}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
@@ -454,6 +392,9 @@
 	%cat and fun
 	\newcommand{\cat}[1]{\mathbf{#1}}
 	\newcommand{\fun}[1]{\bm{\mathrm{#1}}}
+%	\newcommand{\vecA}{\vec{A}}
+
+
 
 	%DefMap
 	\newcommand{\DefMap}[4]{
@@ -466,7 +407,128 @@
 	}
 
 
+
+
 %\wr liefert für diagramme eine tilde<
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% from foreign sources
+{
+	
+%	richtige trennung
+%	\hyphenation{Fou-rier-trans-for-ma-tion}
+	
+	
+	
+	%\newcommand*{\largecdot}{\raisebox{-0.25ex}{\scalebox{1.2}{$\cdot$}}}
+	
+	
+	%%%%%%%%%%%% interesting manipulation
+	%\makeatletter% Damit man Footnotes ohne Nummer machen kann.
+	%\def\blfootnote{\gdef\@thefnmark{}\@footnotetext}
+	%\makeatother
+	
+	% what does providecommand
+	%\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+	%\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+	
+	%%%%%%%%%%%%%%%%%%%%%%
+	%collection of all mathical formation
+	%\begin{gather*}
+	%\mathbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	%\mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	%\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	%\mathds{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	%\mathfrak{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	%\mathit{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	%\mathrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	%\mathsf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	%\mathtt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\ 
+	%\end{gather*}
+	
+	
+	%\newcommand{\mnote}[1]{\marginpar{\tiny\em #1}} 
+	
+	% fancy sum macro
+	%\newcommand{\suma}[2]{\overset{\left[\frac{#2}{2}\right]}{\underset{\ell=#1}{\sum}}}
+	
+	% nice macros
+	%\newcommand{\FE}{F\hspace{-0.8mm}E}
+	%\newcommand{\gc}{\check g}	
+	
+	
+	%%	these two macros does the same thing
+	%\def\Ric{{\mathrm{Ric}}}
+	%\DeclareMathOperator{\Ric}{Ric}
+	
+	
+	
+	%%	equivalent macros
+	%	\newcommand{\definedas}{\mathrel{\raise.095ex\hbox{\rm:}\mkern-5.2mu=}}
+	%	\coloneqq
+	%
+	
+	
+	
+	
+	%\DeclareMathOperator{\Cst}{{\sf C}\,\text{\raisebox{-.1em}{${}^*$}}}
+	%\DeclareMathOperator{\Set}{{\sf Set}}
+	%\DeclareMathOperator{\Sett}{{Set}}
+	%\DeclareMathOperator{\Top}{{\sf Top}}
+	%\DeclareMathOperator{\Toppt}{{\sf Top}_*}
+	%\DeclareMathOperator{\Toppth}{{\sf Top}_{* \sf h}}
+	%\DeclareMathOperator{\Toph}{{\sf Top}_{\sf h}}
+	%\DeclareMathOperator{\Group}{{\sf Group}}
+	%\DeclareMathOperator{\Vect}{{\sf Vect}}
+	%\DeclareMathOperator{\sn}{{\sf sn}}
+	%\DeclareMathOperator{\Ab}{{\sf Ab}}
+	%\DeclareMathOperator{\CW}{{\sf CW}}
+	%\DeclareMathOperator{\CWh}{{\sf CW}_{{\sf h}}}
+	%\DeclareMathOperator{\CWpt}{{\sf CW}_*}
+	%\DeclareMathOperator{\snAb}{{\sf snAb}}
+	%\DeclareMathOperator{\snAbfin}{{\sf snAb}^{{\sf fin}}}
+	%\DeclareMathOperator{\Ch}{{\sf Ch}}
+	%\DeclareMathOperator{\CoCh}{{\sf CoCh}}
+	%%TODO: what are this def are doing
+	%\def\LCh#1{{}_{#1}\!\Ch}
+	%\def\RCh#1{\Ch_{#1}}
+	%%%
+	%\DeclareMathOperator{\Ob}{Ob}
+	%\DeclareMathOperator{\Mor}{Mor}
+
+%\newcommand{\multitext}[1]{%
+%	$\left\{\begin{tabular}{@{}l@{}}%
+%	#1
+%	\end{tabular} \right\}$%
+%}
+
+%% inject pdfbookmarks at thm like environments
+%\makeatletter
+%\let\origswappedhead=\swappedhead
+%\newcommand{\@thmnote}{}
+%
+%\renewcommand{\swappedhead}[3]{%
+%	\origswappedhead{#1}{#2}{#3}%
+%	\ifx\relax\@nextmarkdesc
+%	\def\@thmnote{#3}%
+%	\else
+%	\let\thmnote=\@iden
+%	\let\@thmnote=\@nextmarkdesc 
+%	\global\let\@nextmarkdesc=\relax
+%	\fi
+%	\belowpdfbookmark{#2~#1\thmnote{ (\@thmnote)}}{#1#2}%
+%}
+%\newcommand{\@nextmarkdesc}{}
+%\let\@nextmarkdesc=\relax
+%\newcommand{\nextmark}[1]{%
+%	\def\@nextmarkdesc{#1}%
+%}
+%\makeatother
+
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 %%% Local Variables:
 %%% mode: latex

@@ -1,0 +1,153 @@
+%!TEX root = main.tex
+% vim: tw=0 noet sts=8 sw=8
+
+
+
+\section{Zusammenhang von Immersionen und Spinstrukturen}
+
+Im folgenden ist $(M,g)$ eine geschlossene, kompakte, orientierte \mfg.
+In der Notation wird die Metrik $g$ unterdrückt.
+
+
+Um einen Zusammenhang zwischen den Immersionen und den Spinstrukturen
+herzustellen ist es notwendig den Raum der Immersionen zu vereinfachen.
+Wichtig ist hierbei das wir nur an den Zusammenhangskomponenten interessiert
+sind, also können wir den Raum beliebig homotopieren. Das folgende Theorem
+liefert uns eine erste Vereinfachung des Raumes.
+%satz von smale hirsch als black box, aus intro to the h-principle
+%finde gute referenz für dieses Theorem
+\begin{Thm}[Smale-Hirsch-Theorem]
+	Seien $M^m,N^n$ \mfgen, $m<n$ und M sei geschlossen. Dann ist die Abbildung
+	$\abb{\theta}{\Imm{M}{N}}{\Immf{M}{N}}, f \mapsto (f,\mathrm{d} f)$ eine Homotophieäquivalenz.
+\end{Thm}
+
+Der Raum von formalen Immersionen lässt sich noch weiter vereinfachen, denn wenn
+wir anstatt von nur formalen Immersionen auch diese betrachte bei denen
+die Abbildungen zwischen den Tangentialräumen auch noch eine Isometrie ist,
+erhalten wir folgendes Resultat.
+
+
+\begin{Satz}
+	Seien die isometrischen, formalen Immersionen gegeben durch
+	\begin{gather*}
+	\Immfi{M}{\R^3} \coloneqq \set{(f,F) \in \Immf{M}{\R^3}}{F \text{ ist isometrisch }}
+	\end{gather*}
+	Dann gilt das $\Immf{M}{\R^3}$ und $\Immfi{M}{\R^3}$ homotopieäquivalent sind.
+	\begin{proof}
+		Betrachte für $t \in [0,1]$ die Abbildung $\abb{\psi_t}{\Immf{M}{\R^3}}{\Immf{M}{\R^3}}$ mit 
+		$\psi : (f,F) \mapsto (f,F \circ (F^{\ast}F)^{-\frac{t}{2}})$.
+		Dann liefert dies die gewünschte Homotopieäquivalenz.
+		\todo{warum liefert sie das, genauer.}
+	\end{proof}
+\end{Satz}
+
+Für den Tangentialraum des $\R^n$ gilt:
+\begin{align*}
+	\T \R^n &\simeq \R^n \times \R^n \\
+	(p,v) &\mapsto (p,v)
+\end{align*}
+Damit gilt nun folgendes Resultat
+
+\begin{Lem}
+	Die folgende Abbildung ist eine Bijektion
+\todo{bijektion oder homotopieäquivelante räume?}
+	\begin{align*}
+		\Immfi{M}{\R^3} &\rightarrow \set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{\text{ isometrisch}}\\
+		()
+	\end{align*}
+\end{Lem}
+
+
+%lemma darüber das eine kompakte, orientierte 2dim riem mfg stets spin ist
+\begin{Satz}
+	Jede geschlossene, orientierte, \RMF  $(M,g)$ der Dimension $2$ ist spin.
+	\begin{proof}
+		%todo: beweis
+	\end{proof}
+\end{Satz}
+% satz das die imm und form-imm homotop sind
+
+Sei $\S M$ definiert als $\set{v \in \T M}{ \norm{v} = 1}$, dann
+gilt folgender Satz
+
+\begin{Satz}
+	Es existiert eine Bijektion
+\begin{center}
+\begin{tikzcd}
+	\set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{\text{ isometrisch}} \arrow[rr,"\vartheta"] && \set{ \abb{H}{\S M}{\so{3}}}{\S^1 \text{-invariant}} \\
+\end{tikzcd}
+\end{center}
+
+
+\begin{proof}
+	Sei eine Familie $(\abb{F_p}{\T_pM}{\R^3})_{p\in M}$ von 
+	isometrischen Abbildungen gegeben.
+	Da es sich bei $M$ um eine zweidimensionale, orientierte riemannische Mannigfaltigkeit handelt, gilt das zu jedem normierten Tangentialvektor $v \in \S_p M$ genau einen Tangentialvektor $J(v) \in \S_p M$
+	existiert, sodass $(v,J(v))$ eine positive, orientierte Orthonormalbasis für	$\tang{p}{M}$ ist. Betrachte nun die Abbildung $\abb{H}{\S_p%
+		M}{\so{3}}, v \mapsto (F_p(v),F_p(J(v)),F_p(v)\times F_p(J(v)))$. 
+	Diese Abbildung ist wohldefiniert aufgrund der Eigenschaften
+	der Basis $(v,J(v))$ und dass das Kreuzprodukt der beiden
+	Basiselemente in Matrixform ein Element der $\so{3}$ liefert.
+	Die $\S^1$ Invarianz dieser Abbildung folgt direkt
+	aus der Isometrie der Abbildungen $F_p$.
+	\todo{genauer diesen Teil}
+	
+	Zeige nun das es sich bei dieser Abbildung um eine Bijektion handelt. 
+	\begin{description}
+		\item[Injektivität:] Seien zwei Familien $(F_p)_p,(G_p)_p$ von
+		isometrischen Abbildungen gegeben und sei $\vartheta((F_p)_p)=\vartheta((G_p)_p)$. Dann gilt aufgrund
+		der Abbildungsvorschrift von $\vartheta$ das $F_p(v)=G_p(v)$
+		für alle $v \in \S_p M$ gilt und somit die Abbildungen gleich
+		sind.
+		\item[Surjektivität:] Sei eine $\S^1$-invariante Abbildung
+		$\abb{H}{\S M}{\so{3}}$ gegeben. Für einen normierten
+		Tangentialvektor $v \in \S_p M$ gilt das $H_p(v)$ ein
+		Element der $\so{3}$ ist. Betrachte nun die erste Spalte
+		der Matrix $w(v)=(H_p(v)_{i,1})_{i=1,2,3}$. Definiere nun eine
+		Abbildung $\abb{F_p}{\tang{p}{M}}{\R^3}$ durch 
+		\todo{frac und norm vertragen sich nicht}
+		$v \mapsto \begin{cases}
+		w(\frac{v}{\norm{v}}) & v \neq 0 \\
+		0 & v=0.
+		\end{cases}$
+		
+		Diese Abbildung liefert uns nun das gewünschte Urbild zur
+		anfangs gewählten Abbildung $H$. 
+	\end{description}
+	Der Nachweis der Bijektion liefert die Behauptung.
+\end{proof}
+
+\end{Satz}
+
+Für den schlussendlichen Satz dieser Arbeit benötigen wir
+noch einige Homotopiegruppen der $\so{3}$ und $\spin{3}$.
+\begin{Lem}\label{hgroups}
+	Für die beiden Liegruppen $\spin{3}$ und $\so{3}$ gelten
+	folgende Isomorphien als Mannigfaltigkeiten:
+	\begin{align*}
+	\spin{3} &\simeq \su(2) \simeq \S^3 \\
+	\so{3} &\simeq \RP^3
+	\end{align*}
+	Damit gelten auch folgende Isomorphien der Homotopiegruppen
+	der beide Liegruppen.
+	\begin{align*}
+	\pi_k(\spin{3}) &\simeq \begin{cases}
+	1 & ,k=0,1,2 \\
+	\Z & ,k=3
+	\end{cases}
+	&{\pi_k(\so{3}) \simeq \begin{cases}
+		1 & ,k=0,2 \\
+		\Z_2 & ,k=1 \\
+		\Z & ,k=3
+		\end{cases}}
+	\end{align*}
+\end{Lem}
+
+Nach dieser weiteren Vereinfachung des Raums der Immersionen folgt
+nun der letzte Schritt. Wir können nun folgenden Satz zeigen.
+
+
+%% Local Variables:
+%% mode: latex
+%% TeX-master: "main"
+%% End:

@@ -1,0 +1,64 @@
+%!TEX root = main.tex
+% vim: tw=0 noet sts=8 sw=8
+
+
+
+%def von immersionen und formalen immersionen
+% bemerkung über die topologie auf diesen räumen, einmal kompakt-offen topologie
+% und das dies der C^1 topologie entspricht
+
+\section{Immersionen}
+
+Neben der Spinstruktur ist es noch notwendig den Begriff der Immersion 
+einzuführen.
+
+\begin{Def}[Immersionen,formale Immersionen]
+	Eine Abbildung $\abb{f}{M}{N}$ zwischen zwei Mannigfaltigkeiten
+	heißt \textit{Immersion}, falls das Differential $\abb{\mathrm{d} f}{TM}{TN}$ 
+	injektiv ist.
+	Ein Paar von Abbildungen $\abb{(f,F)}{M \times TM}{N \times TN} ,%
+	(p,v) \mapsto (f(p),F(v)$ heißt \textit{formale Immersion} falls folgendes
+	Diagramm kommutiert:
+	\begin{center}
+		
+		\begin{tikzcd}
+			TM \arrow[rr, "F"] \arrow[dd, "\pi^M"'] & & TN \arrow[dd ,"\pi^N"] \\
+			&& \\
+			M \arrow[rr, "f"] & & N  
+		\end{tikzcd}
+		
+	\end{center}
+	
+	Definiere nun $\Imm{M}{N},\Immf{M}{N}$ als Menge aller (formalen) Immersionen. Die Topologie für diese Mengen ist gegeben als Teilraumtopologie des Raumes $\map(M,N)$ der die Basis der Topologie 
+	trägt mit folgenden Erzeugern. Die Menge aller Mengen der Form $\set{f \in \map}{ f(K) \subset U}$
+	für alle Paare $(K,U)$ von kompakten Teilmengen $K \subset M$ und
+	offenen Teilmengen $U \subset N$ erzeugt die Topologie auf $\map(M,N)$.
+\end{Def}
+
+%bsp für formale immersion die keine immersion von der form (f,df) ist
+%streckung?
+
+\begin{Bsp}
+	Betrachte die beiden Abbildungen 
+	\begin{gather*}
+		\abb{f}{\S^1}{\R^2}, \exp(i\phi)%
+		\mapsto (\cos(\phi),\sin(\phi)),\\
+		\abb{g}{\S^1}{\R^2}, \exp(i\phi)%
+		\mapsto (\cos(2\phi),\sin(2\phi)),\\
+		\abb{h}{\S^1}{\R^2}, \exp(i\phi)%
+		\mapsto (\cos(2\phi),\sin(\phi)).
+	\end{gather*}
+	Diese sehen wie folgt aus.\\
+\todo{bilder der beiden Immersionen}
+	
+	Die Abbildungen $f,h$ sind Immersionen, aber $g$ nicht wie sich leicht
+	anhand der Definition erkennen lässt. Das interessante Beispiel ist
+	das der Abbildung $h$, den diese ist nicht injektiv aber ihr Differential
+	ist es.
+\end{Bsp}
+
+
+%% Local Variables:
+%% mode: latex
+%% TeX-master: "main"
+%% End:
