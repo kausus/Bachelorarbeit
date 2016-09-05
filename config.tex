@@ -1,5 +1,5 @@
-% encodings                                        
 \usepackage[T1]{fontenc}                            
+% encodings                                        
 \usepackage[utf8]{inputenc}                         
 \usepackage[shorthands=off]{babel}                  
 \usepackage{lmodern}                                
@@ -91,6 +91,7 @@
 \newcommand{\N}{\mathds{N}}                         
 \newcommand{\Z}{\mathds{Z}}                         
 \newcommand{\Q}{\mathds{Q}}
+\renewcommand{\H}{\mathds{H}}
 
 % oder alternativ, funktioniert aber nicht
 %\defmathbbsymbols{Z Q C}
@@ -338,7 +339,8 @@
 \DeclareMathOperator{\Ad}{Ad}
 \DeclareMathOperator{\Adt}{\widetilde{\operatorname{Ad}}} % Ad twisted
 \DeclareMathOperator{\id}{id}
-
+\DeclareMathOperator{\CCl}{\C\ell}				%complexified Clifford algebra
+\DeclareMathOperator{\Cl}{C\ell}				%Clifford algebra
 %better epsilon
 \def\epsilon{\varepsilon}
 
@@ -393,7 +395,9 @@
 	\newcommand{\cat}[1]{\mathbf{#1}}
 	\newcommand{\fun}[1]{\bm{\mathrm{#1}}}
 %	\newcommand{\vecA}{\vec{A}}
-
+	
+%	because of pairing
+	\newcommand{\pair}[2]{(#1 , #2)}
 
 
 	%DefMap

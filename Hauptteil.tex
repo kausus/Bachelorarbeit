@@ -13,7 +13,7 @@ Um einen Zusammenhang zwischen den Immersionen und den Spinstrukturen
 herzustellen ist es notwendig den Raum der Immersionen zu vereinfachen.
 Wichtig ist hierbei das wir nur an den Zusammenhangskomponenten interessiert
 sind, also können wir den Raum beliebig homotopieren. Das folgende Theorem
-liefert uns eine erste Vereinfachung des Raumes.
+liefert uns eine erste Vereinfachung des Raumes. \todo{Quelle}
 %satz von smale hirsch als black box, aus intro to the h-principle
 %finde gute referenz für dieses Theorem
 \begin{Thm}[Smale-Hirsch-Theorem]
@@ -21,10 +21,7 @@ liefert uns eine erste Vereinfachung des Raumes.
 	$\abb{\theta}{\Imm{M}{N}}{\Immf{M}{N}}, f \mapsto (f,\mathrm{d} f)$ eine Homotophieäquivalenz.
 \end{Thm}
 
-Der Raum von formalen Immersionen lässt sich noch weiter vereinfachen, denn wenn
-wir anstatt von nur formalen Immersionen auch diese betrachte bei denen
-die Abbildungen zwischen den Tangentialräumen auch noch eine Isometrie ist,
-erhalten wir folgendes Resultat.
+Der Raum von formalen Immersionen lässt sich noch weiter verkleinern bzw. vereinfachen, indem wir anstatt von nur formalen Immersionen auch diese betrachten bei denen die Abbildungen zwischen den Tangentialräumen auch noch isometrisch ist, erhalten wir folgendes Resultat.
 
 
 \begin{Satz}
@@ -35,18 +32,13 @@ erhalten wir folgendes Resultat.
 	Dann gilt das $\Immf{M}{\R^3}$ und $\Immfi{M}{\R^3}$ homotopieäquivalent sind.
 	\begin{proof}
 		Betrachte für $t \in [0,1]$ die Abbildung $\abb{\psi_t}{\Immf{M}{\R^3}}{\Immf{M}{\R^3}}$ mit 
-		$\psi : (f,F) \mapsto (f,F \circ (F^{\ast}F)^{-\frac{t}{2}})$.
+		$\psi_t : (f,F) \mapsto (f,F \circ (F^{\ast}F)^{-\frac{t}{2}})$.
 		Dann liefert dies die gewünschte Homotopieäquivalenz.
-		\todo{warum liefert sie das, genauer.}
+		Zunächst ist diese Homotopie eine glatte Abbildung für alle $ t \in [0,1] $. Für $ t=0 $ gilt dem $ \psi_0 = id $. Im Fall $ t=1 $ gilt nun das $ F \circ (F^{\ast}F)^{-\frac{t}{2}} $ 
 	\end{proof}
 \end{Satz}
 
-Für den Tangentialraum des $\R^n$ gilt:
-\begin{align*}
-	\T \R^n &\simeq \R^n \times \R^n \\
-	(p,v) &\mapsto (p,v)
-\end{align*}
-Damit gilt nun folgendes Resultat
+
 
 \begin{Lem}
 	Die folgende Abbildung ist eine Bijektion
@@ -120,14 +112,15 @@ gilt folgender Satz
 \end{Satz}
 
 Für den schlussendlichen Satz dieser Arbeit benötigen wir
-noch einige Homotopiegruppen der $\so{3}$ und $\spin{3}$.
+noch einige Homotopiegruppen der $\so{3}$ und $\spin{3}$. Die
+verwendete Quelle ist hierbei \cite{BHMMM15}.
 \begin{Lem}\label{hgroups}
 	Für die beiden Liegruppen $\spin{3}$ und $\so{3}$ gelten
 	folgende Isomorphien als Mannigfaltigkeiten:
-	\begin{align*}
-	\spin{3} &\simeq \su(2) \simeq \S^3 \\
-	\so{3} &\simeq \RP^3
-	\end{align*}
+	\begin{align}
+	\spin{3} &\simeq \su(2) \simeq \S^3 \label{{id1}}\\
+	\so{3} &\simeq \RP^3 \label{id2}
+	\end{align}
 	Damit gelten auch folgende Isomorphien der Homotopiegruppen
 	der beide Liegruppen.
 	\begin{align*}
@@ -141,6 +134,33 @@ noch einige Homotopiegruppen der $\so{3}$ und $\spin{3}$.
 		\Z & ,k=3
 		\end{cases}}
 	\end{align*}
+	
+	\begin{proof}
+		\begin{description}
+			\item[1. Schritt:] Wir wollen zunächst die zweite Identität \cref{id1} zeigen. Dieser Isomorphismus
+			ist direkt durch folgende Abbildung anzugeben
+			\DefMap{\set{\pma{a & -\bar{b} \\ b & \bar{a}} \in \su_2}{a,b \in \C}}{\set{(a,b)\in \C^2}{|a|^2+|b|^2=1}=\S^3}{\pma{a & -\bar{b} \\ b & \bar{a}}}{(a,b)}
+			
+			Von \cref{id1} die erste Identität wird wie folgt bewiesen.
+			Es gilt zunächst das die Spingruppe $ \spin{3} $ 
+			eine Teilmenge der Cliffordalgebra $ \Cl_3 $ ist und
+			im geraden Teil dieser liegt, also eine Untergruppe 
+			von $ \H^\ast $ ist. Man kann nun zeigen das dies
+			schon die gewünschte Behauptung zeigt das $ \spin{3} \simeq \su_2 $ gilt.
+			\todo{zeige RP3 iso zu so3}
+			
+			\item[2. Schritt;] Seien nun die obigen Identitäten \ref{id1} \todo{cref verwenden} gegeben, um nun die
+			die Homotopiegruppen zu berechnen reicht es aus
+			diese von $\RP^3$ und $ \S^3 $ zu kennen. Für $ \S^3 $
+			sind diese bekannt und für $ \RP^3 $ stimmen diese
+			für $ k \neq 1 $ mit denen von $ \S^3 $ überein. Die
+			Fundamentalgruppe von $ \RP^3 $ ist bekannterweise $ \Z_2 $. Somit ist alles gezeigt.
+		\end{description}
+		
+		
+		
+	\end{proof}
+	
 \end{Lem}
 
 Nach dieser weiteren Vereinfachung des Raums der Immersionen folgt

@@ -2,7 +2,7 @@
 % vim: tw=0 noet sts=8 sw=8
 
 
-%erstes KKapitel
+%erstes Kapitel
 \section{Hauptfaserbündel und Spinstruktur}
 
 In diesem ersten Abschnitt soll die grundlegenden Strukturen eingeführt werden die für diese Arbeit notwendig sind. Der Begriff des Hauptfaserbündel hat sich als der Richtige herausgebildet indem die Sprache von Spinstrukturen bzw. Spinoren formuliert wird.
@@ -16,11 +16,15 @@ Die verwendete Quelle ist \cite{baum09}
 		die auf $P$ von rechts, fasertreu, transitiv und frei wirkt. 
 		\nomenclature{frei}{eine Gruppenwirkung ist frei, falls die Rechtsmultiplikation mit dem Element $g$ fixpunktfrei ist falls $g$ schon trivial ist}
 		\nomenclature{fasertreu}{Die Faser ist unter Gruppenwirkung stabil, also werden Faserelemente auf Faserelemente abgebildet}
-		\item Es gibt einen Bündelatlas $\sset{(U_i,\phi_i)}$ aus $G$-äquivarianten Bündelkarten. 
+		\item Es gibt einen Bündelatlas $\sset{(U_i,\phi_i)}$ aus $G$-äquivarianten Bündelkarten, d.h.
+		Es gilt das $\sset{(U_i)_{i \in \Lambda}}$ eine offene
+		Überdeckung von M ist. Die Abbildung $ \abb{\phi_i}{\pi^{-1}(U_i)}{U_i\times G} $ ist ein
+		Diffeomorphismus für alle $i \in \Lambda $, für den $ \phi_i(pg) = \phi(p) g  $ und $ \pi_1 \circ \phi_i = \pi^P $ für alle $ g \in G, p \in \pi^{-1}(U_i) $ gilt. Wobei $ (p,g) h = (p,gh) $ in 
+		$ U_i\times G $ gilt. 
 	\end{enumerate}		
 	Für zwei Hauptfaserbündel $(P,\pi^P,M,G),(Q,\pi^Q,M,H)$ 
 	über derselben Mannigfaltigkeit und eine Abbildung $\abb{f}{P}{Q}$ nennen wir $f$ einen \textit{Hauptfaserbündelmorphismus}, falls $ \pi^P=\pi^Q \circ f $ gilt. Ein Hauptfaserbündelisomorphismus ist
-	ist ein Isomorphismus im Sinne der Kategorientheorie.
+	ein Isomorphismus im Sinne der Kategorientheorie.
 \end{Def}
 
 Im folgenden werden die wichtigsten Beispiele angegeben.
@@ -95,14 +99,14 @@ Die verwendete Quelle ist \cite{BHMMM15}.
 		 	\begin{center}
 		 		% das zeichen ' nach " " ändert die position bzgl pfeil
 		 	\begin{tikzcd}
-		 		\spin{n} \ar[rr, "a \mapsto ua"] \ar[dd, "\chi"'] & &  \Ph{\spin{n}}{M}  \arrow[rd] \arrow[dd, "\eta"] & \\
+		 		\spin{n} \ar[rr, "a \mapsto ua"] \ar[dd, "\Ad"'] & &  \Ph{\spin{n}}{M}  \arrow[rd] \arrow[dd, "\eta"] & \\
 		 		&&& M \\
 		 		\so{n} \arrow[rr , "A \mapsto \eta(u)A"] & & 
 		 		\Ph{\so{n}}{M} \arrow[ur] &
 		 	\end{tikzcd}
 			 \end{center}
 			wobei $\Ad$ die doppelte Überlagerungsabbildung von $\so{n}$ ist
-			und dies für alle $u \in \spin{n}$ gilt.
+			und dies für alle $u \in \Ph{\spin{n}}{M}$ gilt.
 	 \end{itemize}
 	 Falls eine \RMF eine Spinstruktur besitzt sagen wir die \mfg ist \textit{spin}.
 	
@@ -112,8 +116,33 @@ Die verwendete Quelle ist \cite{BHMMM15}.
 \begin{Bsp}
 	\begin{enumerate}[(1)]
 		\item Das erste Beispiel ist das Triviale. Für die \RMF $(\R^n, \scdots_{\R^n})$ ist $(\R^n \times \spin{n},\id \times \Ad)$ 
-		die einzige Spinstruktur auf dieser riemannischen 
-		Mannigfaltigkeit.
+		eine Spinstruktur auf dieser riemannischen 
+		Mannigfaltigkeit.\footnote{Dies ist auch die einzigste Spinstruktur für den $ \R^n $ bis auf Isomorphie}
+		\begin{proof}
+			Das Tupel $ (\R^n\times \spin{n},\pi_1,\R^n,\spin{n}) $ ist ein triviales
+			Hauptfaserbündel mit Strukturgruppe $ \spin{n} $.
+			Sei ein $ (p,u)\in \R^n\times \spin{n} $ gegeben, brachte dann
+			folgendes Diagramm
+			
+%			\begin{center}
+%				\begin{tikzcd}
+%				\spin{n} \arrow[rr, "a \mapsto (p,au)"] \arrow[dd,"\Ad"] && \R^n\times \spin{n} \arrow[dd] \aarow  & \\
+%				&&& M \\
+%				\so{n} && \R^n &
+%			\end{tikzcd}
+%			\end{center}	
+				\begin{center}
+					
+					 	\begin{tikzcd}
+					 		\spin{n} \ar[rr, "a \mapsto \pair{p}{au}"] \ar[dd, "\Ad"'] & &  \R^n\times \spin{n}  \arrow[rd] \arrow[dd, "\pi_1"] & \\
+					 		&&& \R^n \\
+					 		\so{n} \arrow[rr , "A \mapsto pA"] & & 
+					 		\R^n \arrow[ru] &
+					 	\end{tikzcd}
+		\end{center}
+
+		\end{proof}
+		
 		\item Ein erstes nichttriviales Beispiel sind zwei nicht
 		isomorphie Spinstrukturen der $\S^1$. Diese sind $(\S^1 , \eta_0)$ und $(\S^1 \times \Z_2 , \eta_1)$, wobei die Abbildungen durch $\eta_0 : \S^1 \rightarrow \S^1 , z \mapsto z^2$ und $\eta_1 : \S^1 \times \Z_2 \rightarrow \S^1 , (z,\alpha) \mapsto z$ gegeben sind. Diese sind auch die Repräsentaten aller Spinstrukturen bis auf 
 		Isomorphie. 
