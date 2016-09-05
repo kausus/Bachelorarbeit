@@ -41,12 +41,45 @@ Der Raum von formalen Immersionen lässt sich noch weiter verkleinern bzw. verei
 
 
 \begin{Lem}
-	Die folgende Abbildung ist eine Bijektion
-\todo{bijektion oder homotopieäquivelante räume?}
-	\begin{align*}
-		\Immfi{M}{\R^3} &\rightarrow \set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{\text{ isometrisch}}\\
-		()
-	\end{align*}
+	Es existiert eine Bijektion
+	
+%	\begin{align*}
+%		\Immfi{M}{\R^3} &\rightarrow \set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{\text{ isometrisch}}\\
+%	\end{align*}.
+	\begin{tikzcd}
+		\Immfi{M}{\R^3} \arrow[r,"\eta"] &%
+		\set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{ F_p \text{ isometrisch für alle }p \in M}
+	\end{tikzcd}
+	\begin{proof}
+		Definiere die Abbildung $ \eta $ wie folgt. Sei ein Paar $ (f,F) \in \Immfi{M}{\R^3}$ gegeben, dann setze als Zielobjekt
+		schlichtweg die Familie $ (F_p)_{p\in M} $. Es ist noch
+		zu zeigen das dies eine Bijektion ist.
+		\begin{description}
+			\item[Injektivität:] Seien zwei Paare $ (f,F),(g,G) $ 
+			mit $ \eta(f,F)=\eta(g,G) $ gegeben. Dann gilt nach
+			Definition $ F_p = G_p $ für alle $ p\in M $. Also
+			gilt $ F=G $ als Abbildungen. Da die Paare nun formale
+			Immersionen sind gilt das die zugehörigen Diagramme aus
+			 \cref{formIso} kommutieren, also gilt:
+			 \begin{gather*}
+			 	f \circ \pi^M = \pi_1 \circ F = \pi_1 \circ G = g \circ \pi^M
+			 \end{gather*}
+			 also
+			 \begin{gather*}
+			 	f \circ \pi^M = g \circ \pi^M
+			 \end{gather*}.
+			 Da die Projektion $ \pi^M $ surjektiv ist, folgt $ f=g $.
+			 Also die Injektivität.
+			 \item[Surjektivität] Sei eine Familie $ (F_p)_{p\in M} $
+			 gegeben. Wähle eine beliebige glatte Funktion $ f\in \Cinfty{M}{\R^3} $. Setze nun als Urbild zu der anfangs
+			 gegeber Familie das Paar $ (f,F) $. Wobei $ F $
+			 gegeben ist als 
+			 \DefMap{\tang{}{M}}{\tang{}{\R^3}}{(p,v)}{(f(p),F_p(v)).}
+			 
+			 Dann gilt offentsichtlich $ \eta(f,F)=(F_p)_{p\in M} $
+			 und damit ist die Bijektion konstruiert.
+		\end{description}
+	\end{proof}
 \end{Lem}
 
 
@@ -59,23 +92,25 @@ Der Raum von formalen Immersionen lässt sich noch weiter verkleinern bzw. verei
 \end{Satz}
 % satz das die imm und form-imm homotop sind
 
-Sei $\S M$ definiert als $\set{v \in \T M}{ \norm{v} = 1}$, dann
-gilt folgender Satz
+Sei $\S M$ definiert als $\set{(p,v) \in \T M}{ \norm{v} = 1}$, 
+wobei die Norm gegeben ist als $ \norm{(p,v)} \coloneqq \sqrt{g_p(v,v)} $ und wir der einfachheithalber lediglich $ \norm{v} $ schreiben werden.
+Der nächste Schritt wird der essentielle auf den Weg zu den Zusammenhang mit den Spinstrukturen sein.
 
 \begin{Satz}
-	Es existiert eine Bijektion
-\begin{center}
-\begin{tikzcd}
-	\set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{\text{ isometrisch}} \arrow[rr,"\vartheta"] && \set{ \abb{H}{\S M}{\so{3}}}{\S^1 \text{-invariant}} \\
-\end{tikzcd}
-\end{center}
-
-
+	Es existiert eine Bijektion zwischen 
+	\begin{gather*}
+		\set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{ F_p \text{ isometrisch für alle }p \in M}
+	\end{gather*}
+	und 
+	\begin{gather*}
+		\set{ \abb{H}{\S M}{\so{3}}}{\S^1 \text{-invariant}}.
+	\end{gather*}
+	\todo{was meint hier S1 invariant.}
 \begin{proof}
 	Sei eine Familie $(\abb{F_p}{\T_pM}{\R^3})_{p\in M}$ von 
 	isometrischen Abbildungen gegeben.
-	Da es sich bei $M$ um eine zweidimensionale, orientierte riemannische Mannigfaltigkeit handelt, gilt das zu jedem normierten Tangentialvektor $v \in \S_p M$ genau einen Tangentialvektor $J(v) \in \S_p M$
-	existiert, sodass $(v,J(v))$ eine positive, orientierte Orthonormalbasis für	$\tang{p}{M}$ ist. Betrachte nun die Abbildung $\abb{H}{\S_p%
+	Da es sich bei $M$ um eine zweidimensionale, orientierte riemannische Mannigfaltigkeit handelt, gilt das zu es jedem normierten Tangentialvektor $v \in \S_p M$ genau einen Tangentialvektor $J(v) \in \S_p M$
+	existiert, sodass $(v,J(v))$ eine positiv, orientierte Orthonormalbasis für	$\tang{p}{M}$ ist. Betrachte nun die Abbildung $\abb{H_p}{\S_p%
 		M}{\so{3}}, v \mapsto (F_p(v),F_p(J(v)),F_p(v)\times F_p(J(v)))$. 
 	Diese Abbildung ist wohldefiniert aufgrund der Eigenschaften
 	der Basis $(v,J(v))$ und dass das Kreuzprodukt der beiden
