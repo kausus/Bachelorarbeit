@@ -23,7 +23,7 @@ Die verwendete Quelle ist \cite{baum09}
 		$ U_i\times G $ gilt. 
 	\end{enumerate}		
 	Für zwei Hauptfaserbündel $(P,\pi^P,M,G),(Q,\pi^Q,M,H)$ 
-	über derselben Mannigfaltigkeit und eine Abbildung $\abb{f}{P}{Q}$ nennen wir $f$ einen \textit{Hauptfaserbündelmorphismus}, falls $ \pi^P=\pi^Q \circ f $ gilt. Ein Hauptfaserbündelisomorphismus ist
+	über derselben Mannigfaltigkeit und einer Abbildung $\abb{f}{P}{Q}$ nennen wir $f$ einen \textit{Hauptfaserbündelmorphismus}, falls $ \pi^P=\pi^Q \circ f $ gilt. Ein Hauptfaserbündelisomorphismus ist
 	ein Isomorphismus im Sinne der Kategorientheorie.
 \end{Def}
 
@@ -46,7 +46,7 @@ Im folgenden werden die wichtigsten Beispiele angegeben.
 		
 		Die Abbildung ist zudem eine lokale Trivalisierung mit
 		$G$-äquivaranten Bündelkarten. Sei hierzu $\mathcal{A}=\sset{(U_i,\phi_i)_{i \in \Lambda}}$ ein
-		Atlas von $M$ gegeben, dann ist $ \sset{\abb{\id\times\id}{U_i \times G}{U_i\times G}} $ ein Bündelatlas	von $G$-äquivarianten Bündelkarten.
+		Atlas von $M$ gegeben, dann ist $ \sset{\abb{\id\times\id}{U_i \times G}{U_i\times G}}{i \in \Lambda} $ ein Bündelatlas	von $G$-äquivarianten Bündelkarten.
 		Damit ist dies ein Hauptfaserbündel mit Strukturgruppe $G$.
 		\end{smallproof}
 		
@@ -77,6 +77,10 @@ Im folgenden werden die wichtigsten Beispiele angegeben.
 			da die Gruppenwirkung innerhalb des Tangentialraums
 			nur transformiert.
 			
+			Sei nun ein Bündelatlas $ \sset{(U_i,\phi_i)_{i\in \Lambda}} $ von $ \T M $ gegeben. Betrachte
+			nun die Abbildungen
+			\DefMap{\pi^{-1}(U_i)}{U_i\times \GL_n}{((v_i,p))}{(p,\phi_i(v_i))}. Diese liefern einen
+			$ \GL_n $-äquivarianten Bündelatlas für das Rahmenbündel.
 			
 		\end{smallproof}
 		
@@ -87,7 +91,7 @@ Im folgenden werden die wichtigsten Beispiele angegeben.
 Im folgenden wird der Begriff der Spinstruktur benötigt, es wird
 hierzu lediglich die Defintion und weitere Beispiele angegeben.
 Die verwendete Quelle ist \cite{BHMMM15}.
-
+\todo{sollen äquivalente Definitionen von Spinstruktur genannt werden? zb. cozykel-liften, oder topologische Spinstrukturen}
 \todo{ist es klar dass das paar $(\phi...)$ eine mfg ist? soll das diagramm größer gemacht werden?}
 \begin{Def}[Spinstruktur]
 	Sei $(M,g)$ eine \RMF der Dimension $m$, dann ist
@@ -117,7 +121,12 @@ Die verwendete Quelle ist \cite{BHMMM15}.
 	\begin{enumerate}[(1)]
 		\item Das erste Beispiel ist das Triviale. Für die \RMF $(\R^n, \scdots_{\R^n})$ ist $(\R^n \times \spin{n},\id \times \Ad)$ 
 		eine Spinstruktur auf dieser riemannischen 
-		Mannigfaltigkeit.\footnote{Dies ist auch die einzigste Spinstruktur für den $ \R^n $ bis auf Isomorphie}
+		Mannigfaltigkeit.\footnote{Dies ist auch die einzigste Spinstruktur für den $ \R^n $ bis auf Isomorphie}. Allgemein gilt das falls 
+		das Orientierungsbündel \todo{falscher Name} $ \Ph{\so{n}}{M} $ für eine
+		Mannigfaltigkeit $ M^n $ trivial ist, also isomorph zu $ M\times \spin{n} $ ist, dann ist das triviale $ \spin{n} $-Haupfaserbündel
+		$ (M\times \spin{n},\pi_1,M,\spin{n}) $ eine Spinstruktur für $ M $.
+		Doch wie wir im nächsten Beispiel sehen werden folgt daraus noch nicht
+		das dies dann die einzige Spinstruktur sein muss. (bis auf Isomorphie)
 		\begin{proof}
 			Das Tupel $ (\R^n\times \spin{n},\pi_1,\R^n,\spin{n}) $ ist ein triviales
 			Hauptfaserbündel mit Strukturgruppe $ \spin{n} $.
@@ -144,7 +153,7 @@ Die verwendete Quelle ist \cite{BHMMM15}.
 		\end{proof}
 		
 		\item Ein erstes nichttriviales Beispiel sind zwei nicht
-		isomorphie Spinstrukturen der $\S^1$. Diese sind $(\S^1 , \eta_0)$ und $(\S^1 \times \Z_2 , \eta_1)$, wobei die Abbildungen durch $\eta_0 : \S^1 \rightarrow \S^1 , z \mapsto z^2$ und $\eta_1 : \S^1 \times \Z_2 \rightarrow \S^1 , (z,\alpha) \mapsto z$ gegeben sind. Diese sind auch die Repräsentaten aller Spinstrukturen bis auf 
+		isomorphie Spinstrukturen der $\S^1$. Diese sind $(\S^1 , \eta_0)$ und $(\S^1 \times \Z_2 = \S^1 \times \spin{1j} , \eta_1)$, wobei die Abbildungen durch $\eta_0 : \S^1 \rightarrow \S^1 , z \mapsto z^2$ und $\eta_1 : \S^1 \times \Z_2 \rightarrow \S^1 , (z,\alpha) \mapsto z$ gegeben sind. Diese sind auch die Repräsentaten aller Spinstrukturen bis auf 
 		Isomorphie. 
 		\todo{suche verweis auf hijazi}
 		\item Die $(\CP^{2n},g)$ ist ein Beispiel für eine Familie von
