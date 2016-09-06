@@ -5,58 +5,85 @@
 %erstes Kapitel
 \section{Hauptfaserbündel und Spinstruktur}
 
-In diesem ersten Abschnitt soll die grundlegenden Strukturen eingeführt werden die für diese Arbeit notwendig sind. Der Begriff des Hauptfaserbündel hat sich als der Richtige herausgebildet indem die Sprache von Spinstrukturen bzw. Spinoren formuliert wird.
+In diesem ersten Abschnitt soll die grundlegenden Strukturen
+eingeführt werden die für diese Arbeit notwendig sind. Der Begriff des
+Hauptfaserbündel hat sich als der Richtige herausgebildet indem die
+Sprache von Spinstrukturen bzw. Spinoren formuliert wird.
 
 Die verwendete Quelle ist \cite{baum09}
 
 \begin{Def}[Hauptfaserbündel]
-	Ein \textit{Hauptfaserbündel} ist ein Tupel $(P,\pi,M,G)$ das aus folgenden Daten besteht
+  Ein \textit{Hauptfaserbündel} ist ein Tupel $(P,\pi,M,G)$ das aus
+  folgenden Daten besteht
 	\begin{enumerate}[\textbullet]
-		\item Die Mengen $P,M$ sind \mfgen, die Abbildung $ \abb{\pi}{P}{M} $ ist eine lokale Trivialiserung und $G$ ist eine Liegruppe
-		die auf $P$ von rechts, fasertreu, transitiv und frei wirkt. 
-		\nomenclature{frei}{eine Gruppenwirkung ist frei, falls die Rechtsmultiplikation mit dem Element $g$ fixpunktfrei ist falls $g$ schon trivial ist}
-		\nomenclature{fasertreu}{Die Faser ist unter Gruppenwirkung stabil, also werden Faserelemente auf Faserelemente abgebildet}
-		\item Es gibt einen Bündelatlas $\sset{(U_i,\phi_i)}$ aus $G$-äquivarianten Bündelkarten, d.h.
-		Es gilt das $\sset{(U_i)_{i \in \Lambda}}$ eine offene
-		Überdeckung von M ist. Die Abbildung $ \abb{\phi_i}{\pi^{-1}(U_i)}{U_i\times G} $ ist ein
-		Diffeomorphismus für alle $i \in \Lambda $, für den $ \phi_i(pg) = \phi(p) g  $ und $ \pi_1 \circ \phi_i = \pi^P $ für alle $ g \in G, p \in \pi^{-1}(U_i) $ gilt. Wobei $ (p,g) h = (p,gh) $ in 
-		$ U_i\times G $ gilt. 
+        \item Die Mengen $P,M$ sind \mfgen, die glatte Abbildung
+          $ \abb{\pi}{P}{M} $ ist eine lokale triviale Abbildung und
+          $G$ ist eine Liegruppe die auf $P$ von rechts, fasertreu,
+          transitiv und frei wirkt.  \nomenclature{frei}{eine
+            Gruppenwirkung ist frei, falls die Rechtsmultiplikation
+            mit dem Element $g$ fixpunktfrei ist falls $g$ schon
+            trivial ist} \nomenclature{fasertreu}{Die Faser ist unter
+            Gruppenwirkung stabil, also werden Faserelemente auf
+            Faserelemente abgebildet}
+        \item Es gibt einen Bündelatlas $\sset{(U_i,\phi_i)}$ aus
+          $G$-äquivarianten Bündelkarten, d.h.  Es gilt das
+          $\sset{(U_i)_{i \in \Lambda}}$ eine offene Überdeckung von M
+          ist. Die Abbildung
+          $ \abb{\phi_i}{\pi^{-1}(U_i)}{U_i\times G} $ ist ein
+          Diffeomorphismus für alle $i \in \Lambda $, für den
+          $ \phi_i(pg) = \phi(p) g $ und
+          $ \pi_1 \circ \phi_i = \pi^P $ für alle
+          $ g \in G, p \in \pi^{-1}(U_i) $ gilt. Wobei
+          $ (p,g) h = (p,gh) $ in $ U_i\times G $ gilt.
 	\end{enumerate}		
-	Für zwei Hauptfaserbündel $(P,\pi^P,M,G),(Q,\pi^Q,M,H)$ 
-	über derselben Mannigfaltigkeit und einer Abbildung $\abb{f}{P}{Q}$ nennen wir $f$ einen \textit{Hauptfaserbündelmorphismus}, falls $ \pi^P=\pi^Q \circ f $ gilt. Ein Hauptfaserbündelisomorphismus ist
-	ein Isomorphismus im Sinne der Kategorientheorie.
+	Für zwei Hauptfaserbündel $(P,\pi^P,M,G),(Q,\pi^Q,M,H)$ über
+        derselben Mannigfaltigkeit und einer Abbildung $\abb{f}{P}{Q}$
+        nennen wir $f$ einen \textit{Hauptfaserbündelmorphismus},
+        falls $ \pi^P=\pi^Q \circ f $ gilt. Ein
+        Hauptfaserbündelisomorphismus ist ein Isomorphismus im Sinne
+        der Kategorientheorie.
 \end{Def}
 
 Im folgenden werden die wichtigsten Beispiele angegeben.
 
 \begin{Bsp}
-	\begin{enumerate}[1)]
-		\item Sei $G$ eine Liegruppe und $M$ eine Mannigfaltigkeit, dann heißt das Tupel $(M \times G, \pi, M, G)$ das triviale Hauptfaserbündel zu $M$ und $G$, wobei die Abbildung
-		durch die Projektion $\abb{\pi}{M \times G}{M}$ , $(p,g) \mapsto p$ 
-		gegeben ist. 
-		\begin{smallproof}(Nachweis das dies ein Hauptfaserbündel ist)
-		Die Gruppenwirkung ist durch folgende Abbildung gegeben:
-		\DefMap{M\times G}{M}{((p,g),h)}{(p,gh)}
+  \begin{enumerate}[1)]
+  \item Sei $G$ eine Liegruppe und $M$ eine Mannigfaltigkeit, dann
+    heißt das Tupel $(M \times G, \pi, M, G)$ das triviale
+    Hauptfaserbündel zu $M$ und $G$, wobei die Abbildung durch die
+    Projektion $\abb{\pi}{M \times G}{M}$ , $(p,g) \mapsto p$ gegeben
+    ist.
+    \begin{smallproof}(Nachweis das dies ein Hauptfaserbündel ist) Die
+      Gruppenwirkung ist durch folgende Abbildung gegeben:
+      \DefMap{M\times G}{M}{((p,g),h)}{(p,gh)}
 		
-		Diese Gruppenwirkung ist die der Gruppe auf sich selbst
-		und erfüllt damit offentsichlich die Eigenschaften
-		transitiv und frei. Die Faser eines Elements $p\in M$ 
-		ist $\{p\}\times G$ und damit gilt offentsichlich
-		durch die Definition der Gruppenwirkung die Fasertreue.
+      Diese Gruppenwirkung ist die der Gruppe auf sich selbst und
+      erfüllt damit offentsichlich die Eigenschaften transitiv und
+      frei. Die Faser eines Elements $p\in M$ ist $\{p\}\times G$ und
+      damit gilt offentsichlich durch die Definition der
+      Gruppenwirkung die Fasertreue.
 		
-		Die Abbildung ist zudem eine lokale Trivalisierung mit
-		$G$-äquivaranten Bündelkarten. Sei hierzu $\mathcal{A}=\sset{(U_i,\phi_i)_{i \in \Lambda}}$ ein
-		Atlas von $M$ gegeben, dann ist $ \sset{\abb{\id\times\id}{U_i \times G}{U_i\times G}}{i \in \Lambda} $ ein Bündelatlas	von $G$-äquivarianten Bündelkarten.
-		Damit ist dies ein Hauptfaserbündel mit Strukturgruppe $G$.
+      Die Abbildung ist zudem eine lokale Trivalisierung mit
+      $G$-äquivaranten Bündelkarten. Sei hierzu
+      $\mathcal{A}=\sset{(U_i,\phi_i)_{i \in \Lambda}}$ ein Atlas von
+      $M$ gegeben, dann ist
+      $ \sset{\abb{\id\times\id}{U_i \times G}{U_i\times G}}{i \in
+        \Lambda} $
+      ein Bündelatlas von $G$-äquivarianten Bündelkarten.  Damit ist
+      dies ein Hauptfaserbündel mit Strukturgruppe $G$.
 		\end{smallproof}
 		
-		\item Das wohl wichtigste Beispiel für ein Hauptfaserbündel in dieser
-		Arbeit ist das \textit{Rahmen- oder Reperebündel}. Sei $M$ eine \mfg und $p \in M$,dann definere $\GL_p(M)$ als die Menge aller Basen von
-		$\tang{p}{M}$ und $\GL(M) \coloneqq \amalg_{p \in M} \GL_p(M)$. 
-		Betrachte nun das Tupel $(\GL(M),\pi,M,\GL_n)$, wobei die Abbildung
-		durch $\abb{\pi}{\GL(M)}{M}$ , $((v_i),p) \mapsto p$ gegeben ist
-		und die Liegruppe $\GL_n$ von rechts auf die \mfg $\GL(M)$ wie  folgt
-		wirkt:
+              \item Das wohl wichtigste Beispiel für ein
+                Hauptfaserbündel in dieser Arbeit ist das
+                \textit{Rahmen- oder Reperebündel}. Sei $M$ eine \mfg
+                und $p \in M$,dann definere $\GL_p(M)$ als die Menge
+                aller Basen von $\tang{p}{M}$ und
+                $\GL(M) \coloneqq \amalg_{p \in M} \GL_p(M)$.
+                Betrachte nun das Tupel $(\GL(M),\pi,M,\GL_n)$, wobei
+                die Abbildung durch $\abb{\pi}{\GL(M)}{M}$ ,
+                $((v_i),p) \mapsto p$ gegeben ist und die Liegruppe
+                $\GL_n$ von rechts auf die \mfg $\GL(M)$ wie folgt
+                wirkt:
 		\begin{center}
 			\begin{tikzcd}
 				\GL(M) \times \GL_n \arrow[r]  & \GL(M) \\
@@ -64,107 +91,134 @@ Im folgenden werden die wichtigsten Beispiele angegeben.
 			\end{tikzcd}
 		\end{center}
 		\begin{smallproof}
-			Zunächst ist ein Atlas für die Menge $ \GL(M) $ anzugeben. Sei hierzu $\mathcal{A}=\sset{(U_i,\phi_i)_{i\in \Lambda}}$
-			ein Atlas von $M$. 
-			\todo{Angabe eines Atlas für $\GL(M)$}
+                  Zunächst ist ein Atlas für die Menge $ \GL(M) $
+                  anzugeben. Sei hierzu
+                  $\mathcal{A}=\sset{(U_i,\phi_i)_{i\in \Lambda}}$ ein
+                  Atlas von $M$.  \todo{Angabe eines Atlas für
+                    $\GL(M)$}
 			
-			Die Gruppenwirkung ist transitiv, da die Elemente
-			von $\GL(M)$ gerade Basen eines Vektorraums sind
-			und sich durch die entsprechenden Basistransformationsmatrizen ineinander überführen
-			lassen. Die Eigenschaft frei wollt auch aus
-			der Eigenschaft von Basistransformationen. Die
-			Fasertreue ist auch anhand der Definition klar, 
-			da die Gruppenwirkung innerhalb des Tangentialraums
-			nur transformiert.
+                  Die Gruppenwirkung ist transitiv, da die Elemente
+                  von $\GL(M)$ gerade Basen eines Vektorraums sind und
+                  sich durch die entsprechenden
+                  Basistransformationsmatrizen ineinander überführen
+                  lassen. Die Eigenschaft frei wollt auch aus der
+                  Eigenschaft von Basistransformationen. Die
+                  Fasertreue ist auch anhand der Definition klar, da
+                  die Gruppenwirkung innerhalb des Tangentialraums nur
+                  transformiert.
 			
-			Sei nun ein Bündelatlas $ \sset{(U_i,\phi_i)_{i\in \Lambda}} $ von $ \T M $ gegeben. Betrachte
-			nun die Abbildungen
-			\DefMap{\pi^{-1}(U_i)}{U_i\times \GL_n}{((v_i,p))}{(p,\phi_i(v_i))}. Diese liefern einen
-			$ \GL_n $-äquivarianten Bündelatlas für das Rahmenbündel.
+                  Sei nun ein Bündelatlas
+                  $ \sset{(U_i,\phi_i)_{i\in \Lambda}} $ von $ \T M $
+                  gegeben. Betrachte nun die Abbildungen
+                  \DefMap{\pi^{-1}(U_i)}{U_i\times
+                    \GL_n}{((v_i,p))}{(p,\phi_i(v_i))}. Diese liefern
+                  einen $ \GL_n $-äquivarianten Bündelatlas für das
+                  Rahmenbündel.
 			
 		\end{smallproof}
-		
+              \item Analog zum vorherigen Beispiel existiert zu einer
+                fest gewählten Orientierung das
+                Orientierungshauptfaserbündel
+                $ (\so(M),\pi,M,\so_n) $, definiert durch
+		\begin{gather*}
+			\so(M) \coloneqq \bigcup_{p\in M} \set{(v_1,\ldots,v_n)}{\text{positiv orientierte ONB von }\tang{p}{M}}.
+		\end{gather*}
+		Wir schreiben auch $ \Ph{\so_n}{M} $ anstatt $ \so(M)
+                $.
 	\end{enumerate}
 \end{Bsp}
 
 
 Im folgenden wird der Begriff der Spinstruktur benötigt, es wird
-hierzu lediglich die Defintion und weitere Beispiele angegeben.
-Die verwendete Quelle ist \cite{BHMMM15}.
-\todo{sollen äquivalente Definitionen von Spinstruktur genannt werden? zb. cozykel-liften, oder topologische Spinstrukturen}
-\todo{ist es klar dass das paar $(\phi...)$ eine mfg ist? soll das diagramm größer gemacht werden?}
+hierzu lediglich die Defintion und weitere Beispiele angegeben.  Die
+verwendete Quelle ist \cite{BHMMM15}.  \todo{sollen äquivalente
+  Definitionen von Spinstruktur genannt werden? zb. cozykel-liften,
+  oder topologische Spinstrukturen} \todo{ist es klar dass das paar
+  $(\phi...)$ eine mfg ist? soll das diagramm größer gemacht werden?}
 \begin{Def}[Spinstruktur]
-	Sei $(M,g)$ eine \RMF der Dimension $m$, dann ist
-	 ($\Ph{\spin{n}}{M}$,$\eta : \Ph{\spin{n}}{M} \rightarrow \Ph{\so{n}}{M}$) eine Spinstruktur auf $(M,g)$, falls folgndes gilt:
+  Sei $(M,g)$ eine \RMF der Dimension $n$, dann ist
+  ($\Ph{\spin_n}{M}$,$\eta : \Ph{\spin_n}{M} \rightarrow
+  \Ph{\so_n}{M}$) eine Spinstruktur auf $(M,g)$, falls folgendes gilt:
 	 \begin{itemize}
-	 	\item Die \mfg $\Ph{\spin{n}}{M}$ ist ein $\spin{n}$-Hauptfaserbündel.
-	 	\item Die Abbildung $\eta$ ist eine doppelte Überlagerung.
-	 	\item Folgendes Diagramm kommutiert\footnote{Dies ist ein Spezialfall für eine Reduktion eines Hauptfaserbündel.}\\
-		 	\begin{center}
-		 		% das zeichen ' nach " " ändert die position bzgl pfeil
+         \item Die \mfg $\Ph{\spin_n}{M}$ ist ein
+           $\spin_n$-Hauptfaserbündel.
+         \item Die Abbildung $\eta$ ist eine doppelte Überlagerung.
+         \item Folgendes Diagramm kommutiert\footnote{Dies ist ein Spezialfall für eine Reduktion eines Hauptfaserbündel.}\\
+           \begin{center}
+             % das zeichen ' nach " " ändert die position bzgl pfeil
 		 	\begin{tikzcd}
-		 		\spin{n} \ar[rr, "a \mapsto ua"] \ar[dd, "\Ad"'] & &  \Ph{\spin{n}}{M}  \arrow[rd] \arrow[dd, "\eta"] & \\
-		 		&&& M \\
-		 		\so{n} \arrow[rr , "A \mapsto \eta(u)A"] & & 
-		 		\Ph{\so{n}}{M} \arrow[ur] &
+                          \spin_n \ar[rr, "a \mapsto ua"] \ar[dd, "\Ad"'] & &  \Ph{\spin_n}{M}  \arrow[rd] \arrow[dd, "\eta"] & \\
+                          &&& M \\
+                          \so_n \arrow[rr , "A \mapsto \eta(u)A"] & &
+                          \Ph{\so_n}{M} \arrow[ur] &
 		 	\end{tikzcd}
 			 \end{center}
-			wobei $\Ad$ die doppelte Überlagerungsabbildung von $\so{n}$ ist
-			und dies für alle $u \in \Ph{\spin{n}}{M}$ gilt.
+                         wobei $\Ad$ die doppelte
+                         Überlagerungsabbildung von $\so_n$ ist und
+                         dies für alle $u \in \Ph{\spin_n}{M}$ gilt.
 	 \end{itemize}
-	 Falls eine \RMF eine Spinstruktur besitzt sagen wir die \mfg ist \textit{spin}.
+	 Falls eine \RMF eine Spinstruktur besitzt sagen wir die \mfg
+         ist \textit{spin}.
 	
 
 \end{Def}
 
 \begin{Bsp}
-	\begin{enumerate}[(1)]
-		\item Das erste Beispiel ist das Triviale. Für die \RMF $(\R^n, \scdots_{\R^n})$ ist $(\R^n \times \spin{n},\id \times \Ad)$ 
-		eine Spinstruktur auf dieser riemannischen 
-		Mannigfaltigkeit.\footnote{Dies ist auch die einzigste Spinstruktur für den $ \R^n $ bis auf Isomorphie}. Allgemein gilt das falls 
-		das Orientierungsbündel \todo{falscher Name} $ \Ph{\so{n}}{M} $ für eine
-		Mannigfaltigkeit $ M^n $ trivial ist, also isomorph zu $ M\times \spin{n} $ ist, dann ist das triviale $ \spin{n} $-Haupfaserbündel
-		$ (M\times \spin{n},\pi_1,M,\spin{n}) $ eine Spinstruktur für $ M $.
-		Doch wie wir im nächsten Beispiel sehen werden folgt daraus noch nicht
-		das dies dann die einzige Spinstruktur sein muss. (bis auf Isomorphie)
-		\begin{proof}
-			Das Tupel $ (\R^n\times \spin{n},\pi_1,\R^n,\spin{n}) $ ist ein triviales
-			Hauptfaserbündel mit Strukturgruppe $ \spin{n} $.
-			Sei ein $ (p,u)\in \R^n\times \spin{n} $ gegeben, brachte dann
-			folgendes Diagramm
+  \begin{enumerate}[(1)]
+  \item Das erste Beispiel ist das Triviale. Für die \RMF
+    $(\R^n, \scdots_{\R^n})$ ist
+    $(\R^n \times \spin_n,\id \times \Ad)$ eine Spinstruktur auf
+    dieser riemannischen Mannigfaltigkeit.\footnote{Dies ist auch die
+      einzigste Spinstruktur für den $ \R^n $ bis auf
+      Isomorphie}. Allgemein gilt das falls das Orientierungsbündel
+    \todo{falscher Name} $ \Ph{\so_n}{M} $ für eine Mannigfaltigkeit
+    $ M^n $ trivial ist, also isomorph zu $ M\times \spin_n $ ist,
+    dann ist das triviale $ \spin_n $-Haupfaserbündel
+    $ (M\times \spin_n,\pi_1,M,\spin_n) $ eine Spinstruktur für $ M $.
+    Doch wie wir im nächsten Beispiel sehen werden folgt daraus noch
+    nicht das dies dann die einzige Spinstruktur sein muss. (bis auf
+    Isomorphie)
+    \begin{proof}
+      Das Tupel $ (\R^n\times \spin_n,\pi_1,\R^n,\spin_n) $ ist ein
+      triviales Hauptfaserbündel mit Strukturgruppe $ \spin_n $.  Sei
+      ein $ (p,u)\in \R^n\times \spin_n $ gegeben, brachte dann
+      folgendes Diagramm
 			
 %			\begin{center}
 %				\begin{tikzcd}
-%				\spin{n} \arrow[rr, "a \mapsto (p,au)"] \arrow[dd,"\Ad"] && \R^n\times \spin{n} \arrow[dd] \aarow  & \\
+%				\spin_n \arrow[rr, "a \mapsto (p,au)"] \arrow[dd,"\Ad"] && \R^n\times \spin_n \arrow[dd] \aarow  & \\
 %				&&& M \\
-%				\so{n} && \R^n &
+%				\so_n && \R^n &
 %			\end{tikzcd}
 %			\end{center}	
-				\begin{center}
+      \begin{center}
 					
-					 	\begin{tikzcd}
-					 		\spin{n} \ar[rr, "a \mapsto \pair{p}{au}"] \ar[dd, "\Ad"'] & &  \R^n\times \spin{n}  \arrow[rd] \arrow[dd, "\pi_1"] & \\
-					 		&&& \R^n \\
-					 		\so{n} \arrow[rr , "A \mapsto pA"] & & 
-					 		\R^n \arrow[ru] &
-					 	\end{tikzcd}
-		\end{center}
+        \begin{tikzcd}
+          \spin_n \ar[rr, "a \mapsto \pair{p}{au}"] \ar[dd, "\Ad"'] & &  \R^n\times \spin_n  \arrow[rd] \arrow[dd, "\pi_1"] & \\
+          &&& \R^n \\
+          \so_n \arrow[rr , "A \mapsto pA"] & & \R^n \arrow[ru] &
+        \end{tikzcd}
+      \end{center}
 
-		\end{proof}
+    \end{proof}
 		
-		\item Ein erstes nichttriviales Beispiel sind zwei nicht
-		isomorphie Spinstrukturen der $\S^1$. Diese sind $(\S^1 , \eta_0)$ und $(\S^1 \times \Z_2 = \S^1 \times \spin{1j} , \eta_1)$, wobei die Abbildungen durch $\eta_0 : \S^1 \rightarrow \S^1 , z \mapsto z^2$ und $\eta_1 : \S^1 \times \Z_2 \rightarrow \S^1 , (z,\alpha) \mapsto z$ gegeben sind. Diese sind auch die Repräsentaten aller Spinstrukturen bis auf 
-		Isomorphie. 
-		\todo{suche verweis auf hijazi}
-		\item Die $(\CP^{2n},g)$ ist ein Beispiel für eine Familie von
-		\RMFen die nicht spin sind, wobei
-		hier $g$ eine riemannische Metrik
-		auf $\CP^{2n}$ ist. 
-\todo{Quelle einfügen}
-		\item Ein wichtiges Beispiel für eine \RMF mit deren Spinstruktur ist die $\S^2$. Diese
-		besitzt genau eine Spinstruktur bis auf Isomorphie. 
-\todo{angabe dieser spinstruktur}
-\todo{Angabe von Spinstrukturen auf S1 und Torus,alle vier Spinstrukturen?}
+  \item Ein erstes nichttriviales Beispiel sind zwei nicht isomorphie
+    Spinstrukturen der $\S^1$. Diese sind $(\S^1 , \eta_0)$ und
+    $(\S^1 \times \Z_2 = \S^1 \times \spin{1} , \eta_1)$, wobei die
+    Abbildungen durch $\eta_0 : \S^1 \rightarrow \S^1 , z \mapsto z^2$
+    und
+    $\eta_1 : \S^1 \times \Z_2 \rightarrow \S^1 , (z,\alpha) \mapsto
+    z$
+    gegeben sind. Diese sind auch die Repräsentaten aller
+    Spinstrukturen bis auf Isomorphie.  \todo{suche verweis auf
+      hijazi}
+  \item Die $(\CP^{2n},g)$ ist ein Beispiel für eine Familie von
+    \RMFen die nicht spin sind, wobei hier $g$ eine riemannische
+    Metrik auf $\CP^{2n}$ ist.  \todo{Quelle einfügen}
+  \item Ein wichtiges Beispiel für eine \RMF mit deren Spinstruktur
+    ist die $\S^2$. Diese besitzt genau eine Spinstruktur bis auf
+    Isomorphie.  \todo{angabe dieser spinstruktur} \todo{Angabe von
+      Spinstrukturen auf S1 und Torus,alle vier Spinstrukturen?}
 	\end{enumerate}
 \end{Bsp}
 

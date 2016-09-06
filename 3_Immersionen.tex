@@ -18,7 +18,7 @@ einzuführen.
 	heißt \textit{Immersion}, falls das Differential $\abb{\mathrm{d} f}{TM}{TN}$ 
 	injektiv ist.
 	Ein Paar von Abbildungen $\abb{(f,F)}{M \times TM}{N \times TN} ,%
-	(p,v) \mapsto (f(p),F(v))$ heißt \textit{formale Immersion} falls folgendes
+	(p,v) \mapsto (f(p),F(v))$ heißt \textit{formale Immersion} falls $ F $ faserweise linear und injektiv ist und folgendes
 	Diagramm kommutiert:
 	\begin{center}
 		
@@ -31,7 +31,7 @@ einzuführen.
 	\end{center}
 	
 	Definiere nun $\Imm{M}{N},\Immf{M}{N}$ als Menge aller (formalen) Immersionen. Die Topologie für diese Mengen ist gegeben als Teilraumtopologie des Raumes $\map(M,N)$ der die Basis der Topologie 
-	trägt mit folgenden Erzeugern\footnote{Dies ist nichts anderes als die }. Die Menge aller Mengen der Form $\set{f \in \map}{ f(K) \subset U}$
+	trägt mit folgenden Erzeugern\footnote{Dies ist nichts anderes als die kompakt-offen-Topologie}. Die Menge aller Mengen der Form $\set{f \in \map}{ f(K) \subset U}$
 	für alle Paare $(K,U)$ von kompakten Teilmengen $K \subset M$ und
 	offenen Teilmengen $U \subset N$ erzeugt die Topologie auf $\map(M,N)$.
 \end{Def}
@@ -39,7 +39,7 @@ einzuführen.
 %bsp für formale immersion die keine immersion von der form (f,df) ist
 %streckung?
 
-Für den Tangentialraum des $\R^n$ gilt:
+Für das nächste Beipiel ist es folgender Fakt wichtig. Der Tangentialraum des $\R^n$ ist aufgrund der nachfolgenden Abbildung trivial:
 \begin{align*}
 \T \R^n &\simeq \R^n \times \R^n \\
 (p,v) &\mapsto (p,v)
@@ -49,14 +49,14 @@ Für den Tangentialraum des $\R^n$ gilt:
 \begin{Bsp}
 	\begin{enumerate}[\textbullet]
 	\item Seien $ \abb{f,g}{\R^n}{\R^n} $ zwei beliebige glatte
-	Abbildungen, dann gilt dass das Paar $ (f,(f,g)) $ eine formale
+	Abbildungen, wobei $ g $ linear und injektiv ist, dann gilt dass das Paar $ (f,(f,g)) $ eine formale
 	Immersion ist. Diese formale Immersion wird genau dann von
 	einer Immersion induziert falls $ g $ die Jacobimatrix von $ f $
-	ist und $ f $ ein Immersion ist. Der genau Grund warum man hier eine sehr große Freiheit bezüglich der Wahl hat, ist dass das Tangentialbündel trivialisierbar ist. 
+	ist und $ f $ ein Immersion ist. Der genau Grund warum man hier eine sehr große Freiheit bezüglich der Wahl hat, ist dass das Tangentialbündel trivial ist. 
 	\item foo \todo{Angabe einer formalen Immersion die nicht von einer Immersion induziert wird, für eine mfg deren tangbündel nicht trivial ist. zb S2}
 	
 	\item Betrachte die beiden Abbildungen 
-	\begin{gather*}
+	\begin{gather*}\label{immBsp}
 		\abb{f}{\S^1}{\R^2}, \exp(i\phi)%
 		\mapsto (\cos(\phi),\sin(\phi)),\\
 		\abb{g}{\S^1}{\R^2}, \exp(i\phi)%

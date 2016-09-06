@@ -5,15 +5,20 @@
 
 \section{Zusammenhang von Immersionen und Spinstrukturen}
 
-Im folgenden ist $(M,g)$ eine geschlossene, kompakte, orientierte \mfg.
+Im folgenden ist $(M,g)$ eine geschlossene, orientierte Mannigfaltigkeit.
 In der Notation wird die Metrik $g$ unterdrückt.
 
 
 Um einen Zusammenhang zwischen den Immersionen und den Spinstrukturen
-herzustellen ist es notwendig den Raum der Immersionen zu vereinfachen.
-Wichtig ist hierbei das wir nur an den Zusammenhangskomponenten interessiert
-sind, also können wir den Raum beliebig homotopieren. Das folgende Theorem
-liefert uns eine erste Vereinfachung des Raumes. \todo{Quelle}
+herzustellen ist es notwendig den Raum der Immersionen zu
+vereinfachen.  Wichtig ist hierbei das wir nur an den
+Zusammenhangskomponenten interessiert sind, also können wir uns nicht
+nur auf Bijektionen sondern auch auf homotopieäquivlanten Räume
+einschränken.  Wir nennen zwei Immersionen $ \abb{f,g}{M}{N} $
+\textit{regulär homotop} falls sie sich in $ \Imm{M}{N} $ durch einen
+glatten Weg verbinden lassen.
+
+ Das folgende Theorem liefert uns eine erste Vereinfachung des Raumes. \todo{Quelle}
 %satz von smale hirsch als black box, aus intro to the h-principle
 %finde gute referenz für dieses Theorem
 \begin{Thm}[Smale-Hirsch-Theorem]
@@ -21,65 +26,127 @@ liefert uns eine erste Vereinfachung des Raumes. \todo{Quelle}
 	$\abb{\theta}{\Imm{M}{N}}{\Immf{M}{N}}, f \mapsto (f,\mathrm{d} f)$ eine Homotophieäquivalenz.
 \end{Thm}
 
-Der Raum von formalen Immersionen lässt sich noch weiter verkleinern bzw. vereinfachen, indem wir anstatt von nur formalen Immersionen auch diese betrachten bei denen die Abbildungen zwischen den Tangentialräumen auch noch isometrisch ist, erhalten wir folgendes Resultat.
+\begin{Bsp}
+	Die Forderung $ \dim(M)<\dim(N) $ ist essentiell. Betrachte 
+	den Fall $ M=N=\S^1 $ und die Abbildungen aus \cref{immBsp}:
+%	\begin{gather*}
+%	\abb{f}{\S^1}{\R^2}, \exp(i\phi)%
+%	\mapsto (\cos(\phi),\sin(\phi)),\\
+%	\abb{h}{\S^1}{\R^2}, \exp(i\phi)%
+%	\mapsto (\cos(2\phi),\sin(\phi)).
+%	\end{gather*}
+	Dann induziert die Abbildung 
+	\DefMap{\Imm{\S^1}{\S^1}}{\Immf{\S^1}{\S^1}}{f}{(f,\d f)}
+	keine Homotopieäquivalenz. \todo{beispiel finden}
+\end{Bsp}
+
+Im Weiteren betrachten wir den Spezialfall $ M=M^2 $ als geschlossene $ 2 $-dimensionale riemannsche Mannigfaltigkeit und
+$ N=\R^3 $.
+
+Der Raum von formalen Immersionen lässt sich noch weiter verkleinern
+bzw. vereinfachen, indem wir anstatt von nur formalen Immersionen auch
+diese betrachten bei denen die Abbildungen zwischen den
+Tangentialräumen auch noch isometrisch ist, damit erhalten wir
+folgenden
 
 
 \begin{Satz}
-	Seien die isometrischen, formalen Immersionen gegeben durch
-	\begin{gather*}
-	\Immfi{M}{\R^3} \coloneqq \set{(f,F) \in \Immf{M}{\R^3}}{F \text{ ist isometrisch }}
-	\end{gather*}
-	Dann gilt das $\Immf{M}{\R^3}$ und $\Immfi{M}{\R^3}$ homotopieäquivalent sind.
+  Seien die isometrischen, formalen Immersionen gegeben durch
+  \begin{gather*}
+    \Immfi{M}{\R^3} \coloneqq \set{(f,F) \in \Immf{M}{\R^3}}{F \text{
+        ist isometrisch }}
+  \end{gather*}
+  Dann gilt das $\Immf{M}{\R^3}$ und $\Immfi{M}{\R^3}$
+  homotopieäquivalent sind.
 	\begin{proof}
-		Betrachte für $t \in [0,1]$ die Abbildung $\abb{\psi_t}{\Immf{M}{\R^3}}{\Immf{M}{\R^3}}$ mit 
-		$\psi_t : (f,F) \mapsto (f,F \circ (F^{\ast}F)^{-\frac{t}{2}})$.
+          Betrachte für $t \in [0,1]$ die Abbildung
+          $\abb{\psi_t}{\Immf{M}{\R^3}}{\Immf{M}{\R^3}}$ mit
+          $\psi_t : (f,F) \mapsto (f,F \circ
+          (F^{\ast}F)^{-\frac{t}{2}})$.
+		
+          Zunächst ist diese Homotopie eine glatte Abbildung für alle
+          $ t \in [0,1] $. Für $ t=0 $ gilt $ \psi_0 = id $. Im Fall
+          $ t=1 $ gilt nun das $ F \circ (F^{\ast}F)^{-\frac{t}{2}} $
+          isometrisch ist.
+		
+          Der Ausdruck $ (F_p^\ast F_p)^{-\frac{1}{2}} $ ist wie folgt
+          definiert. Sei $ \abb{f}{V}{V} $ eine linearer, injektiver,
+          symmetrischer Endomorphismus eines reellen Vektorraums mit
+          Skalarprodukt, dann existieren $ n $ postivite, reelle
+          Eigenwerte $ \lambda_i $ für diesen Endomorphismus. Nach
+          Wahl einer Basis existiert eine unitäre Transformation
+          $ U $, sodass $ f = U^\ast \diag(\lambda_i) U $ gilt. Nun
+          definiere
+          $ f^\alpha \coloneqq U^\ast \diag(\lambda_i^\alpha) U $.
+		
+          Sei nun die lineare, injektive Abbildung
+          $ \abb{F_p}{\tang{p}{M}}{\tang{F_p(p)}{\R^3}} $ gegeben,
+          dann ist $ (F_p^\ast F_p) $ symmetrisch und aufgrund der
+          Injektivität auch positiv definit, damit ist
+          $ (F_p^\ast F_p)^{-\frac{1}{2}} $ wohldefiniert.
+		
+          Es folgt nun durch Umformungen das die Abbildung
+          $ F_p \circ (F_p^\ast F_p)^{-\frac{1}{2}} $ isometrisch
+          ist. Sei hierzu $ v,w \in \tang{p}{M} $.
+          \begin{align*}
+            \scalar{F_p \circ (F_p^\ast F_p)^{-\frac{1}{2}}(v)}{F_p \circ (F_p^\ast F_p)^{-\frac{1}{2}}(w)}_{\R^3} &=
+                                                                                                                     g_p(F_p^\ast F_p \circ (F_p^\ast F_p)^{-\frac{1}{2}}(v),(F_p^\ast F_p)^{-\frac{1}{2}}(w)) \\
+                                                                                                                   &= g_p((F_p^\ast F_p)^\frac{1}{2}(v),(F_p^\ast F_p)^{-\frac{1}{2}}(w)) \\
+                                                                                                                   &= g_p((F_p^\ast F_p)^{-\frac{1}{2}} \circ (F_p^\ast F_p)^\frac{1}{2}(v,w)) \\
+                                                                                                                   &= g_p(v,w)
+		\end{align*}
+		
+		Hierbei haben wir $ \scalar{v}{F_p(w)}_{\R^3} = g_p(F_p^\ast(v),w) $ für $ q =F_p(p) $ und $ v \in \tang{q}{\R^3},w\in \tang{p}{M} $ 
+		benutzt.
+		
 		Dann liefert dies die gewünschte Homotopieäquivalenz.
-		Zunächst ist diese Homotopie eine glatte Abbildung für alle $ t \in [0,1] $. Für $ t=0 $ gilt dem $ \psi_0 = id $. Im Fall $ t=1 $ gilt nun das $ F \circ (F^{\ast}F)^{-\frac{t}{2}} $ 
+	
 	\end{proof}
 \end{Satz}
 
 
 
 \begin{Lem}
-	Es existiert eine Bijektion
+  Es existiert eine Bijektion
 	
 %	\begin{align*}
 %		\Immfi{M}{\R^3} &\rightarrow \set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{\text{ isometrisch}}\\
 %	\end{align*}.
-	\begin{tikzcd}
-		\Immfi{M}{\R^3} \arrow[r,"\eta"] &%
-		\set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{ F_p \text{ isometrisch für alle }p \in M}
-	\end{tikzcd}
-	\begin{proof}
-		Definiere die Abbildung $ \eta $ wie folgt. Sei ein Paar $ (f,F) \in \Immfi{M}{\R^3}$ gegeben, dann setze als Zielobjekt
-		schlichtweg die Familie $ (F_p)_{p\in M} $. Es ist noch
-		zu zeigen das dies eine Bijektion ist.
-		\begin{description}
-			\item[Injektivität:] Seien zwei Paare $ (f,F),(g,G) $ 
-			mit $ \eta(f,F)=\eta(g,G) $ gegeben. Dann gilt nach
-			Definition $ F_p = G_p $ für alle $ p\in M $. Also
-			gilt $ F=G $ als Abbildungen. Da die Paare nun formale
-			Immersionen sind gilt das die zugehörigen Diagramme aus
-			 \cref{formIso} kommutieren, also gilt:
-			 \begin{gather*}
-			 	f \circ \pi^M = \pi_1 \circ F = \pi_1 \circ G = g \circ \pi^M
-			 \end{gather*}
-			 also
-			 \begin{gather*}
-			 	f \circ \pi^M = g \circ \pi^M
-			 \end{gather*}.
-			 Da die Projektion $ \pi^M $ surjektiv ist, folgt $ f=g $.
-			 Also die Injektivität.
-			 \item[Surjektivität] Sei eine Familie $ (F_p)_{p\in M} $
-			 gegeben. Wähle eine beliebige glatte Funktion $ f\in \Cinfty{M}{\R^3} $. Setze nun als Urbild zu der anfangs
-			 gegeber Familie das Paar $ (f,F) $. Wobei $ F $
-			 gegeben ist als 
-			 \DefMap{\tang{}{M}}{\tang{}{\R^3}}{(p,v)}{(f(p),F_p(v)).}
+  \begin{tikzcd}
+    \Immfi{M}{\R^3} \arrow[r,"\eta"] &%
+    \set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{ F_p \text{ isometrisch
+        für alle }p \in M}
+  \end{tikzcd}
+  \begin{proof}
+    Definiere die Abbildung $ \eta $ wie folgt. Sei ein Paar
+    $ (f,F) \in \Immfi{M}{\R^3}$ gegeben, dann setze als Zielobjekt
+    schlichtweg die Familie $ (F_p)_{p\in M} $. Es ist noch zu zeigen
+    das dies eine Bijektion ist.
+    \begin{description}
+    \item[Injektivität:] Seien zwei Paare $ (f,F),(g,G) $ mit
+      $ \eta(f,F)=\eta(g,G) $ gegeben. Dann gilt nach Definition
+      $ F_p = G_p $ für alle $ p\in M $. Also gilt $ F=G $ als
+      Abbildungen. Da die Paare nun formale Immersionen sind gilt das
+      die zugehörigen Diagramme aus \cref{formIso} kommutieren, also
+      gilt:
+      \begin{gather*}
+        f \circ \pi^M = \pi_1 \circ F = \pi_1 \circ G = g \circ \pi^M
+      \end{gather*}
+      also
+      \begin{gather*}
+        f \circ \pi^M = g \circ \pi^M
+      \end{gather*}.  Da die Projektion $ \pi^M $ surjektiv ist, folgt
+      $ f=g $.  Also die Injektivität.
+    \item[Surjektivität] Sei eine Familie $ (F_p)_{p\in M} $
+      gegeben. Wähle eine beliebige glatte Funktion
+      $ f\in \Cinfty{M}{\R^3} $. Setze nun als Urbild zu der anfangs
+      gegeber Familie das Paar $ (f,F) $. Wobei $ F $ gegeben ist als
+      \DefMap{\tang{}{M}}{\tang{}{\R^3}}{(p,v)}{(f(p),F_p(v)).}
 			 
-			 Dann gilt offentsichtlich $ \eta(f,F)=(F_p)_{p\in M} $
-			 und damit ist die Bijektion konstruiert.
-		\end{description}
-	\end{proof}
+      Dann gilt offentsichtlich $ \eta(f,F)=(F_p)_{p\in M} $ und damit
+      ist die Bijektion konstruiert.
+    \end{description}
+  \end{proof}
 \end{Lem}
 
 
@@ -92,78 +159,106 @@ Der Raum von formalen Immersionen lässt sich noch weiter verkleinern bzw. verei
 \end{Satz}
 % satz das die imm und form-imm homotop sind
 
-Sei $\S M$ definiert als $\set{(p,v) \in \T M}{ \norm{v} = 1}$, 
-wobei die Norm gegeben ist als $ \norm{(p,v)} \coloneqq \sqrt{g_p(v,v)} $ und wir der einfachheithalber lediglich $ \norm{v} $ schreiben werden.
-Der nächste Schritt wird der essentielle auf den Weg zu den Zusammenhang mit den Spinstrukturen sein.
+Sei $\S M$ definiert als $\set{(p,v) \in \T M}{ \norm{v} = 1}$, wobei
+die Norm gegeben ist als $ \norm{(p,v)} \coloneqq \sqrt{g_p(v,v)} $
+und wir der einfachheithalber lediglich $ \norm{v} $ schreiben werden.
+
+Für den nächsten Satz benötigen wir miteinander verträgliche $ \S^1 $-Gruppenwirkungen auf der $ \S M $ und $ \so_3 $. Es wird der
+Zusammenhang $ \S^1 \simeq \so_2 $ vorausgesetzt. Für die erste
+Gruppenwirkung wählen wir eine positiv orientierte Orthonormalbasis
+$ (v,w) $ von $ \tang{p}{M} $ und betrachte den davon induzierten
+Vektorraumisomorphismus $ \abb{\phi}{\R^2}{\tang{p}{M}} $. Diese
+Abbildung liefert uns einen Liegruppenisomorphismus $\abb{\bar{\phi}}{\so(\R^2) = \so_2}{\so(\tang{p}{M})} $. Die Verkettung
+dieser Isomorphismen liefert uns zu einem Element $ z\in\S^1 $ ein
+eindeutiges Element $ U(z)\in \so(\tang{p}{M}) $. Damit ergibt sich
+nun die Gruppenwirkung:
+\DefMap{\S^1 \times \S_pM}{\S_pM}{(z,v)}{z*v\coloneqq U(z)v}
+
+Für die zweite Gruppenwirkung benötigen wir den Fakt das sich jedes
+Element $ A \in \so_3$  eindeutig in der Form $ A=\left( v~w~v\times w\right) $ mit $ v,w \in \R^3$ normiert und orthogonal zueinander, 
+schreiben lässt. Durch die Wahl dieser Vektoren lässt sich auf
+analoge Art wie oben ein Liegruppenisomorphismus $ \abb{\varphi}{\so_2}{\so(W)} $ finden, wobei $ W $ der von $ v,w $ 
+im $ \R^3 $ aufgespannte Vektorraum ist. Damit operiert nun die
+$ \S^1 $ auf dem $ \so_3 $.
+
+Wir nennen nun eine glatte Abbildung $ \abb{H}{\S M}{\so_3}~\S^1$-invariant, falls $ H(z*v) = z*H(v) $ für alle $ z \in \S^1, v\in \S M $ gilt, also die Gruppenwirkung mit der Abbildung vertauscht. 
+ 
+
+Der nächste Schritt wird der essentielle auf den Weg zu den
+Zusammenhang mit den Spinstrukturen sein.
 
 \begin{Satz}
-	Es existiert eine Bijektion zwischen 
-	\begin{gather*}
-		\set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{ F_p \text{ isometrisch für alle }p \in M}
-	\end{gather*}
-	und 
-	\begin{gather*}
-		\set{ \abb{H}{\S M}{\so{3}}}{\S^1 \text{-invariant}}.
-	\end{gather*}
-	\todo{was meint hier S1 invariant.}
-\begin{proof}
-	Sei eine Familie $(\abb{F_p}{\T_pM}{\R^3})_{p\in M}$ von 
-	isometrischen Abbildungen gegeben.
-	Da es sich bei $M$ um eine zweidimensionale, orientierte riemannische Mannigfaltigkeit handelt, gilt das zu es jedem normierten Tangentialvektor $v \in \S_p M$ genau einen Tangentialvektor $J(v) \in \S_p M$
-	existiert, sodass $(v,J(v))$ eine positiv, orientierte Orthonormalbasis für	$\tang{p}{M}$ ist. Betrachte nun die Abbildung $\abb{H_p}{\S_p%
-		M}{\so{3}}, v \mapsto (F_p(v),F_p(J(v)),F_p(v)\times F_p(J(v)))$. 
-	Diese Abbildung ist wohldefiniert aufgrund der Eigenschaften
-	der Basis $(v,J(v))$ und dass das Kreuzprodukt der beiden
-	Basiselemente in Matrixform ein Element der $\so{3}$ liefert.
-	Die $\S^1$ Invarianz dieser Abbildung folgt direkt
-	aus der Isometrie der Abbildungen $F_p$.
-	\todo{genauer diesen Teil}
+  Es existiert eine Bijektion zwischen
+  \begin{gather*}
+    \set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{ F_p \text{ isometrisch
+        für alle }p \in M}
+  \end{gather*}
+  und
+  \begin{gather*}
+    \set{ \abb{H}{\S M}{\so_3}}{H\text{ ist }\S^1 \text{-invariant}}.
+  \end{gather*}
+  \todo{was meint hier S1 invariant.}
+  \begin{proof}
+    Sei eine Familie $(\abb{F_p}{\T_pM}{\R^3})_{p\in M}$ von
+    isometrischen Abbildungen gegeben.  Da es sich bei $M$ um eine
+    zweidimensionale, orientierte riemannische Mannigfaltigkeit
+    handelt, gilt das zu es jedem normierten Tangentialvektor
+    $v \in \S_p M$ genau einen Tangentialvektor $J(v) \in \S_p M$
+    existiert, sodass $(v,J(v))$ eine positiv, orientierte
+    Orthonormalbasis für $\tang{p}{M}$ bildet. Betrachte nun die
+    Abbildung $\abb{H_p}{\S_p%
+      M}{\so_3}, v \mapsto (F_p(v),F_p(J(v)),F_p(v)\times F_p(J(v)))$.
+    Diese Abbildung ist wohldefiniert aufgrund der Eigenschaften der
+    Basis $(v,J(v))$ und dass das Kreuzprodukt der beiden
+    Basiselemente in Matrixform ein Element der $\so_3$ liefert, hier nutzen wir das die Abbildugen $ F_p $ isometrisch sind.  Die
+    $\S^1$ Invarianz dieser Abbildung folgt direkt aus den oben
+    konstruierten Gruppenwirkungen.   
 	
-	Zeige nun das es sich bei dieser Abbildung um eine Bijektion handelt. 
-	\begin{description}
-		\item[Injektivität:] Seien zwei Familien $(F_p)_p,(G_p)_p$ von
-		isometrischen Abbildungen gegeben und sei $\vartheta((F_p)_p)=\vartheta((G_p)_p)$. Dann gilt aufgrund
-		der Abbildungsvorschrift von $\vartheta$ das $F_p(v)=G_p(v)$
-		für alle $v \in \S_p M$ gilt und somit die Abbildungen gleich
-		sind.
-		\item[Surjektivität:] Sei eine $\S^1$-invariante Abbildung
-		$\abb{H}{\S M}{\so{3}}$ gegeben. Für einen normierten
-		Tangentialvektor $v \in \S_p M$ gilt das $H_p(v)$ ein
-		Element der $\so{3}$ ist. Betrachte nun die erste Spalte
-		der Matrix $w(v)=(H_p(v)_{i,1})_{i=1,2,3}$. Definiere nun eine
-		Abbildung $\abb{F_p}{\tang{p}{M}}{\R^3}$ durch 
-		\todo{frac und norm vertragen sich nicht}
-		$v \mapsto \begin{cases}
-		w(\frac{v}{\norm{v}}) & v \neq 0 \\
-		0 & v=0.
-		\end{cases}$
+    Zeige nun das es sich bei dieser Abbildung um eine Bijektion
+    handelt.
+    \begin{description}
+    \item[Injektivität:] Seien zwei Familien $(F_p)_p,(G_p)_p$ von
+      isometrischen Abbildungen gegeben und sei
+      $\vartheta((F_p)_p)=\vartheta((G_p)_p)$. Dann gilt aufgrund der
+      Abbildungsvorschrift von $\vartheta$ das $F_p(v)=G_p(v)$ für
+      alle $v \in \S_p M$ gilt und somit die Abbildungen gleich sind.
+    \item[Surjektivität:] Sei eine $\S^1$-invariante Abbildung
+      $\abb{H}{\S M}{\so_3}$ gegeben. Für einen normierten
+      Tangentialvektor $v \in \S_p M$ gilt das $H_p(v)$ ein Element
+      der $\so_3$ ist. Betrachte nun die erste Spalte der Matrix
+      $w(v)=(H_p(v)_{i,1})_{i=1,2,3}$. Definiere nun eine Abbildung
+      $\abb{F_p}{\tang{p}{M}}{\R^3}$ durch \todo{frac und norm
+        vertragen sich nicht} $v \mapsto \begin{cases}
+        w(\frac{v}{\norm{v}}) & v \neq 0 \\
+        0 & v=0.
+      \end{cases}$
 		
-		Diese Abbildung liefert uns nun das gewünschte Urbild zur
-		anfangs gewählten Abbildung $H$. 
-	\end{description}
-	Der Nachweis der Bijektion liefert die Behauptung.
+      Diese Abbildung liefert uns nun das gewünschte Urbild zur
+      anfangs gewählten Abbildung $H$.
+    \end{description}
+    Der Nachweis der Bijektion liefert die Behauptung.
 \end{proof}
 
 \end{Satz}
 
-Für den schlussendlichen Satz dieser Arbeit benötigen wir
-noch einige Homotopiegruppen der $\so{3}$ und $\spin{3}$. Die
-verwendete Quelle ist hierbei \cite{BHMMM15}.
+Für den schlussendlichen Satz dieser Arbeit benötigen wir noch einige
+Homotopiegruppen der $\so_3$ und $\spin_3$. Die verwendete Quelle ist
+hierbei \cite{BHMMM15}.
 \begin{Lem}\label{hgroups}
-	Für die beiden Liegruppen $\spin{3}$ und $\so{3}$ gelten
+	Für die beiden Liegruppen $\spin_3$ und $\so_3$ gelten
 	folgende Isomorphien als Mannigfaltigkeiten:
 	\begin{align}
-	\spin{3} &\simeq \su(2) \simeq \S^3 \label{{id1}}\\
-	\so{3} &\simeq \RP^3 \label{id2}
+	\spin_3 &\simeq \su(2) \simeq \S^3 \label{{id1}}\\
+	\so_3 &\simeq \RP^3 \label{id2}
 	\end{align}
 	Damit gelten auch folgende Isomorphien der Homotopiegruppen
 	der beide Liegruppen.
 	\begin{align*}
-	\pi_k(\spin{3}) &\simeq \begin{cases}
+	\pi_k(\spin_3) &\simeq \begin{cases}
 	1 & ,k=0,1,2 \\
 	\Z & ,k=3
 	\end{cases}
-	&{\pi_k(\so{3}) \simeq \begin{cases}
+	&{\pi_k(\so_3) \simeq \begin{cases}
 		1 & ,k=0,2 \\
 		\Z_2 & ,k=1 \\
 		\Z & ,k=3
@@ -172,24 +267,32 @@ verwendete Quelle ist hierbei \cite{BHMMM15}.
 	
 	\begin{proof}
 		\begin{description}
-			\item[1. Schritt:] Wir wollen zunächst die zweite Identität \cref{id1} zeigen. Dieser Isomorphismus
-			ist direkt durch folgende Abbildung anzugeben
-			\DefMap{\set{\pma{a & -\bar{b} \\ b & \bar{a}} \in \su_2}{a,b \in \C}}{\set{(a,b)\in \C^2}{|a|^2+|b|^2=1}=\S^3}{\pma{a & -\bar{b} \\ b & \bar{a}}}{(a,b)}
+                \item[1. Schritt:] Wir wollen zunächst die zweite
+                  Identität \cref{id1} zeigen. Dieser Isomorphismus
+                  ist direkt durch folgende Abbildung anzugeben
+                  \DefMap{\set{\pma{a & -\bar{b} \\ b & \bar{a}} \in
+                      \su_2}{a,b \in \C}}{\set{(a,b)\in
+                      \C^2}{|a|^2+|b|^2=1}=\S^3}{\pma{a & -\bar{b} \\
+                      b & \bar{a}}}{(a,b)}
 			
-			Von \cref{id1} die erste Identität wird wie folgt bewiesen.
-			Es gilt zunächst das die Spingruppe $ \spin{3} $ 
-			eine Teilmenge der Cliffordalgebra $ \Cl_3 $ ist und
-			im geraden Teil dieser liegt, also eine Untergruppe 
-			von $ \H^\ast $ ist. Man kann nun zeigen das dies
-			schon die gewünschte Behauptung zeigt das $ \spin{3} \simeq \su_2 $ gilt.
-			\todo{zeige RP3 iso zu so3}
+                  Von \cref{id1} die erste Identität wird wie folgt
+                  bewiesen.  Es gilt zunächst das die Spingruppe
+                  $ \spin_3 $ eine Teilmenge der Cliffordalgebra
+                  $ \Cl_3 $ ist und im geraden Teil dieser liegt, also
+                  eine Untergruppe von $ \H^\ast $ ist. Man kann nun
+                  zeigen das dies schon die gewünschte Behauptung
+                  zeigt das $ \spin_3 \simeq \su_2 $ gilt.
+                  \todo{zeige RP3 iso zu so3}
 			
-			\item[2. Schritt;] Seien nun die obigen Identitäten \ref{id1} \todo{cref verwenden} gegeben, um nun die
-			die Homotopiegruppen zu berechnen reicht es aus
-			diese von $\RP^3$ und $ \S^3 $ zu kennen. Für $ \S^3 $
-			sind diese bekannt und für $ \RP^3 $ stimmen diese
-			für $ k \neq 1 $ mit denen von $ \S^3 $ überein. Die
-			Fundamentalgruppe von $ \RP^3 $ ist bekannterweise $ \Z_2 $. Somit ist alles gezeigt.
+                \item[2. Schritt;] Seien nun die obigen Identitäten
+                  \ref{id1} \todo{cref verwenden} gegeben, um nun die
+                  die Homotopiegruppen zu berechnen reicht es aus
+                  diese von $\RP^3$ und $ \S^3 $ zu kennen. Für
+                  $ \S^3 $ sind diese bekannt und für $ \RP^3 $
+                  stimmen diese für $ k \neq 1 $ mit denen von
+                  $ \S^3 $ überein. Die Fundamentalgruppe von
+                  $ \RP^3 $ ist bekannterweise $ \Z_2 $. Somit ist
+                  alles gezeigt.
 		\end{description}
 		
 		
@@ -198,8 +301,83 @@ verwendete Quelle ist hierbei \cite{BHMMM15}.
 	
 \end{Lem}
 
-Nach dieser weiteren Vereinfachung des Raums der Immersionen folgt
-nun der letzte Schritt. Wir können nun folgenden Satz zeigen.
+Nach dieser weiteren Vereinfachung des Raums der Immersionen folgt nun
+der letzte Schritt. Wir können nun folgenden Satz zeigen.
+
+
+
+\begin{Satz}
+	Es existiert eine Bijektion
+	\begin{center}
+		\begin{tikzcd}
+			\set{ \abb{H}{\S M}{\so_3}}{H\text{ ist }\S^1 \text{-invariant}}  \arrow[rr,"\psi"] && \sset{\text{Spinstrukturen auf }M}.\\
+		\end{tikzcd}
+	\end{center}
+	\begin{proof}
+          Im ersten Schritt des Beweises wählen wir eine
+          Triangulierung $\Sigma \coloneqq \sset{ \Delta_i^j}$ der
+          Mannigfaltigkeit. Wobei für den Simplex $\Delta_i^j$ der
+          Index $i$ einer Durchnummerierung entspricht und der Index
+          $j$ die Dimension des Simplex angibt.  \todo{bild von torus
+            mit angedeuteter Triangulierung}
+		
+          Wir können zu auf folgende Art und Weise eine Abbildung
+          $\psi$ konstruieren.  Zu einer $\S^1$-invarianten Abbildung
+          $\abb{H}{\S M}{\so_3}$ definieren wir zunächst eine
+          Spinstruktur auf dem $0$-Skelett und setzen diese induktiv
+          auf die höheren Skelette fort um schließlich beim
+          $2$-Skelett endend auf der gesamten Mannigfaltigkeit eine
+          Spinstruktur zu erhalten. Schließlich zeigen wir noch das
+          diese Konstruktion eine Bijektion liefert.
+		
+          \textbf{Konstruktion der Abbildung $\psi$}
+		
+          Sei nun eine $\S^1$-invarianten Abbildung
+          $\abb{H}{\S M}{\so_3}$ gegeben.
+          \begin{description}
+          \item[$0$-Skelett:] In diesem Fall ist die kanonische Wahl
+            zu treffen und es ist nichts zu zeigen.
+          \item[$1$-Skelett:] Für diesen Fall ist nun die Abbildung
+            $H$ zu benutzen. Wir wollen die Spinstruktur zunächst für
+            jeden $1$-Simplex der Triangulierung angeben.  Benutze
+            hierbei das ein $1$-Simplex $\Delta^1_i$ isomorph zur
+            $\S^1$ und damit auch zu $\S M$ ist. Wenn man nun
+            folgendes Diagramm betrachtet
+            \begin{center}
+              \begin{tikzcd}
+                && \spin_3 \arrow[dd,"2:1 u \mapsto \pair{a}{u}"] \\
+                &&\\
+                \Ph{\so_3}{\Delta^1_i} = \S M \arrow[rr,"H"] && \so_3
+              \end{tikzcd}
+            \end{center}
+            Wir betrachten nun den Pullback für dieses Diagramm und
+            erhalten somit das folgende kommutative Diagramm
+            \begin{center}
+              \begin{tikzcd}
+                \Ph{\spin_3}{\Delta^1_i} \arrow[rr] \arrow[dd] && \spin_3 \arrow[dd,"2:1"] \\
+                &&\\
+                \Ph{\so_3}{\Delta^1_i} = \S M \arrow[rr,"H"] && \so_3
+              \end{tikzcd}
+            \end{center}
+            erhalten damit eine Spinstruktur für den $1$-Simplex
+            $\Delta^1_i$. \todo{zeige das für zwei spinstruktuen auf
+              benachbarten 1-simplices die induzierten spinstrukturen
+              übereinstimmen}
+          \item[$2$-Skelett:] Es gilt nun noch zu zeigen das sich die
+            Spinstruktur auf den $1$-Skelett auf eindeutige Art und
+            Weise auf das $2$-Skelett fortsetzen lässt.  Sei nun
+            $\Delta^2_i$ gegeben und auf $\partial\Delta^2_i$ ist eine
+            Spinstruktur vorgegeben, dann existiert eine Fortsetzung
+            da nach \cref{hgroups} für die Homotopiegruppe der
+            $\spin_3$ gilt $\pi_k(\spin_3)=1$ für $k=1,2$.  Die
+            Tatsache für $k=1$ liefert uns die Existenz und $k=2$ die
+            Eindeutigkeit der fortgesetzten Spinstruktur.
+          \item[Injektivität:]
+          \item[Surjektivität:]
+          \end{description}
+	\end{proof}
+\end{Satz}
+
 
 
 %% Local Variables:
