@@ -13,7 +13,7 @@ Um einen Zusammenhang zwischen den Immersionen und den Spinstrukturen
 herzustellen ist es notwendig den Raum der Immersionen zu
 vereinfachen.  Wichtig ist hierbei das wir nur an den
 Zusammenhangskomponenten interessiert sind, also können wir uns nicht
-nur auf Bijektionen sondern auch auf homotopieäquivlanten Räume
+nur auf Bijektionen sondern auch auf homotopieäquivalente Räume
 einschränken.  Wir nennen zwei Immersionen $ \abb{f,g}{M}{N} $
 \textit{regulär homotop} falls sie sich in $ \Imm{M}{N} $ durch einen
 glatten Weg verbinden lassen.
@@ -23,21 +23,27 @@ glatten Weg verbinden lassen.
 %finde gute referenz für dieses Theorem
 \begin{Thm}[Smale-Hirsch-Theorem]
 	Seien $M^m,N^n$ \mfgen, $m<n$ und M sei geschlossen. Dann ist die Abbildung
-	$\abb{\theta}{\Imm{M}{N}}{\Immf{M}{N}}, f \mapsto (f,\mathrm{d} f)$ eine Homotophieäquivalenz.
+	$\abb{\theta}{\Imm{M}{N}}{\Immf{M}{N}}, f \mapsto (f,\mathrm{d} f)$ eine Homotopieäquivalenz.
+\begin{proof}
+	\todo{vorschlag: soll hier der beweis für M=M, N=R3}
+\end{proof}
+
 \end{Thm}
 
 \begin{Bsp}
 	Die Forderung $ \dim(M)<\dim(N) $ ist essentiell. Betrachte 
 	den Fall $ M=N=\S^1 $ und die Abbildungen aus \cref{immBsp}:
-%	\begin{gather*}
-%	\abb{f}{\S^1}{\R^2}, \exp(i\phi)%
-%	\mapsto (\cos(\phi),\sin(\phi)),\\
-%	\abb{h}{\S^1}{\R^2}, \exp(i\phi)%
-%	\mapsto (\cos(2\phi),\sin(\phi)).
-%	\end{gather*}
 	Dann induziert die Abbildung 
 	\DefMap{\Imm{\S^1}{\S^1}}{\Immf{\S^1}{\S^1}}{f}{(f,\d f)}
-	keine Homotopieäquivalenz. \todo{beispiel finden}
+	keine Homotopieäquivalenz, denn die Abbildung kann
+	nicht alle Zusammenhangskomponenten von $ \Immf{\S^1}{\S^1} $
+	treffen. Betrachte hierzu die konstante Abbildung
+	\DefMap{f : \S^1}{\S^1}{z}{1} wobei wir $ \S^1\subset\C $ 
+	verwenden, und den Diffeomorphismus $ \abb{\beta}{\S^1}{\R / \Z} $
+	der durch die Winkelfunktion gegeben ist. Dann ist das Paar $ (f,\d \beta) $ eine formale Immersion, kann aber nicht regulär
+	homotop zu einer Immersion sein, da Immersionen immer einen 
+	Abbildungsgrad ungleich $ 0 $ haben, der von $ (f,\d \beta) $ aber
+	verschwindet.
 \end{Bsp}
 
 Im Weiteren betrachten wir den Spezialfall $ M=M^2 $ als geschlossene $ 2 $-dimensionale riemannsche Mannigfaltigkeit und
@@ -62,37 +68,38 @@ folgenden
           Betrachte für $t \in [0,1]$ die Abbildung
           $\abb{\psi_t}{\Immf{M}{\R^3}}{\Immf{M}{\R^3}}$ mit
           $\psi_t : (f,F) \mapsto (f,F \circ
-          (F^{\ast}F)^{-\frac{t}{2}})$.
+          (F^{\ast}F)^{-t/2})$.
 		
           Zunächst ist diese Homotopie eine glatte Abbildung für alle
           $ t \in [0,1] $. Für $ t=0 $ gilt $ \psi_0 = id $. Im Fall
-          $ t=1 $ gilt nun das $ F \circ (F^{\ast}F)^{-\frac{t}{2}} $
+          $ t=1 $ gilt nun das $ F \circ (F^{\ast}F)^{-t/2} $
           isometrisch ist.
 		
-          Der Ausdruck $ (F_p^\ast F_p)^{-\frac{1}{2}} $ ist wie folgt
+          Der Ausdruck $ (F_p^\ast F_p)^{-t/2} $ ist wie folgt
           definiert. Sei $ \abb{f}{V}{V} $ eine linearer, injektiver,
           symmetrischer Endomorphismus eines reellen Vektorraums mit
-          Skalarprodukt, dann existieren $ n $ postivite, reelle
+          Skalarprodukt, dann existieren $ n $ positive, reelle
           Eigenwerte $ \lambda_i $ für diesen Endomorphismus. Nach
           Wahl einer Basis existiert eine unitäre Transformation
           $ U $, sodass $ f = U^\ast \diag(\lambda_i) U $ gilt. Nun
           definiere
           $ f^\alpha \coloneqq U^\ast \diag(\lambda_i^\alpha) U $.
+          \todo{warum ist dies trotz der wahl wohldef?}
 		
           Sei nun die lineare, injektive Abbildung
           $ \abb{F_p}{\tang{p}{M}}{\tang{F_p(p)}{\R^3}} $ gegeben,
           dann ist $ (F_p^\ast F_p) $ symmetrisch und aufgrund der
           Injektivität auch positiv definit, damit ist
-          $ (F_p^\ast F_p)^{-\frac{1}{2}} $ wohldefiniert.
+%          $ (F_p^\ast F_p)^{-1/2} $ wohldefiniert.
 		
           Es folgt nun durch Umformungen das die Abbildung
-          $ F_p \circ (F_p^\ast F_p)^{-\frac{1}{2}} $ isometrisch
-          ist. Sei hierzu $ v,w \in \tang{p}{M} $.
+          $ F_p \circ (F_p^\ast F_p)^{-1/2} $ isometrisch
+          ist. Sei hierzu $ v,w \in \tang{p}{M} $,so gilt
           \begin{align*}
-            \scalar{F_p \circ (F_p^\ast F_p)^{-\frac{1}{2}}(v)}{F_p \circ (F_p^\ast F_p)^{-\frac{1}{2}}(w)}_{\R^3} &=
-                                                                                                                     g_p(F_p^\ast F_p \circ (F_p^\ast F_p)^{-\frac{1}{2}}(v),(F_p^\ast F_p)^{-\frac{1}{2}}(w)) \\
-                                                                                                                   &= g_p((F_p^\ast F_p)^\frac{1}{2}(v),(F_p^\ast F_p)^{-\frac{1}{2}}(w)) \\
-                                                                                                                   &= g_p((F_p^\ast F_p)^{-\frac{1}{2}} \circ (F_p^\ast F_p)^\frac{1}{2}(v,w)) \\
+            \scalar{F_p \circ (F_p^\ast F_p)^{-1/2}(v)}{F_p \circ (F_p^\ast F_p)^{-1/2}(w)}_{\R^3} &=
+                                                                                                                     g_p(F_p^\ast F_p \circ (F_p^\ast F_p)^{-1/2}(v),(F_p^\ast F_p)^{-1/2}(w)) \\
+                                                                                                                   &= g_p((F_p^\ast F_p)^1/2(v),(F_p^\ast F_p)^{-1/2}(w)) \\
+                                                                                                                   &= g_p((F_p^\ast F_p)^{-1/2} \circ (F_p^\ast F_p)^1/2(v,w)) \\
                                                                                                                    &= g_p(v,w)
 		\end{align*}
 		
@@ -104,7 +111,7 @@ folgenden
 	\end{proof}
 \end{Satz}
 
-
+Der nächste Schritt ist der des Vergessens des Basispunktes.
 
 \begin{Lem}
   Es existiert eine Bijektion
@@ -115,7 +122,7 @@ folgenden
   \begin{tikzcd}
     \Immfi{M}{\R^3} \arrow[r,"\eta"] &%
     \set{ (\abb{F_p}{\T_pM}{\R^3})_{p\in M} }{ F_p \text{ isometrisch
-        für alle }p \in M}
+        für alle }p \in M}.
   \end{tikzcd}
   \begin{proof}
     Definiere die Abbildung $ \eta $ wie folgt. Sei ein Paar
@@ -134,27 +141,37 @@ folgenden
       \end{gather*}
       also
       \begin{gather*}
-        f \circ \pi^M = g \circ \pi^M
-      \end{gather*}.  Da die Projektion $ \pi^M $ surjektiv ist, folgt
+        f \circ \pi^M = g \circ \pi^M.
+      \end{gather*}  Da die Projektion $ \pi^M $ surjektiv ist, folgt
       $ f=g $.  Also die Injektivität.
     \item[Surjektivität] Sei eine Familie $ (F_p)_{p\in M} $
       gegeben. Wähle eine beliebige glatte Funktion
       $ f\in \Cinfty{M}{\R^3} $. Setze nun als Urbild zu der anfangs
-      gegeber Familie das Paar $ (f,F) $. Wobei $ F $ gegeben ist als
+      gegebener Familie das Paar $ (f,F) $. Wobei $ F $ gegeben ist als
       \DefMap{\tang{}{M}}{\tang{}{\R^3}}{(p,v)}{(f(p),F_p(v)).}
 			 
       Dann gilt offentsichtlich $ \eta(f,F)=(F_p)_{p\in M} $ und damit
-      ist die Bijektion konstruiert.
+      ist die Bijektivität nachgewiesen.
     \end{description}
   \end{proof}
 \end{Lem}
 
-
+Für das folgende Theorem benötigen wir die Existenz von Spinstrukturen
+auf Flächen.
 %lemma darüber das eine kompakte, orientierte 2dim riem mfg stets spin ist
 \begin{Satz}
 	Jede geschlossene, orientierte, \RMF  $(M,g)$ der Dimension $2$ ist spin.
 	\begin{proof}
-		%todo: beweis
+		Wir haben schon in \cref{SpinstrSphäre} gezeigt das es 
+		auf der $ \S^2 $ ein eindeutige Spinstruktur gibt. Wir
+		wissen nun das sich alle Flächen $ \S^2 $ mit Henkel 
+		darstellen lassen. Um nun die Spinstruktur auf der $ \S^2 $
+		auf die Flächen mit höheren Geschlecht zu erweitern müssen
+		wir zeigen das ausgehend von der $ \S^2 $ und zwei Punkten
+		$ p,q \in\S^2 $ mit disjunkten Bällen $ B_p,B_q \subset\S^2$,
+		durch zusammenkleben der beiden Umgebungen ein Henkel
+		entsteht und die Spinstruktur erhalten bleibt.
+		 \todo{zeige die wohldef, und glueing eigenschaften}
 	\end{proof}
 \end{Satz}
 % satz das die imm und form-imm homotop sind
@@ -167,7 +184,7 @@ Für den nächsten Satz benötigen wir miteinander verträgliche $ \S^1 $-Gruppe
 Zusammenhang $ \S^1 \simeq \so_2 $ vorausgesetzt. Für die erste
 Gruppenwirkung wählen wir eine positiv orientierte Orthonormalbasis
 $ (v,w) $ von $ \tang{p}{M} $ und betrachte den davon induzierten
-Vektorraumisomorphismus $ \abb{\phi}{\R^2}{\tang{p}{M}} $. Diese
+Vektorraumisomorphismus $ \abb{\phi}{\R^2}{\tang{p}{M}},e_1 \mapsto v, e_2\mapsto w $. Diese
 Abbildung liefert uns einen Liegruppenisomorphismus $\abb{\bar{\phi}}{\so(\R^2) = \so_2}{\so(\tang{p}{M})} $. Die Verkettung
 dieser Isomorphismen liefert uns zu einem Element $ z\in\S^1 $ ein
 eindeutiges Element $ U(z)\in \so(\tang{p}{M}) $. Damit ergibt sich
@@ -197,7 +214,6 @@ Zusammenhang mit den Spinstrukturen sein.
   \begin{gather*}
     \set{ \abb{H}{\S M}{\so_3}}{H\text{ ist }\S^1 \text{-invariant}}.
   \end{gather*}
-  \todo{was meint hier S1 invariant.}
   \begin{proof}
     Sei eine Familie $(\abb{F_p}{\T_pM}{\R^3})_{p\in M}$ von
     isometrischen Abbildungen gegeben.  Da es sich bei $M$ um eine
@@ -282,7 +298,9 @@ hierbei \cite{BHMMM15}.
                   eine Untergruppe von $ \H^\ast $ ist. Man kann nun
                   zeigen das dies schon die gewünschte Behauptung
                   zeigt das $ \spin_3 \simeq \su_2 $ gilt.
-                  \todo{zeige RP3 iso zu so3}
+				  Es folgt nun unmittelbar aufgrund des Isomorphismus
+				  und den doppelten Überlagerung durch rausteilen
+				  von $ \Z_2 $ die Isomorphie $ \RP^3\simeq\so_3 $.
 			
                 \item[2. Schritt;] Seien nun die obigen Identitäten
                   \ref{id1} \todo{cref verwenden} gegeben, um nun die
@@ -310,9 +328,10 @@ der letzte Schritt. Wir können nun folgenden Satz zeigen.
 	Es existiert eine Bijektion
 	\begin{center}
 		\begin{tikzcd}
-			\set{ \abb{H}{\S M}{\so_3}}{H\text{ ist }\S^1 \text{-invariant}}  \arrow[rr,"\psi"] && \sset{\text{Spinstrukturen auf }M}.\\
+			\set{ \abb{H}{\S M}{\so_3}}{H\text{ ist }\S^1 \text{-invariant}}/\sim  \arrow[rr,"\psi"] && \sset{\text{Spinstrukturen auf }M}.\\
 		\end{tikzcd}
 	\end{center}
+	Wobei $ \sim $ meint, das bis auf Homotopie gilt.
 	\begin{proof}
           Im ersten Schritt des Beweises wählen wir eine
           Triangulierung $\Sigma \coloneqq \sset{ \Delta_i^j}$ der
@@ -333,48 +352,57 @@ der letzte Schritt. Wir können nun folgenden Satz zeigen.
           \textbf{Konstruktion der Abbildung $\psi$}
 		
           Sei nun eine $\S^1$-invarianten Abbildung
-          $\abb{H}{\S M}{\so_3}$ gegeben.
-          \begin{description}
-          \item[$0$-Skelett:] In diesem Fall ist die kanonische Wahl
-            zu treffen und es ist nichts zu zeigen.
-          \item[$1$-Skelett:] Für diesen Fall ist nun die Abbildung
-            $H$ zu benutzen. Wir wollen die Spinstruktur zunächst für
-            jeden $1$-Simplex der Triangulierung angeben.  Benutze
-            hierbei das ein $1$-Simplex $\Delta^1_i$ isomorph zur
-            $\S^1$ und damit auch zu $\S M$ ist. Wenn man nun
-            folgendes Diagramm betrachtet
-            \begin{center}
+          $\abb{H}{\S M}{\so_3}$ gegeben. Die Spinstruktur zu $ H $
+          ist gegeben durch den Pullback des Diagramms $  $
+              \begin{center}
               \begin{tikzcd}
-                && \spin_3 \arrow[dd,"2:1 u \mapsto \pair{a}{u}"] \\
-                &&\\
-                \Ph{\so_3}{\Delta^1_i} = \S M \arrow[rr,"H"] && \so_3
+                \Ph{\spin_2}{M} \arrow[r] \arrow[d] \arrow[dr, phantom, "\ulcorner", very near start] & \spin_3 \arrow[d,"2:1"] \\
+                \Ph{\so_2}{M} = \S M \arrow[r,"H"] & \so_3
               \end{tikzcd}
             \end{center}
-            Wir betrachten nun den Pullback für dieses Diagramm und
-            erhalten somit das folgende kommutative Diagramm
-            \begin{center}
-              \begin{tikzcd}
-                \Ph{\spin_3}{\Delta^1_i} \arrow[rr] \arrow[dd] && \spin_3 \arrow[dd,"2:1"] \\
-                &&\\
-                \Ph{\so_3}{\Delta^1_i} = \S M \arrow[rr,"H"] && \so_3
-              \end{tikzcd}
-            \end{center}
-            erhalten damit eine Spinstruktur für den $1$-Simplex
-            $\Delta^1_i$. \todo{zeige das für zwei spinstruktuen auf
-              benachbarten 1-simplices die induzierten spinstrukturen
-              übereinstimmen}
-          \item[$2$-Skelett:] Es gilt nun noch zu zeigen das sich die
-            Spinstruktur auf den $1$-Skelett auf eindeutige Art und
-            Weise auf das $2$-Skelett fortsetzen lässt.  Sei nun
-            $\Delta^2_i$ gegeben und auf $\partial\Delta^2_i$ ist eine
-            Spinstruktur vorgegeben, dann existiert eine Fortsetzung
-            da nach \cref{hgroups} für die Homotopiegruppe der
-            $\spin_3$ gilt $\pi_k(\spin_3)=1$ für $k=1,2$.  Die
-            Tatsache für $k=1$ liefert uns die Existenz und $k=2$ die
-            Eindeutigkeit der fortgesetzten Spinstruktur.
-          \item[Injektivität:]
-          \item[Surjektivität:]
-          \end{description}
+          
+          
+%          \begin{description}
+%          \item[$0$-Skelett:] In diesem Fall ist die kanonische Wahl
+%            zu treffen und es ist nichts zu zeigen.
+%          \item[$1$-Skelett:] Für diesen Fall ist nun die Abbildung
+%            $H$ zu benutzen. Wir wollen die Spinstruktur zunächst für
+%            jeden $1$-Simplex der Triangulierung angeben.  Benutze
+%            hierbei das ein $1$-Simplex $\Delta^1_i$ isomorph zur
+%            $\S^1$ und damit auch zu $\S M$ ist. Wenn man nun
+%            folgendes Diagramm betrachtet
+%            \begin{center}
+%              \begin{tikzcd}
+%                && \spin_3 \arrow[dd,"2:1"] \\
+%                &&\\
+%                \Ph{\so_3}{\Delta^1_i} = \S M \arrow[rr,"H"] && \so_3
+%              \end{tikzcd}
+%            \end{center}
+%            Wir betrachten nun den Pullback für dieses Diagramm und
+%            erhalten somit das folgende kommutative Diagramm
+%            \begin{center}
+%              \begin{tikzcd}
+%                \Ph{\spin_3}{\Delta^1_i} \arrow[rr] \arrow[dd] && \spin_3 \arrow[dd,"2:1"] \\
+%                &&\\
+%                \Ph{\so_3}{\Delta^1_i} = \S M \arrow[rr,"H"] && \so_3
+%              \end{tikzcd}
+%            \end{center}
+%            erhalten damit eine Spinstruktur für den $1$-Simplex
+%            $\Delta^1_i$. \todo{zeige das für zwei spinstruktuen auf
+%              benachbarten 1-simplices die induzierten spinstrukturen
+%              übereinstimmen}
+%          \item[$2$-Skelett:] Es gilt nun noch zu zeigen das sich die
+%            Spinstruktur auf den $1$-Skelett auf eindeutige Art und
+%            Weise auf das $2$-Skelett fortsetzen lässt.  Sei nun
+%            $\Delta^2_i$ gegeben und auf $\partial\Delta^2_i$ ist eine
+%            Spinstruktur vorgegeben, dann existiert eine Fortsetzung
+%            da nach \cref{hgroups} für die Homotopiegruppe der
+%            $\spin_3$ gilt $\pi_k(\spin_3)=1$ für $k=1,2$.  Die
+%            Tatsache für $k=1$ liefert uns die Existenz und $k=2$ die
+%            Eindeutigkeit der fortgesetzten Spinstruktur.
+%          \item[Injektivität:] \todo{warum ist mfg orientierbar falls 1skelett liftet, warum für spinstr bei 2skelett}
+%          \item[Surjektivität:]\todo{spinstr ist orientierung des loopspace von M}
+%          \end{description}
 	\end{proof}
 \end{Satz}
 

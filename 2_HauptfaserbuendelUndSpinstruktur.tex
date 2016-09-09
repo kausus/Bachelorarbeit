@@ -10,7 +10,7 @@ eingeführt werden die für diese Arbeit notwendig sind. Der Begriff des
 Hauptfaserbündel hat sich als der Richtige herausgebildet indem die
 Sprache von Spinstrukturen bzw. Spinoren formuliert wird.
 
-Die verwendete Quelle ist \cite{baum09}
+Die verwendete Quelle ist \cite{baum09}.
 
 \begin{Def}[Hauptfaserbündel]
   Ein \textit{Hauptfaserbündel} ist ein Tupel $(P,\pi,M,G)$ das aus
@@ -39,8 +39,7 @@ Die verwendete Quelle ist \cite{baum09}
 	Für zwei Hauptfaserbündel $(P,\pi^P,M,G),(Q,\pi^Q,M,H)$ über
         derselben Mannigfaltigkeit und einer Abbildung $\abb{f}{P}{Q}$
         nennen wir $f$ einen \textit{Hauptfaserbündelmorphismus},
-        falls $ \pi^P=\pi^Q \circ f $ gilt. Ein
-        Hauptfaserbündelisomorphismus ist ein Isomorphismus im Sinne
+        falls $ \pi^P=\pi^Q \circ f $ und mit $ G $-äquivariant ist, gilt. Ein Hauptfaserbündelisomorphismus ist ein Isomorphismus im Sinne
         der Kategorientheorie.
 \end{Def}
 
@@ -91,23 +90,22 @@ Im folgenden werden die wichtigsten Beispiele angegeben.
 			\end{tikzcd}
 		\end{center}
 		\begin{smallproof}
+			
                   Zunächst ist ein Atlas für die Menge $ \GL(M) $
                   anzugeben. Sei hierzu
                   $\mathcal{A}=\sset{(U_i,\phi_i)_{i\in \Lambda}}$ ein
-                  Atlas von $M$.  \todo{Angabe eines Atlas für
-                    $\GL(M)$}
-			
+                  Atlas von $M$.  
+                  
                   Die Gruppenwirkung ist transitiv, da die Elemente
                   von $\GL(M)$ gerade Basen eines Vektorraums sind und
                   sich durch die entsprechenden
                   Basistransformationsmatrizen ineinander überführen
-                  lassen. Die Eigenschaft frei wollt auch aus der
-                  Eigenschaft von Basistransformationen. Die
+                  lassen. Die Eigenschaft frei folgt unmittelbar auch aus den Eigenschaften von Basistransformationen. Die
                   Fasertreue ist auch anhand der Definition klar, da
                   die Gruppenwirkung innerhalb des Tangentialraums nur
                   transformiert.
 			
-                  Sei nun ein Bündelatlas
+                  Sei nun ein Bündelatlas \todo{was ist ein bündelatlas}
                   $ \sset{(U_i,\phi_i)_{i\in \Lambda}} $ von $ \T M $
                   gegeben. Betrachte nun die Abbildungen
                   \DefMap{\pi^{-1}(U_i)}{U_i\times
@@ -118,7 +116,7 @@ Im folgenden werden die wichtigsten Beispiele angegeben.
 		\end{smallproof}
               \item Analog zum vorherigen Beispiel existiert zu einer
                 fest gewählten Orientierung das
-                Orientierungshauptfaserbündel
+                \textit{orientierte Reperebündel}
                 $ (\so(M),\pi,M,\so_n) $, definiert durch
 		\begin{gather*}
 			\so(M) \coloneqq \bigcup_{p\in M} \set{(v_1,\ldots,v_n)}{\text{positiv orientierte ONB von }\tang{p}{M}}.
@@ -135,33 +133,68 @@ verwendete Quelle ist \cite{BHMMM15}.  \todo{sollen äquivalente
   Definitionen von Spinstruktur genannt werden? zb. cozykel-liften,
   oder topologische Spinstrukturen} \todo{ist es klar dass das paar
   $(\phi...)$ eine mfg ist? soll das diagramm größer gemacht werden?}
-\begin{Def}[Spinstruktur]
-  Sei $(M,g)$ eine \RMF der Dimension $n$, dann ist
+\begin{Def}[Spinstruktur]\label{DefSpin}
+  Sei $(M^n,g)$ eine orientierte, riemannsche Mannigfaltigkeit, dann ist ein Paar
   ($\Ph{\spin_n}{M}$,$\eta : \Ph{\spin_n}{M} \rightarrow
   \Ph{\so_n}{M}$) eine Spinstruktur auf $(M,g)$, falls folgendes gilt:
 	 \begin{itemize}
          \item Die \mfg $\Ph{\spin_n}{M}$ ist ein
-           $\spin_n$-Hauptfaserbündel.
-         \item Die Abbildung $\eta$ ist eine doppelte Überlagerung.
-         \item Folgendes Diagramm kommutiert\footnote{Dies ist ein Spezialfall für eine Reduktion eines Hauptfaserbündel.}\\
+           $\spin_n$-Hauptfaserbündel über $ M $.
+         \item Folgendes Diagramm kommutiert\footnote{Dies ist ein Spezialfall für eine Reduktion eines Hauptfaserbündel siehe \cite{baum09}.}\\
+%           \begin{center}
+%             % das zeichen ' nach " " ändert die position bzgl pfeil
+%		 	\begin{tikzcd}
+%                          \spin_n \ar[rr, "a \mapsto ua"] \ar[dd, "\Ad"'] & &  \Ph{\spin_n}{M}  \arrow[rd] \arrow[dd, "\eta"] & \\
+%                          &&& M \\
+%                          \so_n \arrow[rr , "A \mapsto \eta(u)A"] & &
+%                          \Ph{\so_n}{M} \arrow[ur] &
+%		 	\end{tikzcd}
+%			 \end{center}
+
            \begin{center}
-             % das zeichen ' nach " " ändert die position bzgl pfeil
-		 	\begin{tikzcd}
-                          \spin_n \ar[rr, "a \mapsto ua"] \ar[dd, "\Ad"'] & &  \Ph{\spin_n}{M}  \arrow[rd] \arrow[dd, "\eta"] & \\
-                          &&& M \\
-                          \so_n \arrow[rr , "A \mapsto \eta(u)A"] & &
-                          \Ph{\so_n}{M} \arrow[ur] &
-		 	\end{tikzcd}
-			 \end{center}
+           	% das zeichen ' nach " " ändert die position bzgl pfeil
+           	\begin{tikzcd}
+           		\spin_n \arrow[d,"\Ad"] \arrow[out=15,in=-15,loop] & \Ph{\spin_n}{M} \arrow[dr] \arrow[d,"\eta"] & \\
+           		\so_n \arrow[out=15,in=-15,loop] & \Ph{\so_n}{M} \arrow[r] & M
+           	\end{tikzcd}
+           \end{center}
+
                          wobei $\Ad$ die doppelte
                          Überlagerungsabbildung von $\so_n$ ist und
-                         dies für alle $u \in \Ph{\spin_n}{M}$ gilt.
+                        die gekrümmten Pfeile die glatten Gruppenwirkungen sind.
+                         Es folgt nun schon das die Abbildung $\eta$   eine doppelte Überlagerung ist.
 	 \end{itemize}
 	 Falls eine \RMF eine Spinstruktur besitzt sagen wir die \mfg
          ist \textit{spin}.
-	
-
+     Zwei Spinstrukturen $ (\Ph{\spin_n}{M},\eta),(P_{\spin_n}^{'}M,\eta^{'}) $ über $ M $ heißen isomorph, falls einen $ \spin_n $-Hauptfaserbündelisomorphismus $ \abb{\beta}{\Ph{\spin_n}{M}}{P_{\spin_n}^{'}M} $ gibt, sodass die
+     Spinstrukturen miteinander verträglich sind, also $ \eta=\eta^{'} \circ \beta $ gilt.
 \end{Def}
+
+Die Frage nach der Existenz und Eindeutigkeit von Spinstrukturen 
+auf einer riemannschen Mannigfaltigkeit $ (M,g) $ wird durch folgenden
+Satz beantwortet.
+
+\begin{Satz}\label{anzahlspin}
+	Sei $ (M,g) $ eine orientierte, riemannsche Mannigfaltigkeit dann
+	gilt das $ H^1(M,\Z_2) $ isomorph ist zu der Menge aller $ \Z_2 $
+	Hauptfaserbündel über $ M $. Zudem operiert $ H^1(M,\Z_2) $ frei
+	und transitiv auf der Menge aller Spinstrukturen. 
+	\begin{proof}
+		$ \tilde{M} \times_{\pi_1(M)} \Z_2 $
+		oder
+		$ \tilde{M} \times \Z_2 / \pi_1(M)$
+		foobar \todo{beweis}
+	\end{proof}
+\end{Satz}
+
+Mithilfe dieses Satzes folgt unmittelbares das
+\begin{Kor}
+	Für eine $ 1 $-zusammenhängende, orientierte, riemannsche Mannigfaltigkeit existiert genau eine Spinstruktur bis auf Isomorphie. Für eine Fläche mit Geschlecht $ \gamma $ existieren
+	genau $ 2^{2\gamma} $ nicht isomorphe Spinstrukturen.
+	\begin{proof}
+		foobar\todo{beweis}
+	\end{proof}
+\end{Kor}
 
 \begin{Bsp}
   \begin{enumerate}[(1)]
@@ -170,14 +203,13 @@ verwendete Quelle ist \cite{BHMMM15}.  \todo{sollen äquivalente
     $(\R^n \times \spin_n,\id \times \Ad)$ eine Spinstruktur auf
     dieser riemannischen Mannigfaltigkeit.\footnote{Dies ist auch die
       einzigste Spinstruktur für den $ \R^n $ bis auf
-      Isomorphie}. Allgemein gilt das falls das Orientierungsbündel
-    \todo{falscher Name} $ \Ph{\so_n}{M} $ für eine Mannigfaltigkeit
-    $ M^n $ trivial ist, also isomorph zu $ M\times \spin_n $ ist,
+      Isomorphie}. Allgemein gilt das falls $ \Ph{\so_n}{M} $ für eine Mannigfaltigkeit
+    $ M^n $ trivial ist, also isomorph zu $ M\times \so_n $ ist,
     dann ist das triviale $ \spin_n $-Haupfaserbündel
     $ (M\times \spin_n,\pi_1,M,\spin_n) $ eine Spinstruktur für $ M $.
     Doch wie wir im nächsten Beispiel sehen werden folgt daraus noch
-    nicht das dies dann die einzige Spinstruktur sein muss. (bis auf
-    Isomorphie)
+    nicht das dies dann die einzige Spinstruktur sein muss (bis auf
+    Isomorphie).
     \begin{proof}
       Das Tupel $ (\R^n\times \spin_n,\pi_1,\R^n,\spin_n) $ ist ein
       triviales Hauptfaserbündel mit Strukturgruppe $ \spin_n $.  Sei
@@ -194,9 +226,9 @@ verwendete Quelle ist \cite{BHMMM15}.  \todo{sollen äquivalente
       \begin{center}
 					
         \begin{tikzcd}
-          \spin_n \ar[rr, "a \mapsto \pair{p}{au}"] \ar[dd, "\Ad"'] & &  \R^n\times \spin_n  \arrow[rd] \arrow[dd, "\pi_1"] & \\
+          \spin_n \ar[rr, "a \mapsto \pair{p}{au}"] \ar[dd, "\Ad"'] & &  \R^n\times \spin_n  \arrow[rd] \arrow[dd, "\id\times\Ad"] & \\
           &&& \R^n \\
-          \so_n \arrow[rr , "A \mapsto pA"] & & \R^n \arrow[ru] &
+          \so_n \arrow[rr , "A \mapsto pA"] & & \R^n\times\so_n  \arrow[ru] &
         \end{tikzcd}
       \end{center}
 
@@ -204,26 +236,78 @@ verwendete Quelle ist \cite{BHMMM15}.  \todo{sollen äquivalente
 		
   \item Ein erstes nichttriviales Beispiel sind zwei nicht isomorphie
     Spinstrukturen der $\S^1$. Diese sind $(\S^1 , \eta_0)$ und
-    $(\S^1 \times \Z_2 = \S^1 \times \spin{1} , \eta_1)$, wobei die
+    $(\S^1 \times \Z_2 = \S^1 \times \spin_1 , \eta_1)$, wobei die
     Abbildungen durch $\eta_0 : \S^1 \rightarrow \S^1 , z \mapsto z^2$
     und
     $\eta_1 : \S^1 \times \Z_2 \rightarrow \S^1 , (z,\alpha) \mapsto
     z$
-    gegeben sind. Diese sind auch die Repräsentaten aller
-    Spinstrukturen bis auf Isomorphie.  \todo{suche verweis auf
-      hijazi}
+    gegeben sind. Die beiden Spinstrukturen können nicht isomorph
+    sein, da die Totalräume verschieden viele Zusammenhangskomponenten
+    haben und somit schon als topologische Räume nicht homöomorph sein
+    können. Nun sind dies auch alle Repräsentaten von
+    Spinstrukturen bis auf Isomorphie auf der $ \S^1 $.
   \item Die $(\CP^{2n},g)$ ist ein Beispiel für eine Familie von
     \RMFen die nicht spin sind, wobei hier $g$ eine riemannische
     Metrik auf $\CP^{2n}$ ist.  \todo{Quelle einfügen}
-  \item Ein wichtiges Beispiel für eine \RMF mit deren Spinstruktur
-    ist die $\S^2$. Diese besitzt genau eine Spinstruktur bis auf
-    Isomorphie.  \todo{angabe dieser spinstruktur} \todo{Angabe von
-      Spinstrukturen auf S1 und Torus,alle vier Spinstrukturen?}
+    
+  \item \label{SpinstrSphäre}Ein wichtiges Beispiel für eine \RMF mit deren Spinstruktur
+    sind die $ n $-Sphären $\S^n$ für $ n \geq 2 $. Diese besitzen  
+    aufgrund von \cref{anzahlspin} genau eine Spinstruktur. Um 
+    dieses anzugeben betrachten wir zunächst das orientierte Reperebündel $ \so(\S^n) $. Für ein $ p\in\S^n $ ist der Tangentialraum $ \tang{p}{\S^n} $ mit $ \S^n\subset\R^{n+1} $ 
+    gleich zu $ p^\bot\subset\R^{n+1} $. Für ein Element von $ (p,A) \Ph{\so_n}{\S^n} $ gilt nun das $ A \in\so_n$ ist und damit folgt
+    nun leicht $ \Ph{\so_n}{\S^n} \simeq \so_{n+1} $. Damit folgt
+    aufgrund von $ n\geq 2 $ als einzige doppelte Überlagerung der
+    $ \so_{n+1} $ die $ \spin_{n+1} $, da diese Überlagerung universell ist. Somit ist $ (\spin_{n+1},\Ad) $ die eindeutige
+    Spinstruktur auf der $ \S^n $.
+  \item Ein wichtiges Beispiel sind die Spinstrukturen auf dem $ 2 $-Tours $ \T^2 \coloneqq \S^1\times\S^1$. Diese lassen sich auf sehr
+  kompakte Art und Weise alle Spinstrukturen auf $ \T^2 $ angeben.
+  Sei hierzu $ \chi $ ein Gruppenhomomorphismus $ \Z^2 \rightarrow \Z_2 $
+  und betrachte folgende Gruppenwirkungen, wobei $ \Z_2\simeq\sset{+1,-1}\simeq\spin_1 \subset\spin_2 $ benutzt wird.
+  \DefMap{\rho_1 : \Z^2\times\R^2}{\R^2}{((n,m),(x,y))}{(x+n,y+m)}
+  \DefMap{\rho_2 : \Z_2\times\spin_2}{\spin_2}{(\alpha,z)}{\alpha z}
+  Dann sind alle Spinstrukturen gegeben durch  
+  \begin{gather*}
+  	\R^2 \times \spin_2 / (\rho_1(a,b)(x,y),z) \sim ((x,y),\rho(\chi(a,b))z).
+  \end{gather*}
+  \begin{smallproof}(diese Spinstrukturen sind nicht isomorph)
+  	bla
+  \end{smallproof}
+  
 	\end{enumerate}
 \end{Bsp}
 
+In \cite{KS96} wird für Flächen eine äquivalente Definition
+von Spinstruktur angegeben. Diese begründet die Aussage das
+eine Spinstruktur die \enquote{Wurzel} aus dem Tangentialbündel ist.
 
+\begin{Def}\label{DefSpin_KS}
+	Sei $ (M,g) $ eine Fläche, dann heißt $ (S,\mu) $ eine
+	\textit{Spinstruktur} auf $ M $, falls $ S $ ein komplexes Geradenbündel
+	über $ M $ ist und die Bündelabbildung $ \abb{\mu}{S}{\T M} $ quadratisch	ist, d.h. $ \mu(\lambda s) = \lambda^2 \mu(s) $ für alle Schnitte
+	von $ S $.
+\end{Def}
 
+Zeige nun das diese beiden Definitionen sich ineinander überführen
+lassen und somit dasgleich liefern.
+
+\begin{Satz}
+	Zu jeder Spinstruktur im Sinne von \cref{DefSpin} existiert
+	genau eine Spinstruktur im Sinne von \cref{DefSpin_KS}.
+	\begin{proof}
+		Sei eine Spinstruktur $ (\Ph{\spin_2}{M},\eta) $ gegeben.
+		Mit den Fakt $ \S^1\simeq\so_2\simeq\spin_2 $ und der Abbildung
+		$ \abb{\Ad}{\spin_2}{\so_2},z\mapsto z^2 $ liefert uns dies
+		die induzierte Abbildung $ \Ph{\spin_2}{M}\rightarrow \Ph{\so_2}{M} $. Betrachten wir nun die davon assoziierten
+		Bündel bezüglich der Darstellung $ \abb{\rho}{\S^1}{\End(\C)}, z\mapsto (w \mapsto zw) $, dann erhalten wir die doppelte
+		Überlagerung $ S\coloneqq \Ph{\spin_2}{M}\times_{\S^1}\C \rightarrow {\T M = \Ph{\so_2}{M}\times_{\S^1}\C} $. Diese Abbildung ist wohldefiniert, da die Gruppenwirkung der $ \S^1 $ mit der
+	    der Abbildung $ z\mapsto z^2 $ vertauscht. Damit erhalten
+	    wir die gewünschte Spinstruktur.
+	    
+	    Sei nun $ (S,\mu) $ gegeben. \todo{andere richtung, entweder mu abbildung nutzen um Pspin zu definieren, oder aus dem ass bündel die spinstr zurückgewinnen}
+	    
+		
+	\end{proof}
+\end{Satz}
 
 
 
