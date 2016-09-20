@@ -1,7 +1,13 @@
+\KOMAoptions{parskip=half}
+
 \usepackage[T1]{fontenc}                            
 % encodings                                        
-\usepackage[utf8]{inputenc}                         
-\usepackage[shorthands=off]{babel}                  
+\usepackage[utf8]{inputenc} 
+%\usepackage{fontspec}
+%%\setmainfont{Latin Modern Roman}
+%\setmainfont{Charis SIL}   
+%\setmainfont{CharisSIL}                     
+\usepackage{babel}                  
 \usepackage{lmodern}                                
 \usepackage{microtype}                              
 \usepackage{scrlayer-scrpage}                       
@@ -39,7 +45,7 @@
 %bibliography                 
 %\usepackage[backend=biber,style=numeric-comp]{biblatex}
 %\bibliography{literatur.bib}
-\usepackage[backend=biber, style=numeric-comp, sorting=nty]{biblatex}
+\usepackage[backend=biber, style=numeric-comp,sorting=nty]{biblatex}
 \bibliography{literatur}
 
 % for fancy colors
@@ -52,6 +58,9 @@
 %zum spielen
 \usepackage{verbatim}
 
+\usepackage[colorlinks=true, linkcolor=blue]{hyperref}
+
+
 %commutative diagramms
 \usepackage{tikz}
 \usepackage{tikz-cd}
@@ -62,7 +71,7 @@
 
 %fancyheader
 %\usepackage{fancyhdr, blindtext}
-
+\usepackage{blindtext}
 %\renewenvironment{proof}{{\bfseries Proof}}{*something*}
 % \newenvironment{myproof}[1][\proofname]{%
 %   \proof[\ttfamily \scshape \large #1 (yes, ``#1'')]%
@@ -91,7 +100,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Definitions and macros
 
-\newcommand{\C}{\mathds{C}}                         
+%\renewcommand{\C}{\mathds{C}}                         
 \newcommand{\R}{\mathds{R}}                         
 \newcommand{\N}{\mathds{N}}                         
 \newcommand{\Z}{\mathds{Z}}                         
@@ -313,7 +322,10 @@
 %TODO: schrift soll geändert werden,
 %\renewenvironment*{proof}{\bfseries}{}
 
-%stuff used only a few times                        
+%stuff used only a few times        
+\DeclareMathOperator{\dist}{dist}                
+\DeclareMathOperator{\Span}{span}
+%\renewcommand{\span}{\operatorname{span}}                
 \DeclareMathOperator{\D}{D}
 \DeclareMathOperator{\CC}{C}
 \DeclareMathOperator{\pow}{P} 
@@ -327,7 +339,8 @@
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\Int}{Int}
 \DeclareMathOperator{\End}{End}
-\DeclareMathOperator{\B}{B}
+%\DeclareMathOperator{\B}{B}
+%\renewcommand*{\B}{\operatorname{B}}
 \DeclareMathOperator{\Bn}{\overline{\B_{n}(0)}}
 %\DeclareMathOperator{\Sp}{S} 
 %better
@@ -342,7 +355,8 @@
 \DeclareMathOperator{\su}{\mathsf{SU}}
 \DeclareMathOperator{\spin}{\mathsf{Spin}}
 \DeclareMathOperator{\map}{Abb}
-\DeclareMathOperator{\T}{T}
+%\DeclareMathOperator{\T}{T}
+%\renewcommand*{\T}{\operatorname{T}}
 \DeclareMathOperator{\Ad}{Ad}
 \DeclareMathOperator{\Adt}{\widetilde{\operatorname{Ad}}} % Ad twisted
 \DeclareMathOperator{\id}{id}

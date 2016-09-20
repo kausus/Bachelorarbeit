@@ -18,33 +18,7 @@ einschränken.  Wir nennen zwei Immersionen $ \abb{f,g}{M}{N} $
 \textit{regulär homotop} falls sie sich in $ \Imm{M}{N} $ durch einen
 glatten Weg verbinden lassen.
 
- Das folgende Theorem liefert uns eine erste Vereinfachung des Raumes. \todo{Quelle}
-%satz von smale hirsch als black box, aus intro to the h-principle
-%finde gute referenz für dieses Theorem
-\begin{Thm}[Smale-Hirsch-Theorem]
-	Seien $M^m,N^n$ \mfgen, $m<n$ und M sei geschlossen. Dann ist die Abbildung
-	$\abb{\theta}{\Imm{M}{N}}{\Immf{M}{N}}, f \mapsto (f,\mathrm{d} f)$ eine Homotopieäquivalenz.
-\begin{proof}
-	\todo{vorschlag: soll hier der beweis für M=M, N=R3}
-\end{proof}
-
-\end{Thm}
-
-\begin{Bsp}
-	Die Forderung $ \dim(M)<\dim(N) $ ist essentiell. Betrachte 
-	den Fall $ M=N=\S^1 $ und die Abbildungen aus \cref{immBsp}:
-	Dann induziert die Abbildung 
-	\DefMap{\Imm{\S^1}{\S^1}}{\Immf{\S^1}{\S^1}}{f}{(f,\d f)}
-	keine Homotopieäquivalenz, denn die Abbildung kann
-	nicht alle Zusammenhangskomponenten von $ \Immf{\S^1}{\S^1} $
-	treffen. Betrachte hierzu die konstante Abbildung
-	\DefMap{f : \S^1}{\S^1}{z}{1} wobei wir $ \S^1\subset\C $ 
-	verwenden, und den Diffeomorphismus $ \abb{\beta}{\S^1}{\R / \Z} $
-	der durch die Winkelfunktion gegeben ist. Dann ist das Paar $ (f,\d \beta) $ eine formale Immersion, kann aber nicht regulär
-	homotop zu einer Immersion sein, da Immersionen immer einen 
-	Abbildungsgrad ungleich $ 0 $ haben, der von $ (f,\d \beta) $ aber
-	verschwindet.
-\end{Bsp}
+ Das Smale-Hirsch Theorem \cref{smalehirsch} liefert uns eine erste Vereinfachung des Raumes. 
 
 Im Weiteren betrachten wir den Spezialfall $ M=M^2 $ als geschlossene $ 2 $-dimensionale riemannsche Mannigfaltigkeit und
 $ N=\R^3 $.
@@ -164,8 +138,8 @@ auf Flächen.
 	\begin{proof}
 		Wir haben schon in \cref{SpinstrSphäre} gezeigt das es 
 		auf der $ \S^2 $ ein eindeutige Spinstruktur gibt. Wir
-		wissen nun das sich alle Flächen $ \S^2 $ mit Henkel 
-		darstellen lassen. Um nun die Spinstruktur auf der $ \S^2 $
+		wissen nun das sich alle Flächen als $ \S^2 $ mit Henkel 
+		darstellen lassen \todo{bild}. Um nun die Spinstruktur auf der $ \S^2 $
 		auf die Flächen mit höheren Geschlecht zu erweitern müssen
 		wir zeigen das ausgehend von der $ \S^2 $ und zwei Punkten
 		$ p,q \in\S^2 $ mit disjunkten Bällen $ B_p,B_q \subset\S^2$,
@@ -331,7 +305,7 @@ der letzte Schritt. Wir können nun folgenden Satz zeigen.
 			\set{ \abb{H}{\S M}{\so_3}}{H\text{ ist }\S^1 \text{-invariant}}/\sim  \arrow[rr,"\psi"] && \sset{\text{Spinstrukturen auf }M}.\\
 		\end{tikzcd}
 	\end{center}
-	Wobei $ \sim $ meint, das bis auf Homotopie gilt.
+	Wobei $ \sim $ hier bis auf Homotopie meint.
 	\begin{proof}
           Im ersten Schritt des Beweises wählen wir eine
           Triangulierung $\Sigma \coloneqq \sset{ \Delta_i^j}$ der
@@ -351,16 +325,39 @@ der letzte Schritt. Wir können nun folgenden Satz zeigen.
 		
           \textbf{Konstruktion der Abbildung $\psi$}
 		
-          Sei nun eine $\S^1$-invarianten Abbildung
+          Sei nun eine $\S^1$-invariante Abbildung
           $\abb{H}{\S M}{\so_3}$ gegeben. Die Spinstruktur zu $ H $
           ist gegeben durch den Pullback des Diagramms $  $
               \begin{center}
               \begin{tikzcd}
-                \Ph{\spin_2}{M} \arrow[r] \arrow[d] \arrow[dr, phantom, "\ulcorner", very near start] & \spin_3 \arrow[d,"2:1"] \\
+                \Ph{\spin_2}{M} \arrow[r,"\phi"] \arrow[d] \arrow[dr, phantom, "\ulcorner", very near start] & \spin_3 \arrow[d,"2:1"] \\
                 \Ph{\so_2}{M} = \S M \arrow[r,"H"] & \so_3
               \end{tikzcd}
             \end{center}
+          Die Mannigfaltigkeit $ \Ph{\spin_2}{M} $ ist eine Spinstruktur
+          auf $ M $. Diese ist eine zweifache Überlagerung des orientieren
+          Rahmenbündels und hat eine $ \spin_2 $-Gruppenwirkung durch
+          eine Wahl $ \spin_2\subset\spin_3 $ und den Morphismus $ \phi $.
           
+          Wir müssen nun noch die Bijektivität bis auf Homotopie zeigen,
+          d.h. wir bezüglich der gewählten Triangulierung lassen sich
+          Injektivität und Surjektivität zeigen.
+          
+          \begin{description}
+	          	\item[Injektivität:] Seien $ \abb{H,H^{'}}{\S M}{\so_3} $
+	          	zwei $ \S^1 $-invariante Abbildungen mit $ \psi(H)=\psi(H^{'}) $. Wir wollen zeigen das die beiden
+	          	Abbildungen homotop zueinander sind. Hierzu nutzen wir
+	          	die Skelettstruktur der Mannigfaltigkeit aus.
+		          	\begin{enumerate}[\hspace{1cm}0-{Skelett}:]
+		          		\item Für die endlich vielen $ 0 $-Skelette, also
+		          		Punkte, auf der Mannigfaltigkeit lässt sich durch
+		          		eine beliebige Verschiebung die Gleichheit von
+		          		den Werten der beiden Abbildungen $ H,H^{'} $
+		          		erreichen.
+		          		\item Seien die Abbildungen auf dem $ 0 $-Skelett
+		          		gleich, dann wollen wir zunächst die
+		          	\end{enumerate}
+          \end{description}
           
 %          \begin{description}
 %          \item[$0$-Skelett:] In diesem Fall ist die kanonische Wahl
