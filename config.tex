@@ -1,12 +1,11 @@
 \KOMAoptions{parskip=half}
 
-\usepackage[T1]{fontenc}                            
-% encodings                                        
-\usepackage[utf8]{inputenc} 
-%\usepackage{fontspec}
+%\usepackage[T1]{fontenc}                            
+%% encodings                                        
+%\usepackage[utf8]{inputenc} 
+\usepackage{fontspec}
 %%\setmainfont{Latin Modern Roman}
-%\setmainfont{Charis SIL}   
-%\setmainfont{CharisSIL}                     
+
 \usepackage{babel}                  
 \usepackage{lmodern}                                
 \usepackage{microtype}                              
@@ -19,6 +18,11 @@
 %\usepackage{lscape}
 % for \FloatBarrier
 \usepackage{placeins}   
+\usepackage{blindtext}
+
+%für tabular
+\usepackage{tabularx}
+
 %	\usepackage{fancyhdr}				%includes a fancy header on each page
 
 %\verb|\rmfamily text|
@@ -53,8 +57,8 @@
 
 
 % %maths                                            
-\usepackage{amsmath, amsthm, amssymb, bm, bbm, mathtools, dsfont, mathrsfs}
-
+\usepackage{amsmath, amsthm, amssymb,dsfont,  mathtools , mathrsfs}
+%\usepackage{bm, bbm}
 %zum spielen
 \usepackage{verbatim}
 
@@ -65,13 +69,10 @@
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usetikzlibrary{babel}
-% links, TODO
-%\usepackage[pdftitle={Seminar: "K1 von Ringen"},pdfauthor={Julian Seipel}, pdfsubject={Seminararbeit}]{hyperref}
-%TODO: abschluss-projekt von tex-kurs heranziehen
 
 %fancyheader
 %\usepackage{fancyhdr, blindtext}
-\usepackage{blindtext}
+
 %\renewenvironment{proof}{{\bfseries Proof}}{*something*}
 % \newenvironment{myproof}[1][\proofname]{%
 %   \proof[\ttfamily \scshape \large #1 (yes, ``#1'')]%
@@ -100,7 +101,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Definitions and macros
 
-%\renewcommand{\C}{\mathds{C}}                         
+\renewcommand{\c}{\mathds{C}}                         
 \newcommand{\R}{\mathds{R}}                         
 \newcommand{\N}{\mathds{N}}                         
 \newcommand{\Z}{\mathds{Z}}                         
@@ -121,6 +122,14 @@
 % \Big| setzt
 \newcommand{\set}[2]{\bigl\{ #1 \;  | \; #2 \bigr\}}
 \newcommand{\sset}[1]{\bigl\{ #1 \bigr\}}
+
+%\ExplSyntaxOn
+%%\newcommand{\newsset}[2][]{\left\{ #1 \middle| #2 \right\}}
+%%do it with latex3 bzw xparse
+%\NewDocumentCommand{\newset}{s m o}{}
+%
+%\ExplSyntaxOff
+
 \renewcommand{\sp}[2]{\sum\limits_{i=#1}^{#2}}
 
 \newcommand{\nn}[1][\,\bullet\,]{\left\| #1 \right\|}	% norm       
@@ -322,7 +331,8 @@
 %TODO: schrift soll geändert werden,
 %\renewenvironment*{proof}{\bfseries}{}
 
-%stuff used only a few times        
+%stuff used only a few times       
+\DeclareMathOperator{\Hom}{Hom} 
 \DeclareMathOperator{\dist}{dist}                
 \DeclareMathOperator{\Span}{span}
 %\renewcommand{\span}{\operatorname{span}}                
@@ -355,7 +365,7 @@
 \DeclareMathOperator{\su}{\mathsf{SU}}
 \DeclareMathOperator{\spin}{\mathsf{Spin}}
 \DeclareMathOperator{\map}{Abb}
-%\DeclareMathOperator{\T}{T}
+\DeclareMathOperator{\TT}{T}
 %\renewcommand*{\T}{\operatorname{T}}
 \DeclareMathOperator{\Ad}{Ad}
 \DeclareMathOperator{\Adt}{\widetilde{\operatorname{Ad}}} % Ad twisted
@@ -406,21 +416,21 @@
 %\newcommand{\so}[1]{\soOp_{ #1 } }
 \newcommand{\scalar}[2]{\langle #1 {,} #2 \rangle}
 \newcommand{\scdots}{\scalar{\cdot}{\cdot}}%{$\langle\cdot{,}\cdot\rangle$}
-\newcommand{\CP}{\C P}
+\newcommand{\CP}{\c P}
 \newcommand{\RP}{\R P}
 \newcommand{\abb}[3]{#1 \colon #2 \rightarrow #3} % f\colon D \to Z$
 \newcommand{\Imm}[2]{\imm(#1,#2)}
 \newcommand{\Immf}[2]{\imm^{form}(#1,#2)}
 \newcommand{\Immfi}[2]{\imm^{form}_{iso}(#1,#2)}
 %\newcommand{\Gl}[1]{\GL(#1)}
-\newcommand{\tang}[2]{\T_{#1}#2}
+\newcommand{\tang}[2]{\TT_{#1}#2}
 \newcommand{\Cinfty}[2]{\CC^\infty( #1 , #2 )}
 
 \newcommand*{\pd}[2][]{\frac{\partial #1}{\partial #2}}
 
 	%cat and fun
 	\newcommand{\cat}[1]{\mathbf{#1}}
-	\newcommand{\fun}[1]{\bm{\mathrm{#1}}}
+%	\newcommand{\fun}[1]{\bm{\mathrm{#1}}}
 %	\newcommand{\vecA}{\vec{A}}
 	
 %	because of pairing
@@ -436,9 +446,6 @@
 		\end{array} 
 		\end{align*}
 	}
-
-
-
 
 %\wr liefert für diagramme eine tilde<
 

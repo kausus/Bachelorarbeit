@@ -8,9 +8,10 @@
 % und das dies der C^1 topologie entspricht
 
 \section{Immersionen}
-
+\label{sec:Immersionen}
 Neben der Spinstruktur ist es noch notwendig den Begriff der Immersion 
-einzuführen.
+einzuführen. Dieser Begriff tritt auf natürliche Weise auf wenn man sich
+mit Einbettungen von abstrakten Mannigfaltigkeiten in den $ \R^n $ beschäftigt.
 
 \begin{Def}[Immersionen,formale Immersionen]
 	\label{formIso}
@@ -75,14 +76,35 @@ Für das nächste Beipiel ist es folgender Fakt wichtig. Der Tangentialraum des 
 \end{Bsp}
 
 Für das nächste Theorem benötigen wir eine simple Aussage im $ \R^3 $.
-\begin{Lem}
+\begin{Lem}\label{lem:hilfSmaleHirsch}
 	Seien $ z_1,z_2\in\R^3 $ linear unabhängig. Dann gilt für alle
-	$ u_1,u_2\in\R^3 $ mit $ \norm{u_1} < \frac{1}{2}\dist(z_1,\Span(z_2)) $
-	und $ \norm{u_2}<\frac{1}{2}\dist(z_2,\Span(z_1) $ das $ z_1+u_1,z_2+u_2 $
+	$ u_1,u_2\in\R^3 $ mit $ \norm{u_1} < \frac{1}{2}\dist(z_1,\R(z_2)) $
+	und $ \norm{u_2}<\frac{1}{2}\dist(z_2,\R(z_1)) $ das $ z_1+u_1,z_2+u_2 $
 	linear unabhängig sind.
 	
-	Für $ v_1,v_2,v_3\in\R^3 $ mit $ v_1,v_2 $ linear unabhängig und
-	$ v_3 $ senkrecht zu $ v_1,v_2 $ und mit $ \norm{v_3}=\norm{v_2} $\todo{vervollständigen und beweisen}
+	Für $ v_1,v_2,v_3\in\R^3 $ mit $ v_1,v_2 $ linear unabhängig,
+	$ v_3 \coloneqq \norm{v_1} \frac{v_1\times v_2}{\norm{v_1\times v_2}}$ 
+	und $ \abb{W}{\R}{\R^2}, s\mapsto (\sin(2s),\sin(s)) $ gilt das ein $ k\in\R $
+	mit $ \norm{e_1 + t \frac{\d W(s)}{\d s}} \geq k > 0 $ für alle $ t,s\in\R $
+	existiert.
+	
+	Für die obigen $ v_1,v_2,v_3,k $ existiert ein $ \epsilon >0 $, sodass
+	für alle $ v\in\Span(v_1,v_3) $ mit $ \norm{v} \geq k\norm{v_1} $ und $ \norm{u_1},\norm{u_2} <\epsilon $ gilt das $ v+z_1, v_2+u_2 $ linear
+	unabhängig sind.
+	\begin{proof}
+		\todo{Bild einfügen}
+		Die erste Aussage ist zu $ B_{1/2 \dist(z_1,\R z_2)}(z_1) \cap  B_{1/2\dist(z_2,\R z_1)}(z_2) = \emptyset $ äquivalent. Und mit
+		\begin{align*}
+			\norm{u_1+u_2} \leq 1/2 \dist(z_1,\R z_2) + 1/2 \dist(z_2,\R z_1)
+			&\leq 1/2 \norm{z_1} + 1/2 \norm{z_2} \\
+			&\leq \norm{z_1 - z_2} \leq \norm{z_1} + \norm{z_2}
+		\end{align*}
+		folgt die erste Behauptung.
+		
+		Die zweite Aussage ist klar, da die stetige Funktion $ (t,s) \mapsto \norm{e_1 + t \frac{\d W(s)}{\d s}} $ nach unten beschränkt ist und
+		nicht verschwindet.
+		\todo{letzte Aussage}
+	\end{proof}
 \end{Lem}
 
 Wir wollen nun einen wichtigen Zusammenhang zeigen. 
@@ -94,7 +116,61 @@ Wir wollen nun einen wichtigen Zusammenhang zeigen.
 	\begin{proof}
 		Wir wollen dieses Theorem lediglich für den Fall $ M=M^2,N=\R^3 $
 		zeigen, für den allgemeinen Fall sei auf \cite{SH} verwiesen.
-		
+
+		Wir werden in mehreren Schritten vorgehen. Zunächst wird die Aussage
+		in einer Karte $ (U\subset M,(x,y)) $ und dann für einen 
+		endlichen Atlas $ \mathcal{A} $ gezeigt.
+		\begin{description}
+			\item[In einer Karte $ U $:] Sei $ (\hat{b},b) \in \Immf{M}{\R^3}$ gegeben.
+			Wir werden eine Homotopie 
+			\begin{gather*}
+			 \abb{\psi_t}{\Immf{M}{\R^3}}{\Immf{M}{\R^3}} 
+			\end{gather*}
+			  angeben mit $ \psi_0 = id $ und $ \psi_1(\theta(\Imm{M}{\R^3})) \subset \theta(\Imm{M}{\R^3}) $. Der Weg $ b_t \coloneqq \psi_t((\hat{b},b)) $ wird durch mehrere Teilwege zusammengesetzt.
+			  
+			  Wir benötigen für die Teilwege eine Funktion $ \abb{\phi_t}{U}{\R^3} $,$ t\in[0,1] $ mit den folgenden Eigenschaften:
+			  \begin{enumerate}[\textbullet]
+			  	\item $ \phi_0=0 $
+			  	\item $b + \d \phi_t$ hat vollen Rang für alle $ t $.
+			  	\item $ (1-t)b+t\d \hat{b} + \d \phi_1 $ hat vollen Rang für alle $ t\in[0,1] $.
+			  \end{enumerate}
+			  Angenommen wir hätten ein solche $ \phi_t $, dann lassen sich
+			  die Teilwege auf die folgende Art und Weise angeben.
+			  \begin{align*}
+			  	(\hat{b} + \phi_t,b+\d \phi_t) & (\hat{b}+\phi_1,(1-t)b+t\d \hat{b} + \d \phi_1)
+			  \end{align*}
+			  Wobei die beiden Wege hintereinander geschaltet werden.
+			  Aufgrund der Eigenschaften von dem gewählten $ \phi_t $ wäre dies
+			  ein Weg in $ \Immf{M}{\R^3} $ der bei $ t=1 $ in $ \theta(\Imm{M}{\R^3}) $ bleibt. Die Glattheit der Wege ist klar
+			  bis auf den Übergang bei der Verknüpfung der Teilwege. Doch lässt
+			  sich dies abstrakt dahingehend beheben, das sich der Weg ausglätten
+			  lässt, also beliebig genau durch einen glatten Weg approximieren 
+			  lässt, wobei die Genauigkeit so gewählt wird, sodass der Weg
+			  weiterhin in $ \Imm{M}{\R^3} $ liegt.
+			  
+			  Somit ist die Behauptung gezeigt falls man ein solches $ \phi_t $
+			  findet. 
+			  
+			  \item[Konstruktion von $ \psi_t $:] Sei die Funktion $ W=(W_1,W_2) $ wie in \cref{lem:hilfSmaleHirsch} gegeben. Dann 
+			  betrachten wir zu $ \abb{b}{U}{\R^{3\times 2}} , p\mapsto (v_1,v_2) \coloneqq b(p) $ wie in \cref{lem:hilfSmaleHirsch}
+			  den dazugehörigen Vektor $ v_3 $ bilden daraus die Funktion
+			  $ \abb{A}{U}{\GL_3^+} $. Mit $ \bar{W}\coloneqq (W_1,0,W_2)^t$ 
+			  definieren wir die Funktion $ \varphi(x,y)\coloneqq aA(x,y)\bar{W}(cx) $ mit zwei fest gewählten Konstanten $ a,c\in\R $. Die Konstanten werden nun so gewählt das
+			  $ b + t\d \varphi $ vollen Rang als Abbildung hat. Dies 
+			  erreichen wir durch \cref{lem:hilfSmaleHirsch}, indem 
+			  wir ein $ \epsilon > 0 $ wählen sodass $ \norm{a \frac{\partial A}{\partial x} \bar{W}(cx)},\norm{a \frac{\partial A}{\partial y}\bar{W}(cx)} < \epsilon $ gilt. Dann wissen wir duch \cref{lem:hilfSmaleHirsch} das in
+			  \begin{align*}
+			  	v_1 + t \frac{\partial \varphi}{\partial x} &= v_1 + ta\frac{\partial A}{\partial x} \bar{W}(cx) + tac\frac{\d W}{\d s}(cx) \\
+			  	v_2 + t \frac{\partial \varphi}{\partial y} &= v_2 + ta \frac{\partial A}{\partial y} \bar{W}(cx)
+			  \end{align*}
+			  die Ausdrücke auf der rechten Seite die lineare Unabhängigkeit
+			  nicht stören.
+			  Diese Konstruktion wiederholt sich nun mit folgenden Änderungen.
+			  Wir setzen $ \bar{W}=(0,W_1,W_2)^t $ und $ \norm{v_3}=\norm{v_2} $ und setzen schließlich $ \psi(x,y) = a^{'}A(x,y)\bar{W}(c^{'}y) $. 
+			  Schlussendlich setzen wir als $ \phi_t $ die Hintereinanderausführung von $ t\varphi $ und $ \varphi + t\psi $. Damit ist die Abbildung $ \phi_t $ konstruiert.
+			  
+			\item[Im Atlas $ \mathcal{A} $:] \todo{für enen eindlichen Atlas zeigen}
+			\end{description}
 	\end{proof}
 	
 \end{Thm}
@@ -107,7 +183,7 @@ Wir wollen nun einen wichtigen Zusammenhang zeigen.
 	keine Homotopieäquivalenz, denn die Abbildung kann
 	nicht alle Zusammenhangskomponenten von $ \Immf{\S^1}{\S^1} $
 	treffen. Betrachte hierzu die konstante Abbildung
-	\DefMap{f : \S^1}{\S^1}{z}{1} wobei wir $ \S^1\subset\C $ 
+	\DefMap{f : \S^1}{\S^1}{z}{1} wobei wir $ \S^1\subset\c$ 
 	verwenden, und den Diffeomorphismus $ \abb{\beta}{\S^1}{\R / \Z} $
 	der durch die Winkelfunktion gegeben ist. Dann ist das Paar $ (f,\d \beta) $ eine formale Immersion, kann aber nicht regulär
 	homotop zu einer Immersion sein, da Immersionen immer einen 

@@ -4,6 +4,7 @@
 
 %erstes Kapitel
 \section{Hauptfaserbündel und Spinstruktur}
+\label{sec:Hauptfaserbündel und Spinstruktur}
 
 In diesem ersten Abschnitt soll die grundlegenden Strukturen
 eingeführt werden die für diese Arbeit notwendig sind. Der Begriff des
@@ -26,11 +27,10 @@ Die verwendete Quelle ist \cite{baum09}.
             Gruppenwirkung stabil, also werden Faserelemente auf
             Faserelemente abgebildet}
         \item Es gibt einen Bündelatlas $\sset{(U_i,\phi_i)}$ aus
-          $G$-äquivarianten Bündelkarten, d.h.  Es gilt das
-          $\sset{(U_i)_{i \in \Lambda}}$ eine offene Überdeckung von M
-          ist. Die Abbildung
-          $ \abb{\phi_i}{\pi^{-1}(U_i)}{U_i\times G} $ ist ein
-          Diffeomorphismus für alle $i \in \Lambda $, für den
+          $G$-äquivarianten Bündelkarten, d.h.  Es gibt
+           eine offene Überdeckung $\sset{(U_i)_{i \in \Lambda}}$ von $ M $ und  Abbildungen
+          $ \abb{\phi_i}{\pi^{-1}(U_i)}{U_i\times G} $ die
+          Diffeomorphismen sind für alle $i \in \Lambda $, für die
           $ \phi_i(pg) = \phi(p) g $ und
           $ \pi_1 \circ \phi_i = \pi^P $ für alle
           $ g \in G, p \in \pi^{-1}(U_i) $ gilt. Wobei
@@ -66,7 +66,7 @@ Im folgenden werden die wichtigsten Beispiele angegeben.
       $G$-äquivaranten Bündelkarten. Sei hierzu
       $\mathcal{A}=\sset{(U_i,\phi_i)_{i \in \Lambda}}$ ein Atlas von
       $M$ gegeben, dann ist
-      $ \sset{\abb{\id\times\id}{U_i \times G}{U_i\times G}}{i \in
+      $ \sset{\abb{\id\times\id}{U_i \times G}{U_i\times G}}_{i \in
         \Lambda} $
       ein Bündelatlas von $G$-äquivarianten Bündelkarten.  Damit ist
       dies ein Hauptfaserbündel mit Strukturgruppe $G$.
@@ -109,7 +109,7 @@ Im folgenden werden die wichtigsten Beispiele angegeben.
                   $ \sset{(U_i,\phi_i)_{i\in \Lambda}} $ von $ \T M $
                   gegeben. Betrachte nun die Abbildungen
                   \DefMap{\pi^{-1}(U_i)}{U_i\times
-                    \GL_n}{((v_i,p))}{(p,\phi_i(v_i))}. Diese liefern
+                    \GL_n}{((v_i,p))}{(p,\phi_i(v_i)).} Diese liefern
                   einen $ \GL_n $-äquivarianten Bündelatlas für das
                   Rahmenbündel.
 			
@@ -167,7 +167,7 @@ verwendete Quelle ist \cite{BHMMM15}.  \todo{sollen äquivalente
 	 Falls eine \RMF eine Spinstruktur besitzt sagen wir die \mfg
          ist \textit{spin}.
      Zwei Spinstrukturen $ (\Ph{\spin_n}{M},\eta),(P_{\spin_n}^{'}M,\eta^{'}) $ über $ M $ heißen isomorph, falls einen $ \spin_n $-Hauptfaserbündelisomorphismus $ \abb{\beta}{\Ph{\spin_n}{M}}{P_{\spin_n}^{'}M} $ gibt, sodass die
-     Spinstrukturen miteinander verträglich sind, also $ \eta=\eta^{'} \circ \beta $ gilt.
+     Spinstrukturen miteinander verträglich sind, also $ \eta=\eta^{'} \circ \beta $ gilt\footnote{Es existieren Hauptfaserbündel die als lokal-trivale Faserungen isomorph sind, aber nicht als Hauptfaserbündel}.
 \end{Def}
 
 Die Frage nach der Existenz und Eindeutigkeit von Spinstrukturen 
@@ -176,23 +176,90 @@ Satz beantwortet.
 
 \begin{Satz}\label{anzahlspin}
 	Sei $ (M,g) $ eine orientierte, riemannsche Mannigfaltigkeit dann
-	gilt das $ H^1(M,\Z_2) $ isomorph ist zu der Menge aller $ \Z_2 $
-	Hauptfaserbündel über $ M $. Zudem operiert $ H^1(M,\Z_2) $ frei
+	gilt das $ H^1(M,\Z_2) $ isomorph ist zu der Menge aller $ \Z_2 $-Hauptfaserbündel über $ M $. Zudem operiert $ H^1(M,\Z_2) $ frei
 	und transitiv auf der Menge aller Spinstrukturen. 
 	\begin{proof}
-		$ \tilde{M} \times_{\pi_1(M)} \Z_2 $
-		oder
-		$ \tilde{M} \times \Z_2 / \pi_1(M)$
-		foobar \todo{beweis}
+%		$ \tilde{M} \times_{\pi_1(M)} \Z_2 $
+%		oder
+%		$ \tilde{M} \times \Z_2 / \pi_1(M)$
+		Wir können $ H^1(M,\Z_2)\simeq \Hom(\pi_1(M),\Z_2) $ aufgrund des universellen
+		Koeffiziententheorems identifizieren. Wir nutzen nun das $ \pi_1(M) $
+		auf der universellen Überlagerung von $ M $ operiert.
+		
+		Sei nun $ \chi\in\Hom(\pi(M),\Z_2) $ gegeben und wir wollen
+		ein $ \Z_2 $-Hauptfaserbündel konstruieren. Sei $ \abb{\pi}{\tilde{M}}{M} $ die universelle Überlagerung
+		und $ \tilde{M}\times_{\pi_1(M)}\Z_2 $ ist gegeben als
+		Quotient bezüglich der Äquivalenzrelation : $ (p,a) \sim (p\gamma,\chi(\gamma)^{-1}a) $ für alle $ p\in\tilde{M},a\in\Z_2,\gamma\in\pi_1(M) $.
+		Nun ist ein $ \Z_2 $-Hauptfaserbündel gegeben durch
+		 \DefMap{\pi_\chi \colon \tilde{M} \times_{\pi_1(M)} \Z_2}{M}{\left[p,a\right]}{\pi(p)}
+		Die Wohldefiniertheit der Projektion folgt aus der Faserinvarianz
+		von $ \pi $.
+		
+		Seien nun zwei $ \chi_1,\chi_2\in H^1(M,\Z_2) $ gegeben mit $ \pi_{\chi_1}=\pi_{\chi_2} $. Dann folgt unmittelbar mit $ [p\gamma,\chi_1(\gamma)a] = [p,a] = [p\gamma,\chi_2(\gamma)a] $
+		die Gleichheit $ \chi_1=\chi_2 $.
+		
+		Sei nun ein $ \Z_2 $-Hauptfaserbündel $ \Ph{\Z_2}{M} $ über $ M $
+		gegeben, dann ist ein Gruppenhomomorphismus $ \chi\in\Hom(\pi_1(M),\Z_2) $ mit $ \tilde{M}\times_{\pi_1(M)} \Z_2 = \Ph{\Z_2}{M}$ anzugeben.\todo{surjektivität}
+		
+		Wir wollen nun die Gruppenwirkung von $ H^1(M,\Z_2)\simeq \Ph{\Z_2}{M} $ auf der Menge aller Spinstrukturen bis auf Isomorphie definieren,
+		diese ist gegeben durch
+		\DefMap{H^1(M,\Z_2) \times \sset{\text{Spinstrukturen}}/\sim}{\sset{\text{Spinstrukturen}}/\sim}{(\Ph{\spin_2}{M},\Ph{\Z_2}{M})}{\Ph{\spin_2}{M}\times_{\Z_2} \Ph{\Z_2}{M}. }
+		Wobei wir $ \Z_2=\spin_1\subset\spin_2 $ und damit eine $ \spin_2 $-
+		Gruppenwirkung auf einem $ \spin_2 $-Hauptfaserbündel genutzt haben.
+		
+		Wir zeigen nun das dies eine freie, transitive Gruppenwirkung ist. Sei hierzu $ \abb{(\pi\circ p_1)}{\tilde{M}\times \Z_2}{M} $ das triviale $ \Z_2 $-Hauptfaserbündel. Mit der Definition gilt nun
+		$ \Ph{\spin_2}{M} \times_{\Z_2} (\tilde{M} \times \Z_2) = \Ph{\spin_2}{M} $.\todo{genauer}
+		
+		Für zwei $ \Z_2 $-Hauptfaserbündel $ \Ph{\Z_2}{M},P^{'}_{\Z_2}M $
+		gilt nun $ ( \Ph{\spin_2}{M} \times_{\Z_2} P^{'}_{\Z_2}M ) \times_{\Z_2} \Ph{\Z_2}{M} = \Ph{\spin_2}{M} \times_{\Z_2} (P^{'}_{\Z_2}M \times_{\Z_2} \Ph{\Z_2}{M}) $.
+		
+		\todo{frei und transitiv}
+		
 	\end{proof}
 \end{Satz}
 
 Mithilfe dieses Satzes folgt unmittelbar das
 \begin{Kor}
-	Für eine $ 1 $-zusammenhängende, orientierte, riemannsche Mannigfaltigkeit existiert genau eine Spinstruktur bis auf Isomorphie. Für eine Fläche mit Geschlecht $ \gamma $ existieren
-	genau $ 2^{2\gamma} $ nicht isomorphe Spinstrukturen.
+	Für eine $ 1 $-zusammenhängende\footnote{Eine Mannigfaltigkeit $ M $ ist $ n $-zusammenhängend falls $ \pi_k(M)=0 $ für $ 0\leq k\leq n $.}, spin\footnote{Man muss die Existenz von Spinstrukturen hier fordern} Mannigfaltigkeit existiert genau eine Spinstruktur bis auf Isomorphie. Für eine Fläche mit Geschlecht $ \gamma $ existieren
+	genau $ 2^{2\gamma} $ nicht isomorphe Spinstrukturen. Allgemein
+	gilt für eine spin Mannigfaltigkeit das diese $ \# H^1(M,\Z_2) $-Spinstrukturen bis auf Isomorphie hat.
 	\begin{proof}
-		foobar\todo{beweis}
+		Wir zeigen die letzte Aussage, da die vorherigen Spezialfälle
+		davon sind. Wir müssen lediglich eine simple Tatsache über
+		freie, transitive Gruppenwirkungen auf einer nichtleeren Menge wissen. Sei $ G\times M \longrightarrow M $ die Gruppenwirkung,
+		dann gilt das man zu jedem Element $ m\in M $ sich alle
+		anderen Elemente von $ M $ durch die Gruppenwirkung erreichen lassen. Somit gilt $ M = \set{gm}{g\in G} $. Die Freiheit
+		der Gruppenwirkung liefert uns nun aus $ gm=hm $ schon die 
+		Gleichheit $ g=h $. Somit sind alle Element in der Darstellung
+		$ \set{gm}{g\in G} $ verschieden und damit gilt $ \# G = \# M $,
+		falls die Menge $ M $ nichtleer ist.
+		
+		Damit müssen wir lediglich die Mächtigkeit der Menge $ H^1(M,\Z_2) $
+		berechnen um die Anzahl aller nicht isomorphen Spinstrukturen zu kennen. Diese ist stets endlich, da endliche dimensionale Mannigfaltigkeit stets eine endliche $ CW $-Darstellung besitzen.
+		
+		Es gilt nun für eine $ 1 $-zusammenhängende spin Mannigfaltigkeit.
+		\begin{gather*}
+			H^1(M,\Z_2)\simeq \Hom(\underbrace{\pi_1(M)}_{=0},\Z_2)=0 
+		\end{gather*}
+		Wir werden in \cref{existenzspinflächen} beweisen das Flächen
+		stets spin sind. Wir müssen genauso wie vorher nur $ H^1(M,\Z_2) $
+		berechnen. Wir werden hierzu eine CW-Zerlegung einer Flächen
+		benutzen und mit Sätzen aus der algebraischen Topologie folgt nun
+		das $ H^1(M,\Z) \simeq H_1(M,\Z)\simeq\Z^{2\gamma} $ gilt und damit 
+		$ \# H^1(M,\Z_2) = \# (\Z_2^{2\gamma})  = 2^{2\gamma}$.
+		
+%		Wir müssen lediglich $ H^1(M,\Z_2) $ berechnen und die transitive
+%		Gruppenwirkung benutzen. Da die Mannigfaltigkeit $ 1 $-zusammenhängend ist, gilt mit dem universellen Koeffiziententheorem
+%		$ H^1(M,\Z_2)\simeq \Hom(\underbrace{\pi_1(M)}_{=0},\Z_2)=0 $.
+%		Die Menge aller Spinstrukturen ist nichtleer, da die Mannigfaltigkeit spin ist. Aufgrund der Transitivität der Gruppenwirkung aus \cref{anzahlspin} und der trivialen Gruppe 
+%		folgt nun das es genau eine Spinstruktur bis auf Isomorphie gibt.
+%		
+%		Wir werden in \cref{existenzspinflächen} beweisen das Flächen
+%		stets spin sind. Wir müssen genauso wie vorher nur $ H^1(M,\Z_2) $
+%		berechnen. Wir werden hierzu eine CW-Zerlegung einer Flächen
+%		benutzen und mit Sätzen aus der algebraischen Topologie folgt nun
+%		das $ H^1(M,\Z) \simeq H_1(M,\Z)\simeq\Z^{2\gamma} $ gilt und damit 
+%		$ \# H^1(M,\Z_2) = \#(\Z_2^{2\gamma})  = 2^{2\gamma}$.\ŧodo{genauer?}
 	\end{proof}
 \end{Kor}
 
@@ -254,17 +321,19 @@ Mithilfe dieses Satzes folgt unmittelbar das
     sind die $ n $-Sphären $\S^n$ für $ n \geq 2 $. Diese besitzen  
     aufgrund von \cref{anzahlspin} genau eine Spinstruktur. Um 
     dieses anzugeben betrachten wir zunächst das orientierte Reperebündel $ \so(\S^n) $. Für ein $ p\in\S^n $ ist der Tangentialraum $ \tang{p}{\S^n} $ mit $ \S^n\subset\R^{n+1} $ 
-    gleich zu $ p^\bot\subset\R^{n+1} $. Für ein Element von $ (p,A) \Ph{\so_n}{\S^n} $ gilt nun das $ A \in\so_n$ ist und damit folgt
+    gleich zu $ p^\bot\subset\R^{n+1} $. Für ein Element von $ (p,A)\in \Ph{\so_n}{\S^n} $ gilt nun das $ A \in\so_n$ ist und damit folgt
     nun leicht $ \Ph{\so_n}{\S^n} \simeq \so_{n+1} $. Damit folgt
     aufgrund von $ n\geq 2 $ als einzige doppelte Überlagerung der
     $ \so_{n+1} $ die $ \spin_{n+1} $, da diese Überlagerung universell ist. Somit ist $ (\spin_{n+1},\Ad) $ die eindeutige
     Spinstruktur auf der $ \S^n $.
-  \item Ein wichtiges Beispiel sind die Spinstrukturen auf dem $ 2 $-Tours $ \T^2 \coloneqq \S^1\times\S^1$. Diese lassen sich auf sehr
+  \item Ein wichtiges Beispiel sind die Spinstrukturen auf dem $ 2 $-Tours $ \TT^2 \coloneqq \S^1\times\S^1$. Diese lassen sich auf sehr
   kompakte Art und Weise angeben.
-  Sei hierzu $ \chi $ ein Gruppenhomomorphismus $ \Z^2 \rightarrow \Z_2 $
+  Sei hierzu $ \abb{\chi}{\Z^2}{\Z_2}$\footnote{Mit $ \pi_1(\TT^2)=\Z^2 $ ist dies genau wie in \cref{anzahlspin}} ein Gruppenhomomorphismus gegeben
   und betrachte folgende Gruppenwirkungen, wobei $ \Z_2\simeq\sset{+1,-1}\simeq\spin_1 \subset\spin_2 $ benutzt wird.
   \DefMap{\rho_1 : \Z^2\times\R^2}{\R^2}{((n,m),(x,y))}{(x+n,y+m)}
   \DefMap{\rho_2 : \Z_2\times\spin_2}{\spin_2}{(\alpha,z)}{\alpha z}
+
+
   Dann sind alle Spinstrukturen gegeben durch  
   \begin{gather*}
   	\R^2 \times \spin_2 / (\rho_1(a,b)(x,y),z) \sim ((x,y),\rho(\chi(a,b))z).
@@ -298,8 +367,8 @@ lassen und somit dasgleiche liefern.
 		Mit den Fakt $ \S^1\simeq\so_2\simeq\spin_2 $ und der Abbildung
 		$ \abb{\Ad}{\spin_2}{\so_2},z\mapsto z^2 $ liefert uns dies
 		die induzierte Abbildung $ \Ph{\spin_2}{M}\rightarrow \Ph{\so_2}{M} $. Betrachten wir nun die davon assoziierten
-		Bündel bezüglich der Darstellung $ \abb{\rho}{\S^1}{\End(\C)}, z\mapsto (w \mapsto zw) $, dann erhalten wir die doppelte
-		Überlagerung $ S\coloneqq \Ph{\spin_2}{M}\times_{\S^1}\C \rightarrow {\T M = \Ph{\so_2}{M}\times_{\S^1}\C} $. Diese Abbildung ist wohldefiniert, da die Gruppenwirkung der $ \S^1 $ mit der
+		Bündel bezüglich der Darstellung $ \abb{\rho}{\S^1}{\End(\c)}, z\mapsto (w \mapsto zw) $, dann erhalten wir die doppelte
+		Überlagerung $ S\coloneqq \Ph{\spin_2}{M}\times_{\S^1}\c \rightarrow {\T M = \Ph{\so_2}{M}\times_{\S^1}\c} $. Diese Abbildung ist wohldefiniert, da die Gruppenwirkung der $ \S^1 $ mit der
 	    der Abbildung $ z\mapsto z^2 $ vertauscht. Damit erhalten
 	    wir die gewünschte Spinstruktur.
 	    

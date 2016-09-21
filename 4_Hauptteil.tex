@@ -4,6 +4,7 @@
 
 
 \section{Zusammenhang von Immersionen und Spinstrukturen}
+\label{sec:Zusammenhang von Immersionen und Spinstrukturen}
 
 Im folgenden ist $(M,g)$ eine geschlossene, orientierte Mannigfaltigkeit.
 In der Notation wird die Metrik $g$ unterdrückt.
@@ -18,10 +19,10 @@ einschränken.  Wir nennen zwei Immersionen $ \abb{f,g}{M}{N} $
 \textit{regulär homotop} falls sie sich in $ \Imm{M}{N} $ durch einen
 glatten Weg verbinden lassen.
 
- Das Smale-Hirsch Theorem \cref{smalehirsch} liefert uns eine erste Vereinfachung des Raumes. 
-
 Im Weiteren betrachten wir den Spezialfall $ M=M^2 $ als geschlossene $ 2 $-dimensionale riemannsche Mannigfaltigkeit und
 $ N=\R^3 $.
+
+Das Smale-Hirsch Theorem \cref{smalehirsch} liefert uns eine erste Vereinfachung des Raumes. 
 
 Der Raum von formalen Immersionen lässt sich noch weiter verkleinern
 bzw. vereinfachen, indem wir anstatt von nur formalen Immersionen auch
@@ -52,13 +53,16 @@ folgenden
           Der Ausdruck $ (F_p^\ast F_p)^{-t/2} $ ist wie folgt
           definiert. Sei $ \abb{f}{V}{V} $ eine linearer, injektiver,
           symmetrischer Endomorphismus eines reellen Vektorraums mit
-          Skalarprodukt, dann existieren $ n $ positive, reelle
-          Eigenwerte $ \lambda_i $ für diesen Endomorphismus. Nach
-          Wahl einer Basis existiert eine unitäre Transformation
-          $ U $, sodass $ f = U^\ast \diag(\lambda_i) U $ gilt. Nun
-          definiere
-          $ f^\alpha \coloneqq U^\ast \diag(\lambda_i^\alpha) U $.
-          \todo{warum ist dies trotz der wahl wohldef?}
+          Skalarprodukt. Die Abbildung $ x\mapsto x^\alpha $ ist analytisch.
+          Wir betrachten die Potenzreihenentwicklung $ x^\alpha = \sum_{k=1}^{\infty} a_k x^k $ und setzen dann $ f^\alpha \coloneqq \sum_{k=1}^{\infty} a_k f^k $. Die Konvergenz in $ V $ ist durch
+          die Konvergenz der Potenzreihe garantiert.
+%           dann existieren $ n $ positive, reelle
+%          Eigenwerte $ \lambda_i $ für diesen Endomorphismus. Nach
+%          Wahl einer Basis existiert eine unitäre Transformation
+%          $ U $, sodass $ f = U^\ast \diag(\lambda_i) U $ gilt. Nun
+%          definiere
+%          $ f^\alpha \coloneqq U^\ast \diag(\lambda_i^\alpha) U $.
+%          \todo{warum ist dies trotz der wahl wohldef?}
 		
           Sei nun die lineare, injektive Abbildung
           $ \abb{F_p}{\tang{p}{M}}{\tang{F_p(p)}{\R^3}} $ gegeben,
@@ -73,7 +77,7 @@ folgenden
             \scalar{F_p \circ (F_p^\ast F_p)^{-1/2}(v)}{F_p \circ (F_p^\ast F_p)^{-1/2}(w)}_{\R^3} &=
                                                                                                                      g_p(F_p^\ast F_p \circ (F_p^\ast F_p)^{-1/2}(v),(F_p^\ast F_p)^{-1/2}(w)) \\
                                                                                                                    &= g_p((F_p^\ast F_p)^1/2(v),(F_p^\ast F_p)^{-1/2}(w)) \\
-                                                                                                                   &= g_p((F_p^\ast F_p)^{-1/2} \circ (F_p^\ast F_p)^1/2(v,w)) \\
+                                                                                                                   &= g_p((F_p^\ast F_p)^{-1/2} \circ (F_p^\ast F_p)^{1/2}(v,w)) \\
                                                                                                                    &= g_p(v,w)
 		\end{align*}
 		
@@ -133,19 +137,32 @@ Der nächste Schritt ist der des Vergessens des Basispunktes.
 Für das folgende Theorem benötigen wir die Existenz von Spinstrukturen
 auf Flächen.
 %lemma darüber das eine kompakte, orientierte 2dim riem mfg stets spin ist
-\begin{Satz}
-	Jede geschlossene, orientierte, \RMF  $(M,g)$ der Dimension $2$ ist spin.
+\begin{Satz}\label{existenzspinflächen}
+	Jede Fläche ist spin.
 	\begin{proof}
 		Wir haben schon in \cref{SpinstrSphäre} gezeigt das es 
 		auf der $ \S^2 $ ein eindeutige Spinstruktur gibt. Wir
 		wissen nun das sich alle Flächen als $ \S^2 $ mit Henkel 
 		darstellen lassen \todo{bild}. Um nun die Spinstruktur auf der $ \S^2 $
-		auf die Flächen mit höheren Geschlecht zu erweitern müssen
+		auf Flächen mit höheren Geschlecht zu erweitern, müssen
 		wir zeigen das ausgehend von der $ \S^2 $ und zwei Punkten
 		$ p,q \in\S^2 $ mit disjunkten Bällen $ B_p,B_q \subset\S^2$,
 		durch zusammenkleben der beiden Umgebungen ein Henkel
 		entsteht und die Spinstruktur erhalten bleibt.
-		 \todo{zeige die wohldef, und glueing eigenschaften}
+		
+		Diese Chirugie gestaltet sich wie folgt. Wir wählen auf
+		$ [0,1] \times \S^1 $ eine der beiden möglichen Spinstrukturen \footnote{hieran erkennt man schon das man \textbf{nicht} alle $ 4 $ verschiedenen Spinstrukturen auf dem $ 2 $-Torus damit erhalten kann.} und betrachten 
+		\begin{gather*}
+		 \left( \S^2 \setminus (B_p \cup B_q) \amalg [0,1]\times \S^1 \right) / \sim = \TT^2.
+		\end{gather*}
+		Wobei $ \partial B_p \sim \{ 0 \}\times \S^1$ und $ \partial B_q \sim \{ 1 \}\times \S^1$ miteinanderverklebt werden, sodass die Orientierung
+		erhalten bleibt.
+		Wir müssen nun zeigen das für zwei spin Mannigfaltigkeiten bei 
+		der disjunkten Summe ein eindeutige Spinstruktur existiert die 
+		Erweiterungen der einzelnen Spinstrukturen ist.
+	
+		Hierzu betrachten wir zwei beliebige Flächen $ M,N $ und deren
+		disjunkte Summe $ M \# N $. 	 \todo{ergänzen}
 	\end{proof}
 \end{Satz}
 % satz das die imm und form-imm homotop sind
@@ -217,8 +234,7 @@ Zusammenhang mit den Spinstrukturen sein.
       Tangentialvektor $v \in \S_p M$ gilt das $H_p(v)$ ein Element
       der $\so_3$ ist. Betrachte nun die erste Spalte der Matrix
       $w(v)=(H_p(v)_{i,1})_{i=1,2,3}$. Definiere nun eine Abbildung
-      $\abb{F_p}{\tang{p}{M}}{\R^3}$ durch \todo{frac und norm
-        vertragen sich nicht} $v \mapsto \begin{cases}
+      $\abb{F_p}{\tang{p}{M}}{\R^3}$ durch $v \mapsto \begin{cases}
         w(\frac{v}{\norm{v}}) & v \neq 0 \\
         0 & v=0.
       \end{cases}$
@@ -238,7 +254,7 @@ hierbei \cite{BHMMM15}.
 	Für die beiden Liegruppen $\spin_3$ und $\so_3$ gelten
 	folgende Isomorphien als Mannigfaltigkeiten:
 	\begin{align}
-	\spin_3 &\simeq \su(2) \simeq \S^3 \label{{id1}}\\
+	\spin_3 &\simeq \su(2) \simeq \S^3 \label{id1}\\
 	\so_3 &\simeq \RP^3 \label{id2}
 	\end{align}
 	Damit gelten auch folgende Isomorphien der Homotopiegruppen
@@ -261,8 +277,8 @@ hierbei \cite{BHMMM15}.
                   Identität \cref{id1} zeigen. Dieser Isomorphismus
                   ist direkt durch folgende Abbildung anzugeben
                   \DefMap{\set{\pma{a & -\bar{b} \\ b & \bar{a}} \in
-                      \su_2}{a,b \in \C}}{\set{(a,b)\in
-                      \C^2}{|a|^2+|b|^2=1}=\S^3}{\pma{a & -\bar{b} \\
+                      \su_2}{a,b \in \c}}{\set{(a,b)\in
+                      \c^2}{|a|^2+|b|^2=1}=\S^3}{\pma{a & -\bar{b} \\
                       b & \bar{a}}}{(a,b)}
 			
                   Von \cref{id1} die erste Identität wird wie folgt
@@ -277,7 +293,7 @@ hierbei \cite{BHMMM15}.
 				  von $ \Z_2 $ die Isomorphie $ \RP^3\simeq\so_3 $.
 			
                 \item[2. Schritt;] Seien nun die obigen Identitäten
-                  \ref{id1} \todo{cref verwenden} gegeben, um nun die
+                  \cref{id1} gegeben, um nun die
                   die Homotopiegruppen zu berechnen reicht es aus
                   diese von $\RP^3$ und $ \S^3 $ zu kennen. Für
                   $ \S^3 $ sind diese bekannt und für $ \RP^3 $
@@ -348,14 +364,21 @@ der letzte Schritt. Wir können nun folgenden Satz zeigen.
 	          	zwei $ \S^1 $-invariante Abbildungen mit $ \psi(H)=\psi(H^{'}) $. Wir wollen zeigen das die beiden
 	          	Abbildungen homotop zueinander sind. Hierzu nutzen wir
 	          	die Skelettstruktur der Mannigfaltigkeit aus.
-		          	\begin{enumerate}[\hspace{1cm}0-{Skelett}:]
-		          		\item Für die endlich vielen $ 0 $-Skelette, also
+		          	\begin{enumerate}[1{\bfseries -Skelett:}]
+		          		\item[$ 0 ${\bfseries-Skelett:}] Für die endlich vielen $ 0 $-Skelette, also
 		          		Punkte, auf der Mannigfaltigkeit lässt sich durch
 		          		eine beliebige Verschiebung die Gleichheit von
 		          		den Werten der beiden Abbildungen $ H,H^{'} $
 		          		erreichen.
 		          		\item Seien die Abbildungen auf dem $ 0 $-Skelett
-		          		gleich, dann wollen wir zunächst die
+		          		gleich, dann betrachten wir eine Kurve $ \gamma $
+		          		die genau einen $ 1 $-Simplex durchläuft.
+		          		Die Abbildung $ \abb{\dfrac{\dot{\gamma}}{\norm{\dot{\gamma}}}}{\S^1}{\S M = \Ph{\so}{M}} $ liftet genau dann auf $ \Ph{\spin}{M} $ wenn die Abbildungen
+		          		$ H,H^{'} \circ \dfrac{\dot{\gamma}}{\norm{\dot{\gamma}}} $ auf
+		          		$ \spin_3 $ liften.\todo{ergänzen}
+		          		
+			          	\item \OE~Seien die Abbildungen auf dem $ 1 $-Skelett
+			          	gleich, 
 		          	\end{enumerate}
           \end{description}
           
