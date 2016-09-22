@@ -106,7 +106,7 @@ Im folgenden werden die wichtigsten Beispiele angegeben.
                   transformiert.
 			
                   Sei nun ein Bündelatlas \todo{was ist ein bündelatlas}
-                  $ \sset{(U_i,\phi_i)_{i\in \Lambda}} $ von $ \T M $
+                  $ \sset{(U_i,\phi_i)_{i\in \Lambda}} $ von $ \TT M $
                   gegeben. Betrachte nun die Abbildungen
                   \DefMap{\pi^{-1}(U_i)}{U_i\times
                     \GL_n}{((v_i,p))}{(p,\phi_i(v_i)).} Diese liefern
@@ -140,7 +140,7 @@ verwendete Quelle ist \cite{BHMMM15}.  \todo{sollen äquivalente
 	 \begin{itemize}
          \item Die \mfg $\Ph{\spin_n}{M}$ ist ein
            $\spin_n$-Hauptfaserbündel über $ M $.
-         \item Folgendes Diagramm kommutiert\footnote{Dies ist ein Spezialfall für eine Reduktion eines Hauptfaserbündel siehe \cite{baum09}.}\\
+         \item Folgendes Diagramm kommutiert\footnote{Dies ist ein Spezialfall für eine Reduktion eines Hauptfaserbündel siehe \cite[Seite 63]{baum09}.}\\
 %           \begin{center}
 %             % das zeichen ' nach " " ändert die position bzgl pfeil
 %		 	\begin{tikzcd}
@@ -167,7 +167,7 @@ verwendete Quelle ist \cite{BHMMM15}.  \todo{sollen äquivalente
 	 Falls eine \RMF eine Spinstruktur besitzt sagen wir die \mfg
          ist \textit{spin}.
      Zwei Spinstrukturen $ (\Ph{\spin_n}{M},\eta),(P_{\spin_n}^{'}M,\eta^{'}) $ über $ M $ heißen isomorph, falls einen $ \spin_n $-Hauptfaserbündelisomorphismus $ \abb{\beta}{\Ph{\spin_n}{M}}{P_{\spin_n}^{'}M} $ gibt, sodass die
-     Spinstrukturen miteinander verträglich sind, also $ \eta=\eta^{'} \circ \beta $ gilt\footnote{Es existieren Hauptfaserbündel die als lokal-trivale Faserungen isomorph sind, aber nicht als Hauptfaserbündel}.
+     Spinstrukturen miteinander verträglich sind, also $ \eta=\eta^{'} \circ \beta $ gilt\footnote{Es existieren Hauptfaserbündel die als lokal-trivale Faserungen isomorph sind, aber nicht als Hauptfaserbündel.}.
 \end{Def}
 
 Die Frage nach der Existenz und Eindeutigkeit von Spinstrukturen 
@@ -177,19 +177,19 @@ Satz beantwortet.
 \begin{Satz}\label{anzahlspin}
 	Sei $ (M,g) $ eine orientierte, riemannsche Mannigfaltigkeit dann
 	gilt das $ H^1(M,\Z_2) $ isomorph ist zu der Menge aller $ \Z_2 $-Hauptfaserbündel über $ M $. Zudem operiert $ H^1(M,\Z_2) $ frei
-	und transitiv auf der Menge aller Spinstrukturen. 
+	und transitiv auf der Isomorphieklasse der Spinstrukturen.
 	\begin{proof}
 %		$ \tilde{M} \times_{\pi_1(M)} \Z_2 $
 %		oder
 %		$ \tilde{M} \times \Z_2 / \pi_1(M)$
 		Wir können $ H^1(M,\Z_2)\simeq \Hom(\pi_1(M),\Z_2) $ aufgrund des universellen
-		Koeffiziententheorems identifizieren. Wir nutzen nun das $ \pi_1(M) $
+		Koeffiziententheorems identifizieren. Zudem nutzen nun das $ \pi_1(M) $
 		auf der universellen Überlagerung von $ M $ operiert.
 		
-		Sei nun $ \chi\in\Hom(\pi(M),\Z_2) $ gegeben und wir wollen
+		Sei nun $ \chi\in\Hom(\pi(M),\Z_2) $ gegeben und wir wollen dazu
 		ein $ \Z_2 $-Hauptfaserbündel konstruieren. Sei $ \abb{\pi}{\tilde{M}}{M} $ die universelle Überlagerung
 		und $ \tilde{M}\times_{\pi_1(M)}\Z_2 $ ist gegeben als
-		Quotient bezüglich der Äquivalenzrelation : $ (p,a) \sim (p\gamma,\chi(\gamma)^{-1}a) $ für alle $ p\in\tilde{M},a\in\Z_2,\gamma\in\pi_1(M) $.
+		Quotient bezüglich der Äquivalenzrelation  $ (p,a) \sim (p\gamma,\chi(\gamma)^{-1}a) $ für alle $ p\in\tilde{M},a\in\Z_2,\gamma\in\pi_1(M) $.
 		Nun ist ein $ \Z_2 $-Hauptfaserbündel gegeben durch
 		 \DefMap{\pi_\chi \colon \tilde{M} \times_{\pi_1(M)} \Z_2}{M}{\left[p,a\right]}{\pi(p)}
 		Die Wohldefiniertheit der Projektion folgt aus der Faserinvarianz
@@ -203,7 +203,7 @@ Satz beantwortet.
 		
 		Wir wollen nun die Gruppenwirkung von $ H^1(M,\Z_2)\simeq \Ph{\Z_2}{M} $ auf der Menge aller Spinstrukturen bis auf Isomorphie definieren,
 		diese ist gegeben durch
-		\DefMap{H^1(M,\Z_2) \times \sset{\text{Spinstrukturen}}/\sim}{\sset{\text{Spinstrukturen}}/\sim}{(\Ph{\spin_2}{M},\Ph{\Z_2}{M})}{\Ph{\spin_2}{M}\times_{\Z_2} \Ph{\Z_2}{M}. }
+		\DefMap{H^1(M,\Z_2) \times \sset{\text{Spinstrukturen}}/\sim}{\sset{\text{Spinstrukturen}}/\sim}{(\Ph{\Z_2}{M},\Ph{\spin_2}{M})}{\Ph{\spin_2}{M}\times_{\Z_2} \Ph{\Z_2}{M}. }
 		Wobei wir $ \Z_2=\spin_1\subset\spin_2 $ und damit eine $ \spin_2 $-
 		Gruppenwirkung auf einem $ \spin_2 $-Hauptfaserbündel genutzt haben.
 		
@@ -211,7 +211,7 @@ Satz beantwortet.
 		$ \Ph{\spin_2}{M} \times_{\Z_2} (\tilde{M} \times \Z_2) = \Ph{\spin_2}{M} $.\todo{genauer}
 		
 		Für zwei $ \Z_2 $-Hauptfaserbündel $ \Ph{\Z_2}{M},P^{'}_{\Z_2}M $
-		gilt nun $ ( \Ph{\spin_2}{M} \times_{\Z_2} P^{'}_{\Z_2}M ) \times_{\Z_2} \Ph{\Z_2}{M} = \Ph{\spin_2}{M} \times_{\Z_2} (P^{'}_{\Z_2}M \times_{\Z_2} \Ph{\Z_2}{M}) $.
+		gilt nun $ ( \Ph{\spin_2}{M} \times_{\Z_2} P^{'}_{\Z_2}M ) \times_{\Z_2} \Ph{\Z_2}{M} = \Ph{\spin_2}{M} \times_{\Z_2} (P^{'}_{\Z_2}M \oplus_{H^1(M,\Z_2)} \Ph{\Z_2}{M}) $.
 		
 		\todo{frei und transitiv}
 		
@@ -352,7 +352,7 @@ eine Spinstruktur die \enquote{Wurzel} aus dem Tangentialbündel ist.
 \begin{Def}\label{DefSpin_KS}
 	Sei $ (M,g) $ eine Fläche, dann heißt $ (S,\mu) $ eine
 	\textit{Spinstruktur} auf $ M $, falls $ S $ ein komplexes Geradenbündel
-	über $ M $ ist und die Bündelabbildung $ \abb{\mu}{S}{\T M} $ quadratisch	ist, d.h. $ \mu(\lambda s) = \lambda^2 \mu(s) $ für alle Schnitte
+	über $ M $ ist und die Bündelabbildung $ \abb{\mu}{S}{\TT M} $ quadratisch	ist, d.h. $ \mu(\lambda s) = \lambda^2 \mu(s) $ für alle Schnitte
 	von $ S $.
 \end{Def}
 
@@ -368,7 +368,7 @@ lassen und somit dasgleiche liefern.
 		$ \abb{\Ad}{\spin_2}{\so_2},z\mapsto z^2 $ liefert uns dies
 		die induzierte Abbildung $ \Ph{\spin_2}{M}\rightarrow \Ph{\so_2}{M} $. Betrachten wir nun die davon assoziierten
 		Bündel bezüglich der Darstellung $ \abb{\rho}{\S^1}{\End(\c)}, z\mapsto (w \mapsto zw) $, dann erhalten wir die doppelte
-		Überlagerung $ S\coloneqq \Ph{\spin_2}{M}\times_{\S^1}\c \rightarrow {\T M = \Ph{\so_2}{M}\times_{\S^1}\c} $. Diese Abbildung ist wohldefiniert, da die Gruppenwirkung der $ \S^1 $ mit der
+		Überlagerung $ S\coloneqq \Ph{\spin_2}{M}\times_{\S^1}\c \rightarrow {\TT M = \Ph{\so_2}{M}\times_{\S^1}\c} $. Diese Abbildung ist wohldefiniert, da die Gruppenwirkung der $ \S^1 $ mit der
 	    der Abbildung $ z\mapsto z^2 $ vertauscht. Damit erhalten
 	    wir die gewünschte Spinstruktur.
 	    
