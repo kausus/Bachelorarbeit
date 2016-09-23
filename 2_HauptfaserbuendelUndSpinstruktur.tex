@@ -222,7 +222,7 @@ Mithilfe dieses Satzes folgt unmittelbar das
 \begin{Kor}
 	Für eine $ 1 $-zusammenhängende\footnote{Eine Mannigfaltigkeit $ M $ ist $ n $-zusammenhängend falls $ \pi_k(M)=0 $ für $ 0\leq k\leq n $.}, spin\footnote{Man muss die Existenz von Spinstrukturen hier fordern} Mannigfaltigkeit existiert genau eine Spinstruktur bis auf Isomorphie. Für eine Fläche mit Geschlecht $ \gamma $ existieren
 	genau $ 2^{2\gamma} $ nicht isomorphe Spinstrukturen. Allgemein
-	gilt für eine spin Mannigfaltigkeit das diese $ \# H^1(M,\Z_2) $-Spinstrukturen bis auf Isomorphie hat.
+	gilt für eine spin Mannigfaltigkeit das diese $ \# H^1(M,\Z_2) $-Spinstrukturen bis auf Isomorphie besitzt.
 	\begin{proof}
 		Wir zeigen die letzte Aussage, da die vorherigen Spezialfälle
 		davon sind. Wir müssen lediglich eine simple Tatsache über
@@ -301,7 +301,7 @@ Mithilfe dieses Satzes folgt unmittelbar das
 
     \end{proof}
 		
-  \item Ein erstes nichttriviales Beispiel sind zwei nicht isomorphie
+  \item \label{Bsp:spinstrukturAufsphere} Ein erstes nichttriviales Beispiel sind zwei nicht isomorphie
     Spinstrukturen der $\S^1$. Diese sind $(\S^1 , \eta_0)$ und
     $(\S^1 \times \Z_2 = \S^1 \times \spin_1 , \eta_1)$, wobei die
     Abbildungen durch $\eta_0 : \S^1 \rightarrow \S^1 , z \mapsto z^2$
@@ -363,7 +363,7 @@ lassen und somit dasgleiche liefern.
 	Zu jeder Spinstruktur im Sinne von \cref{DefSpin} existiert
 	genau eine Spinstruktur im Sinne von \cref{DefSpin_KS}.
 	\begin{proof}
-		Sei eine Spinstruktur $ (\Ph{\spin_2}{M},\eta) $ gegeben.
+		Sei eine Spinstruktur $ (\Ph{\spin_2}{M},\eta) $ gegeben\footnote{Wir nutzen hier den allgemeinen Fakt das Vektorbündel und Hauptfaserbündel sich ineinander überführen lassen}.
 		Mit den Fakt $ \S^1\simeq\so_2\simeq\spin_2 $ und der Abbildung
 		$ \abb{\Ad}{\spin_2}{\so_2},z\mapsto z^2 $ liefert uns dies
 		die induzierte Abbildung $ \Ph{\spin_2}{M}\rightarrow \Ph{\so_2}{M} $. Betrachten wir nun die davon assoziierten
@@ -372,7 +372,16 @@ lassen und somit dasgleiche liefern.
 	    der Abbildung $ z\mapsto z^2 $ vertauscht. Damit erhalten
 	    wir die gewünschte Spinstruktur.
 	    
-	    Sei nun $ (S,\mu) $ gegeben. \todo{andere richtung, entweder mu abbildung nutzen um Pspin zu definieren, oder aus dem ass bündel die spinstr zurückgewinnen}
+	    Sei nun $ (S,\mu) $ gegeben, dann wollen wir daraus ein $ \spin_2 $-Hauptfaserbündel konstruieren, das eine zweifache Überlagerung des
+	    orientieren Reperebündels ist. Wie betrachten $ \so(S) $ 
+	    als $ \so_2 $-Hauptfaserbündel und dessen Reduktion auf $ \spin_2 $.
+	    
+	    
+%	    Sei die Spinordarstellung $ \abb{\rho}{\spin_2}{\End(\c)} $ gegeben, dann betrachte das 
+%	    $ \spin_2 $-Hauptfaserbündel $ \so_2 \times_\rho S $. Dann erhält man
+%	    hieraus das gewünschte Hauptfaserbündel.
+%	    
+	    \todo{andere richtung, entweder mu abbildung nutzen um Pspin zu definieren, oder aus dem ass bündel die spinstr zurückgewinnen}
 	    
 		
 	\end{proof}

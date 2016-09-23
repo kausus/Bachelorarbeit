@@ -1,9 +1,10 @@
 \KOMAoptions{parskip=half}
 %
-\usepackage[T1]{fontenc}                            
+%\usepackage[T1]{fontenc}                            
 % encodings                                        
-\usepackage[utf8]{inputenc} 
-%\usepackage{fontspec}
+%\usepackage[utf8]{inputenc} 
+\usepackage{fontspec}
+
 %%\setmainfont{Latin Modern Roman}
 
 \usepackage{babel}                  
@@ -312,9 +313,10 @@
 	
 	}
 
-
-
-
+%\begin{description}[font=\normalfont\itshape]
+%\ni reversed \in
+%\xrightarrow{\pi_\K^\#} , above a arrow
+%  &\overset{\mathllap{\text{Faserprod.}}}{=}
                                                   
 %own color for proof environment
 \definecolor{mygray}{rgb}{0.2,0.2,0.2}
@@ -322,11 +324,20 @@
 %\renewenvironment{center}{\begin{quote}\bfseries}{\end{quote}}
 % use for font, [slshape,mdseries]
 
-\renewenvironment{proof}{{ \vspace{0.5cm} \bfseries ~\newline Beweis:\newline}\slshape\color{mygray}}{\hfill$\blacksquare$}
+%\renewenvironment{proof}{{ \vspace{0.5cm} \bfseries ~\newline Beweis:\newline}\slshape\color{mygray}}{\hfill$\blacksquare$}
 \newenvironment{smallproof}{{ \vspace{0.5cm} \bfseries ~\newline Beweis:}\slshape\color{mygray}}{\hfill$\blacksquare$}
 
-%\renewenvironment{proof}{{ \vspace{0.5cm} \bfseries ~\newline Pr$\infty$f:\newline}\slshape\color{mygray}}{\hfill$\blacksquare$}
-
+ \makeatletter
+    \renewenvironment{proof}[1][\proofname]{\par
+    	\pushQED{\hfill$\blacksquare$}%
+    	\slshape\color{mygray}\topsep6\p@\@plus6\p@\relax
+    	\noindent%
+    	\raisebox{\baselineskip}{\rlap{\bfseries%
+    			#1\@addpunct{.}}}\ignorespaces%TEst
+    }{%
+    \popQED\@endpefalse
+}
+\makeatother
 
 %TODO: schrift soll geändert werden,
 %\renewenvironment*{proof}{\bfseries}{}

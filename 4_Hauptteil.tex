@@ -143,7 +143,16 @@ auf Flächen.
 		Wir haben schon in \cref{SpinstrSphäre} gezeigt das es 
 		auf der $ \S^2 $ ein eindeutige Spinstruktur gibt. Wir
 		wissen nun das sich alle Flächen als $ \S^2 $ mit Henkel 
-		darstellen lassen \todo{bild}. Um nun die Spinstruktur auf der $ \S^2 $
+		darstellen lassen.
+		
+
+		\begin{figure}[h]
+		\begin{center}
+			\includegraphics[width=5cm]{../pic/handles.png}
+		\end{center}
+		\end{figure}
+		
+		 Um nun die Spinstruktur auf der $ \S^2 $
 		auf Flächen mit höheren Geschlecht zu erweitern, müssen
 		wir zeigen das ausgehend von der $ \S^2 $ und zwei Punkten
 		$ p,q \in\S^2 $ mit disjunkten Bällen $ B_p,B_q \subset\S^2$,
@@ -158,11 +167,20 @@ auf Flächen.
 		Wobei $ \partial B_p \sim \{ 0 \}\times \S^1$ und $ \partial B_q \sim \{ 1 \}\times \S^1$ miteinanderverklebt werden, sodass die Orientierung
 		erhalten bleibt.
 		Wir müssen nun zeigen das für zwei spin Mannigfaltigkeiten bei 
-		der disjunkten Summe ein eindeutige Spinstruktur existiert die 
+		der zusammenhängenden Summe ein eindeutige Spinstruktur existiert die 
 		Erweiterungen der einzelnen Spinstrukturen ist.
 	
-		Hierzu betrachten wir zwei beliebige Flächen $ M,N $ und deren
-		disjunkte Summe $ M \# N $. 	 \todo{ergänzen}
+		Hierzu betrachten wir zwei beliebige spin Mannigfaltigkeiten $ M,N $ und deren
+		zusammenhängenden Summe $ M \# N $. Wir betrachten nun zu zwei Punkten
+		$ p\in M,q\in N $ tubulare Umgebungen $ B_p,B_q $. Die Verklebung
+		geschieht nun auf folgende Art. Wir verkleben den inneren Rand von $ B_p $
+		mit	dem äußeren Rand von $ B_q $ und das gleiche mit $ p,q $ vertauscht.
+		Wenn wir nun dieses Objekt einzeln betrachten und die induzierte Spinstruktur darauf lässt sich dieses Objekt als eine $ \S^n $ auffassen
+		und mit \cref{Bsp:spinstrukturAufsphere} folgt nun das die darauf
+		induzierte Spinstruktur eindeutig ist. Damit gibt es auf
+		der zusammenhängenden Summe genau eine Erweiterung der
+		einzelnen Spinstrukturen und mit der Methode des Henkels
+		ankleben lässt sich auf jeder Fläche eine Spinstruktur finden.
 	\end{proof}
 \end{Satz}
 % satz das die imm und form-imm homotop sind
@@ -323,41 +341,67 @@ der letzte Schritt. Wir können nun folgenden Satz zeigen.
 	\end{center}
 	Wobei $ \sim $ hier bis auf Homotopie meint.
 	\begin{proof}
-          Im ersten Schritt des Beweises wählen wir eine
-          Triangulierung $\Sigma \coloneqq \sset{ \Delta_i^j}$ der
-          Mannigfaltigkeit. Wobei für den Simplex $\Delta_i^j$ der
-          Index $i$ einer Durchnummerierung entspricht und der Index
-          $j$ die Dimension des Simplex angibt.  \todo{bild von torus
-            mit angedeuteter Triangulierung}
-		
-          Wir können zu auf folgende Art und Weise eine Abbildung
-          $\psi$ konstruieren.  Zu einer $\S^1$-invarianten Abbildung
-          $\abb{H}{\S M}{\so_3}$ definieren wir zunächst eine
-          Spinstruktur auf dem $0$-Skelett und setzen diese induktiv
-          auf die höheren Skelette fort um schließlich beim
-          $2$-Skelett endend auf der gesamten Mannigfaltigkeit eine
-          Spinstruktur zu erhalten. Schließlich zeigen wir noch das
-          diese Konstruktion eine Bijektion liefert.
-		
+
+%          Wir können zu auf folgende Art und Weise eine Abbildung
+%          $\psi$ konstruieren.  Zu einer $\S^1$-invarianten Abbildung
+%          $\abb{H}{\S M}{\so_3}$ definieren wir zunächst eine
+%          Spinstruktur auf dem $0$-Skelett und setzen diese induktiv
+%          auf die höheren Skelette fort um schließlich beim
+%          $2$-Skelett endend auf der gesamten Mannigfaltigkeit eine
+%          Spinstruktur zu erhalten. Schließlich zeigen wir noch das
+%          diese Konstruktion eine Bijektion liefert.
+		Wir wollen zunächst die Abbildung angeben.
           \textbf{Konstruktion der Abbildung $\psi$}
 		
-          Sei nun eine $\S^1$-invariante Abbildung
+          Sei eine $\S^1$-invariante Abbildung
           $\abb{H}{\S M}{\so_3}$ gegeben. Die Spinstruktur zu $ H $
-          ist gegeben durch den Pullback des Diagramms $  $
+          sei nun gegeben durch den Pullback entlang der Abbildung $ H $
+          gegeben.
               \begin{center}
               \begin{tikzcd}
-                \Ph{\spin_2}{M} \arrow[r,"\phi"] \arrow[d] \arrow[dr, phantom, "\ulcorner", very near start] & \spin_3 \arrow[d,"2:1"] \\
+                H^\ast\Ad  =\Ph{\spin_2}{M} \arrow[r,"\phi"] \arrow[d] \arrow[dr, phantom, "\ulcorner", very near start] & \spin_3 \arrow[d,"\Ad"] \\
                 \Ph{\so_2}{M} = \S M \arrow[r,"H"] & \so_3
               \end{tikzcd}
             \end{center}
-          Die Mannigfaltigkeit $ \Ph{\spin_2}{M} $ ist eine Spinstruktur
-          auf $ M $. Diese ist eine zweifache Überlagerung des orientieren
-          Rahmenbündels und hat eine $ \spin_2 $-Gruppenwirkung durch
-          eine Wahl $ \spin_2\subset\spin_3 $ und den Morphismus $ \phi $.
-          
-          Wir müssen nun noch die Bijektivität bis auf Homotopie zeigen,
-          d.h. wir bezüglich der gewählten Triangulierung lassen sich
-          Injektivität und Surjektivität zeigen.
+          Die so erhaltende Mannigfaltigkeit $ \Ph{\spin_2}{M} $ ist ein
+          $ \spin_2 $-Hauptfaserbündel. Die $ \spin_2 $-Gruppenwirkung
+          ist durch
+          \DefMap{\spin_2 \times \Ph{\spin_2}{M}}{\Ph{\spin_2}{M}}{(z,p)}{z\phi(p)}
+          gegeben. Wobei wir die kanonische Identifzierung $ \spin_2\subset\spin_3 $ benutzt haben. Die Gruppenwirkung ist
+          glatt aufgrund der universellen Eigenschaft des Pullbacks.
+%          Spinstruktur
+%          auf $ M $. Diese ist eine zweifache Überlagerung des orientieren
+%          Rahmenbündels und hat eine $ \spin_2 $-Gruppenwirkung durch
+%          eine Wahl $ \spin_2\subset\spin_3 $ und den Morphismus $ \phi $.
+	       Im nächsten Schritt müssen wir zeigen das diese Konstruktion
+	        homotopieinvariant ist, d.h. für homotope Abbildungen $ H,H^{'} $ die induzierten Spinstrukturen isomorph sind.
+	        
+          Hierzu wählen wir eine Triangulierung $\Sigma \coloneqq \sset{ \Delta_i^j}$ der Mannigfaltigkeit, um den Beweis der Bijektivität entlang des Skeletts zu führen. Wobei für den Simplex $\Delta_i^j$ der
+          Index $i$ einer Durchnummerierung entspricht und der Index
+          $j$ die Dimension des Simplex angibt. 
+          \begin{center}
+          	\begin{tikzpicture}[scale=1.5]
+          	\draw ellipse (2cm and 1cm);
+          	\begin{scope}
+          	\clip (-0.7,0)rectangle(0.7,0.5);
+          	\draw ellipse (0.7cm and 0.25cm);
+          	\end{scope}
+          	\begin{scope}
+          	\clip (-0.9,0.1)rectangle(0.9,-0.5);
+          	\draw (0,0.3) ellipse (1cm and 0.4cm);
+          	\end{scope}
+          	%              	\draw [thin] (0,0) to (1,0) to (0,1) to (0,0);
+          	\draw [thin] (1,-0.5) to (1.2,0) to (1.4,-0.4) to (1,-0.5);
+          	\draw [thin] (1.2,0) to (1.5,0.2) to (1.4,-0.4); 
+          	\draw [thin] (1,-0.5) to (0.7,-0.25)  to (1.2,0) ;
+          	\draw [thin] (1,-0.5) to (1.2,-0.7) to (1.4,-0.4)  ; 
+          	\draw[thin] (1.5,0.2) to (1.7,-0.1) to (1.4,-0.4); 
+          	\draw [thin] (1.2,0) to (1.1,0.3) to (1.5,0.2);
+          	\draw [thin] (1,-0.5) to (0.6,-0.5) to (0.7,-0.25) ;
+          	\end{tikzpicture}
+          \end{center}
+	        \todo{mehr simplizies einführen}
+	       Wir zeigen nun die Bijektivität von $ \psi $.
           
           \begin{description}
 	          	\item[Injektivität:] Seien $ \abb{H,H^{'}}{\S M}{\so_3} $
@@ -377,11 +421,41 @@ der letzte Schritt. Wir können nun folgenden Satz zeigen.
 		          		$ H,H^{'} \circ \dfrac{\dot{\gamma}}{\norm{\dot{\gamma}}} $ auf
 		          		$ \spin_3 $ liften.\todo{ergänzen}
 		          		
-			          	\item \OE~Seien die Abbildungen auf dem $ 1 $-Skelett
-			          	gleich, 
+			          	\item \OE~Seien die Abbildungen auf dem $ 1 $-Skelett gleich, dann betrachten wir die
+			          	Einschränkungen der $ H_i $ auf $ \S \Delta^2 = D^2 \times \S^1$. Wir erhalten ein Diagramm
+			          	von der Form
+			          	
+			          	\begin{center}
+			          		\begin{tikzcd}
+			          			\S \Delta^2 \arrow[r,"H_i"] & \so_3 \\
+			          			D^2 \arrow[u, "\iota"] \arrow[ur, "\hat{H}_i"'] 
+			          		\end{tikzcd}
+			          	\end{center}
+			          	
+			          	Wir nutzen nun ein allgemeines Lemma.
+			          	
+			          	\begin{Lem}
+		          		Sei $ n\geq 2 $ und $ X $ ein topologischer Raum mit
+		          		$ \pi_n(X)=0 $ und 
+		          		$ \abb{f,g}{D^n}{X} $ zwei stetige Abbildungen
+		          		für die $ f_{|\S^{n-1}} = g_{|\S^{n-1}} $ gilt, dann
+		          		sind $ f,g $ homotop.
+			          	\end{Lem}
+			          	
+			          	Da die Abbildungen nach Voraussetzung auf 
+			          	dem Rand des Simplex $ \Delta^2 $ übereinstimmen
+			          	und $ \pi_2(\so_3)=0 $ nach \cref{hgroups} gilt sind die beiden
+			          	Abbildungen homotop auf $ \Delta^2 $. Dies setzt
+			          	sich nun auf $ \S \Delta^2 $ fort. Damit sind
+			          	die Abbildungen auf dem $ 2 $-Skelett homotop, 
+			          	also auch auf der Mannigfaltigkeit selbst.
 		          	\end{enumerate}
+		  \item[Surjektivität:] Sei nun eine Spinstruktur $ \Ph{\spin_2}{M} $ auf $ M $
+		  vorgegeben. Wir müssen eine $ \S^1 $-invariante Abbildung
+		  konstruieren die diese Spinstruktur induziert.
+		  
+		  
           \end{description}
-          
 %          \begin{description}
 %          \item[$0$-Skelett:] In diesem Fall ist die kanonische Wahl
 %            zu treffen und es ist nichts zu zeigen.
