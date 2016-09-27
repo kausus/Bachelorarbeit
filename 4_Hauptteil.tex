@@ -31,7 +31,7 @@ Tangentialräumen auch noch isometrisch ist, damit erhalten wir
 folgenden
 
 
-\begin{Satz}
+\begin{Satz}\label{satz:immerformiso}
   Seien die isometrischen, formalen Immersionen gegeben durch
   \begin{gather*}
     \Immfi{M}{\R^3} \coloneqq \set{(f,F) \in \Immf{M}{\R^3}}{F \text{
@@ -91,7 +91,7 @@ folgenden
 
 Der nächste Schritt ist der des Vergessens des Basispunktes.
 
-\begin{Lem}
+\begin{Lem}\label{lem:famiso}
   Es existiert eine Bijektion
 	
 %	\begin{align*}
@@ -99,7 +99,7 @@ Der nächste Schritt ist der des Vergessens des Basispunktes.
 %	\end{align*}.
   \begin{tikzcd}
     \Immfi{M}{\R^3} \arrow[r,"\eta"] &%
-    \set{ (\abb{F_p}{\TT_pM}{\R^3})_{p\in M} }{ F_p \text{ isometrisch
+    \set{ (\abb{F_p}{\TT_pM}{\R^3})_{p\in M} }{ F_p \text{ isometrisch,injektiv
         für alle }p \in M}.
   \end{tikzcd}
   \begin{proof}
@@ -162,7 +162,7 @@ auf Flächen.
 		Diese Chirugie gestaltet sich wie folgt. Wir wählen auf
 		$ [0,1] \times \S^1 $ eine der beiden möglichen Spinstrukturen \footnote{hieran erkennt man schon das man \textbf{nicht} alle $ 4 $ verschiedenen Spinstrukturen auf dem $ 2 $-Torus damit erhalten kann.} und betrachten 
 		\begin{gather*}
-		 \left( \S^2 \setminus (B_p \cup B_q) \amalg [0,1]\times \S^1 \right) / \sim = \TT^2.
+		 \left. \left( \S^2 \setminus (B_p \cup B_q) \amalg [0,1]\times \S^1 \right) \right/_{\sim}  ~= \TT^2.
 		\end{gather*}
 		Wobei $ \partial B_p \sim \{ 0 \}\times \S^1$ und $ \partial B_q \sim \{ 1 \}\times \S^1$ miteinanderverklebt werden, sodass die Orientierung
 		erhalten bleibt.
@@ -213,7 +213,7 @@ Wir nennen nun eine glatte Abbildung $ \abb{H}{\S M}{\so_3}~\S^1$-invariant, fal
 Der nächste Schritt wird der essentielle auf den Weg zu den
 Zusammenhang mit den Spinstrukturen sein.
 
-\begin{Satz}
+\begin{Satz}\label{satz:s1}
   Es existiert eine Bijektion zwischen
   \begin{gather*}
     \set{ (\abb{F_p}{\TT_pM}{\R^3})_{p\in M} }{ F_p \text{ isometrisch
@@ -332,14 +332,14 @@ der letzte Schritt. Wir können nun folgenden Satz zeigen.
 
 
 
-\begin{Satz}
+\begin{Satz}\label{satz:spinstrukturen}
 	Es existiert eine Bijektion
 	\begin{center}
 		\begin{tikzcd}
-			\set{ \abb{H}{\S M}{\so_3}}{H\text{ ist }\S^1 \text{-invariant}}/\sim  \arrow[rr,"\psi"] && \sset{\text{Spinstrukturen auf }M}.\\
+			\set{ \abb{H}{\S M}{\so_3}}{H\text{ ist }\S^1 \text{-invariant}}/\sim  \arrow[rr,"\psi"] && \sset{\text{Spinstrukturen auf }M}/\sim.\\
 		\end{tikzcd}
 	\end{center}
-	Wobei $ \sim $ hier bis auf Homotopie meint.
+	Wobei $ \sim $ links bis auf Homotopie und rechts bis auf Isomorphie meint.
 	\begin{proof}
 
 %          Wir können zu auf folgende Art und Weise eine Abbildung
@@ -419,7 +419,17 @@ der letzte Schritt. Wir können nun folgenden Satz zeigen.
 		          		die genau einen $ 1 $-Simplex durchläuft.
 		          		Die Abbildung $ \abb{\dfrac{\dot{\gamma}}{\norm{\dot{\gamma}}}}{\S^1}{\S M = \Ph{\so}{M}} $ liftet genau dann auf $ \Ph{\spin}{M} $ wenn die Abbildungen
 		          		$ H,H^{'} \circ \dfrac{\dot{\gamma}}{\norm{\dot{\gamma}}} $ auf
-		          		$ \spin_3 $ liften.\todo{ergänzen}
+		          		$ \spin_3 $ liften. Das heißt das 
+		          		\begin{gather*}
+		          			 \left[H^{'} \circ \dfrac{\dot{\gamma}}{\norm{\dot{\gamma}}} \right]
+		          			 = \left[ H \circ \dfrac{\dot{\gamma}}{\norm{\dot{\gamma}}} \right] \in \pi_1(\so_3)=\Z_2
+		          		\end{gather*}
+		          		Falls die Elemente in verschiedenen Klassen 
+		          		liegen, ändere eine der beiden Klassen wie folgt
+		          		ab. Sei $ [\eta] $ ein Erzeuger von $ \pi_1(\so_3) $ und durchlaufe diesen zuerst
+		          		und dann jeweils die entsprechende Klasse, dann
+		          		stimmen die beiden Klassen in der Fundamentalgruppe überein.
+		          		
 		          		
 			          	\item \OE~Seien die Abbildungen auf dem $ 1 $-Skelett gleich, dann betrachten wir die
 			          	Einschränkungen der $ H_i $ auf $ \S \Delta^2 = D^2 \times \S^1$. Wir erhalten ein Diagramm
@@ -454,51 +464,87 @@ der letzte Schritt. Wir können nun folgenden Satz zeigen.
 		  vorgegeben. Wir müssen eine $ \S^1 $-invariante Abbildung
 		  konstruieren die diese Spinstruktur induziert.
 		  
-		  
+		  Wir benutzen hierzu die Triangulierung und damit die Zerlegung
+		  der Mannigfaltigkeit $ M $ in Skelette $ M_0\subset M_1\subset M_2 $.
+		  Wir werden nun über das Skelett ein Urbild zu der Spinstruktur
+		  konstruieren.
+%		  
+		  \begin{enumerate}[1{\bfseries -Skelett:}]
+		  	\item[$ 0 ${\bfseries-Skelett:}] Es gilt für das $ 0 $-Skelett
+		  	und die Strukturen:
+			  	\begin{gather*}
+			  		\Ph{\spin_2}{M_i} \coloneqq \pi^{-1}_{\spin}(M_i)\\
+			  		\Ph{\so_2}{M_i} \coloneqq \pi^{-1}_{\so}(M_i)
+			  	\end{gather*}
+			  	Nun lässt sich eine $ \S^1 $-invariante Abbildung
+			  auf $ \Ph{\so_2}{M_0} $ angeben durch eine beliebige Wahl
+			  von Elementen aus von einem $ v\in \S M_0 $ und 
+			  $ \so_3 $ und mit der Forderung der $ \S^1 $-Invarianz
+			  ist die Abbildung wohldefiniert. Diese Abbildung
+			  liftet nun auf eindeutige Art zu einer Abbildung auf
+			  $ \Ph{\spin_2}{M_0} \to \spin_3$. Damit ist $ H $ auf dem
+			  $ 0 $-Skelett vorgegeben.
+		  	\item Wir betrachten nun einen Weg in $\abb{\gamma}{[0,1]}{\Ph{\spin_2}{M_1}} $ der entlang eines $ 1 $-Simplex
+		  		verläuft und am $ 0 $-Skelett dessen mit der obigen Abbildung $ H $
+		  		übereinstimmt. Da nun $ \pi_0(\spin_3)=0 $ gilt, können wir
+		  		diesen Weg zu $ \bar{\gamma} \colon [0,1] \to \Ph{\spin_2}{M_1} \to \spin_3 $ fortsetzen. Wir können nun diese Abbildung runterdrücken
+		  		durch die jeweiligen doppelten Überlagerungen und damit die
+		  		Abbildung $ H $ auf das $ 1 $-Skelett fortsetzen. Die $ \S^1 $-Invarianz der Abbildung bleibt aufgrund der verschwindenden
+		  		$ \pi_1(\spin_3)=0 $ gewahrt.
+		  	\item Sei nun die zu konstruierende Abbildung $ H $ auf dem $ 1 $-Skelett
+		  	vorgegeben. Um diese auf das $ 2 $-Skelett fortzusetzen betrachten
+		  	wir die Abbildung $ \abb{H}{\Ph{\spin_2}{M_1}}{\spin_3} $ auf
+		  	den Rand eines einzelnen $ 2 $-Simplex $ \Delta $. Um die Abbildung auf das Innere
+		  	dieses $ 2 $-Simplex eindeutig fortzusetzen benötigen wir den 
+		  	allgemeinen 
+		  	\begin{Satz}
+		  	Falls $ (W,A) $ ein zusammenhängender, abelscher $ CW $ Komplex ist und  ein Diagramm der Art
+		  	\begin{center}
+		  		\begin{tikzcd}
+		  			A \arrow[d, hook] \arrow[r] & X \\
+		  			W \arrow[ru, dashed]
+		  		\end{tikzcd}
+		  	\end{center}
+		  	gegeben, dann existiert der getrichelte Pfeil falls $ H^{n+1}(W,A,\pi_n(X)) =0$ erfüllt ist.
+		  	\end{Satz}
+		  	Falls man nun $ A=\Ph{\spin_2}{\partial\Delta} ,W=\Ph{\spin_2}{\Delta} $ und $ X=\spin_3 $ setzt, gilt mit $ \pi_2(\spin_3)=0 $ die hinreichende
+		  	Bedingung des obigen Satzes und damit lässt sich die Abbildung bis
+		  	auf Homotopie auf das $ 2 $-Skelett fortsetzen. Um nun eine $\S^1$ Abbildung
+		  	$\Ph{\so_2}{M_2} \to \so_3$ zu bekommen geht man vor wie in dem Schritt 
+		  	beim $ 1 $-Skelett.
+		  \end{enumerate}
+		  Nun ist die Abbildung $ H $ auf der Mannigfaltigkeit konstruiert die
+		  die Spinstruktur induziert.
           \end{description}
-%          \begin{description}
-%          \item[$0$-Skelett:] In diesem Fall ist die kanonische Wahl
-%            zu treffen und es ist nichts zu zeigen.
-%          \item[$1$-Skelett:] Für diesen Fall ist nun die Abbildung
-%            $H$ zu benutzen. Wir wollen die Spinstruktur zunächst für
-%            jeden $1$-Simplex der Triangulierung angeben.  Benutze
-%            hierbei das ein $1$-Simplex $\Delta^1_i$ isomorph zur
-%            $\S^1$ und damit auch zu $\S M$ ist. Wenn man nun
-%            folgendes Diagramm betrachtet
-%            \begin{center}
-%              \begin{tikzcd}
-%                && \spin_3 \arrow[dd,"2:1"] \\
-%                &&\\
-%                \Ph{\so_3}{\Delta^1_i} = \S M \arrow[rr,"H"] && \so_3
-%              \end{tikzcd}
-%            \end{center}
-%            Wir betrachten nun den Pullback für dieses Diagramm und
-%            erhalten somit das folgende kommutative Diagramm
-%            \begin{center}
-%              \begin{tikzcd}
-%                \Ph{\spin_3}{\Delta^1_i} \arrow[rr] \arrow[dd] && \spin_3 \arrow[dd,"2:1"] \\
-%                &&\\
-%                \Ph{\so_3}{\Delta^1_i} = \S M \arrow[rr,"H"] && \so_3
-%              \end{tikzcd}
-%            \end{center}
-%            erhalten damit eine Spinstruktur für den $1$-Simplex
-%            $\Delta^1_i$. \todo{zeige das für zwei spinstruktuen auf
-%              benachbarten 1-simplices die induzierten spinstrukturen
-%              übereinstimmen}
-%          \item[$2$-Skelett:] Es gilt nun noch zu zeigen das sich die
-%            Spinstruktur auf den $1$-Skelett auf eindeutige Art und
-%            Weise auf das $2$-Skelett fortsetzen lässt.  Sei nun
-%            $\Delta^2_i$ gegeben und auf $\partial\Delta^2_i$ ist eine
-%            Spinstruktur vorgegeben, dann existiert eine Fortsetzung
-%            da nach \cref{hgroups} für die Homotopiegruppe der
-%            $\spin_3$ gilt $\pi_k(\spin_3)=1$ für $k=1,2$.  Die
-%            Tatsache für $k=1$ liefert uns die Existenz und $k=2$ die
-%            Eindeutigkeit der fortgesetzten Spinstruktur.
-%          \item[Injektivität:] \todo{warum ist mfg orientierbar falls 1skelett liftet, warum für spinstr bei 2skelett}
-%          \item[Surjektivität:]\todo{spinstr ist orientierung des loopspace von M}
-%          \end{description}
+          Damit ist die Behauptung des Satzes gezeigt.
 	\end{proof}
 \end{Satz}
+
+Schlussendlich lässt sich das Hauptresultat dieser Arbeit in einem Theorem
+formulieren.
+
+\begin{Thm}
+	Sei $ (M,g) $ eine Fläche, dann gilt 
+	\begin{gather*}
+	 \pi_0(\Imm{M}{\R^3}) = \sset{\text{Spinstrukturen auf }M}/\sim  
+	\end{gather*}
+	Das heißt die Zusammenhangskomponenten
+	des Raums aller Immersionen stehen in Bijektion zu den Spinstrukturen der Fläche.
+	\begin{proof}
+		In diesem Beweis werden lediglich die vorherigen bewiesenen Sätze benutzt
+		um das Resultat zu zeigen.
+		Ausgehend von \cref{smalehirsch} können wir uns auf die formalen Immerisonen
+		einschränken, die durch \cref{satz:immerformiso} homotopieäquivalent zu
+		den formalen isometrischen Immserionen sind. Weiter können wir durch
+		\cref{lem:famiso} uns auf Familien von isometrischen, injektiven Abbildungen
+		in den $ \R^3 $ einschränken. Nun wird durch \cref{satz:s1} eine Bijektion
+		zu $ \S^1 $-invarianten Abbildungen hergestellt und damit schließlich 
+		eine Bijektion in \cref{satz:spinstrukturen} zu den Spinstrukturen.
+		In all diesen Sätzen und Lemmata sind die Zusammenhänge Bijektionen oder
+		Homotopieäquivalenzen. Der Funktor $ \pi_0 $ ist invariant unter diesen
+		Isomorphismen und liefert damit die gewünschte Behauptung.
+	\end{proof}
+\end{Thm}
 
 
 
