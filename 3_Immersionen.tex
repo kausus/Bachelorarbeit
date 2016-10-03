@@ -75,7 +75,7 @@ Für das nächste Beipiel ist es folgender Fakt wichtig. Der Tangentialraum des 
 	\end{enumerate}
 \end{Bsp}
 
-Für das nächste Theorem benötigen wir eine simple Aussage im $ \R^3 $.
+Für das nächste Theorem benötigen wir einige Aussagen im $ \R^3 $.
 \begin{Lem}\label{lem:hilfSmaleHirsch}
 	Seien $ z_1,z_2\in\R^3 $ linear unabhängig. Dann gilt für alle
 	$ u_1,u_2\in\R^3 $ mit $ \norm{u_1} < \frac{1}{2}\dist(z_1,\R(z_2)) $
@@ -89,7 +89,7 @@ Für das nächste Theorem benötigen wir eine simple Aussage im $ \R^3 $.
 	existiert.
 	
 	Für die obigen $ v_1,v_2,v_3,k $ existiert ein $ \epsilon >0 $, sodass
-	für alle $ v\in\Span(v_1,v_3) $ mit $ \norm{v} \geq k\norm{v_1} $ und $ \norm{u_1},\norm{u_2} <\epsilon $ gilt das $ v+z_1, v_2+u_2 $ linear
+	für alle $ v\in\Span(v_1,v_3) $ mit $ \norm{v} \geq k\norm{v_1} $ und $ \norm{u_1},\norm{u_2} <\epsilon $ gilt das $ v+u_1, v_2+u_2 $ linear
 	unabhängig sind.
 	\begin{proof}
 		\todo{Bild einfügen}
@@ -107,7 +107,9 @@ Für das nächste Theorem benötigen wir eine simple Aussage im $ \R^3 $.
 	\end{proof}
 \end{Lem}
 
-Wir wollen nun einen wichtigen Zusammenhang zeigen. 
+Wir wollen nun einen wichtigen Zusammenhang zeigen der sich
+als erster Schritt in der Vereinfachung des zu betrachtenden 
+Raums $ \imm(M,\R^3) $ darstellt.
 %satz von smale hirsch als black box, aus intro to the h-principle
 %finde gute referenz für dieses Theorem
 \todo{gilt aussage nur als schwache homotopie äquivalenz? siehe adachi quelle}
@@ -170,8 +172,23 @@ Wir wollen nun einen wichtigen Zusammenhang zeigen.
 			  Wir setzen $ \bar{W}=(0,W_1,W_2)^t $ und $ \norm{v_3}=\norm{v_2} $ und setzen schließlich $ \psi(x,y) = a^{'}A(x,y)\bar{W}(c^{'}y) $. 
 			  Schlussendlich setzen wir als $ \phi_t $ die Hintereinanderausführung von $ t\varphi $ und $ \varphi + t\psi $. Damit ist die Abbildung $ \phi_t $ konstruiert.
 			  
-			\item[Im Atlas $ \mathcal{A} $:] \todo{für enen eindlichen Atlas zeigen}
+			\item[Im Atlas $ \mathcal{A} $:] 
+			Wir wählen einen endlichen Atlas für die Fläche.
+			Um nun die obige Konstruktion auf einen Atlas von $ M $ zu erweitern
+			benötigen wir den Fakt das sich die obige Homotopie
+			auf eine abgeschlossene Teilmenge der Karte einschränken
+			lässt. \todo{zeige das dies der Fall ist}
+			
+			Da wir nun wissen das sich die Konstruktion auf eine
+			abgeschlossene Teilmenge der Karte einschränkt die
+			stets leeren Schnitt mit allen anderen Karten hat, können
+			wir nun die Konstruktion induktiv über alle Karten
+			nacheinander ausführen. Die Abgeschlossenheitsbedingung
+			garantiert das beginnend in einer Karte egal wie wir
+			vorgehen innerhalb des Atlases die ausgeführte Homotopie
+			keinerlei Einfluss mehr auf die vorherigen Kartengebiete hat.
 			\end{description}
+			Damit haben wir das Smale-Hirsch Theorem bewiesen.
 	\end{proof}
 	
 \end{Thm}

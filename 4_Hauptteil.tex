@@ -19,7 +19,7 @@ einschränken.  Wir nennen zwei Immersionen $ \abb{f,g}{M}{N} $
 \textit{regulär homotop} falls sie sich in $ \Imm{M}{N} $ durch einen
 glatten Weg verbinden lassen.
 
-Im Weiteren betrachten wir den Spezialfall $ M=M^2 $ als geschlossene $ 2 $-dimensionale riemannsche Mannigfaltigkeit und
+Im Weiteren betrachten wir den Spezialfall $ M=M^2 $ Fläche und
 $ N=\R^3 $.
 
 Das Smale-Hirsch Theorem \cref{smalehirsch} liefert uns eine erste Vereinfachung des Raumes. 
@@ -27,7 +27,7 @@ Das Smale-Hirsch Theorem \cref{smalehirsch} liefert uns eine erste Vereinfachung
 Der Raum von formalen Immersionen lässt sich noch weiter verkleinern
 bzw. vereinfachen, indem wir anstatt von nur formalen Immersionen auch
 diese betrachten bei denen die Abbildungen zwischen den
-Tangentialräumen auch noch isometrisch ist, damit erhalten wir
+Tangentialräumen auch noch isometrisch sind, damit erhalten wir
 folgenden
 
 
@@ -35,7 +35,7 @@ folgenden
   Seien die isometrischen, formalen Immersionen gegeben durch
   \begin{gather*}
     \Immfi{M}{\R^3} \coloneqq \set{(f,F) \in \Immf{M}{\R^3}}{F \text{
-        ist isometrisch }}
+        ist isometrisch }}.
   \end{gather*}
   Dann gilt das $\Immf{M}{\R^3}$ und $\Immfi{M}{\R^3}$
   homotopieäquivalent sind.
@@ -45,17 +45,17 @@ folgenden
           $\psi_t : (f,F) \mapsto (f,F \circ
           (F^{\ast}F)^{-t/2})$.
 		
-          Zunächst ist diese Homotopie eine glatte Abbildung für alle
-          $ t \in [0,1] $. Für $ t=0 $ gilt $ \psi_0 = id $. Im Fall
+          Der Ausdruck $ (F_p^\ast F_p)^{-t/2} $ ist wie folgt
+          definiert. Sei allgemein $ \abb{f}{V}{V} $ eine linearer, injektiver,
+          symmetrischer Endomorphismus eines reellen Vektorraums mit
+          Skalarprodukt gegeben. Da nun die Abbildung $ x\mapsto x^\alpha $ analytisch ist können wir die Potenzreihenentwicklung $ x^\alpha = \sum_{k=1}^{\infty} a_k x^k $ betrachten. Wir setzen dann $ f^\alpha \coloneqq \sum_{k=1}^{\infty} a_k f^k $. Die Konvergenz in $ V $ ist durch die Konvergenz der Potenzreihe garantiert.
+		
+          Des Weiteren ist diese Homotopie eine glatte Abbildung für alle
+          $ t \in [0,1] $, wie man anhand der obigen Konstruktion erkennen kann. Für $ t=0 $ gilt $ \psi_0 = id $. Im Fall
           $ t=1 $ gilt nun das $ F \circ (F^{\ast}F)^{-t/2} $
           isometrisch ist.
 		
-          Der Ausdruck $ (F_p^\ast F_p)^{-t/2} $ ist wie folgt
-          definiert. Sei $ \abb{f}{V}{V} $ eine linearer, injektiver,
-          symmetrischer Endomorphismus eines reellen Vektorraums mit
-          Skalarprodukt. Die Abbildung $ x\mapsto x^\alpha $ ist analytisch.
-          Wir betrachten die Potenzreihenentwicklung $ x^\alpha = \sum_{k=1}^{\infty} a_k x^k $ und setzen dann $ f^\alpha \coloneqq \sum_{k=1}^{\infty} a_k f^k $. Die Konvergenz in $ V $ ist durch
-          die Konvergenz der Potenzreihe garantiert.
+
 %           dann existieren $ n $ positive, reelle
 %          Eigenwerte $ \lambda_i $ für diesen Endomorphismus. Nach
 %          Wahl einer Basis existiert eine unitäre Transformation
@@ -68,7 +68,7 @@ folgenden
           $ \abb{F_p}{\tang{p}{M}}{\tang{F_p(p)}{\R^3}} $ gegeben,
           dann ist $ (F_p^\ast F_p) $ symmetrisch und aufgrund der
           Injektivität auch positiv definit, damit ist
-%          $ (F_p^\ast F_p)^{-1/2} $ wohldefiniert.
+          $ (F_p^\ast F_p)^{-1/2} $ wohldefiniert.
 		
           Es folgt nun durch Umformungen das die Abbildung
           $ F_p \circ (F_p^\ast F_p)^{-1/2} $ isometrisch
@@ -99,13 +99,13 @@ Der nächste Schritt ist der des Vergessens des Basispunktes.
 %	\end{align*}.
   \begin{tikzcd}
     \Immfi{M}{\R^3} \arrow[r,"\eta"] &%
-    \set{ (\abb{F_p}{\TT_pM}{\R^3})_{p\in M} }{ F_p \text{ isometrisch,injektiv
+    \set{ (\abb{F_p}{\TT_pM}{\R^3})_{p\in M} }{ F_p \text{ isometrisch, injektiv
         für alle }p \in M}.
   \end{tikzcd}
   \begin{proof}
     Definiere die Abbildung $ \eta $ wie folgt. Sei ein Paar
     $ (f,F) \in \Immfi{M}{\R^3}$ gegeben, dann setze als Zielobjekt
-    schlichtweg die Familie $ (F_p)_{p\in M} $. Es ist noch zu zeigen
+    die Familie $ (F_p)_{p\in M} $. Es ist noch zu zeigen
     das dies eine Bijektion ist.
     \begin{description}
     \item[Injektivität:] Seien zwei Paare $ (f,F),(g,G) $ mit
@@ -149,6 +149,7 @@ auf Flächen.
 		\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=5cm]{../pic/handles.png}
+			\caption{Eine Fläche mit Geschlecht $ 3 $.}
 		\end{center}
 		\end{figure}
 		
@@ -160,7 +161,7 @@ auf Flächen.
 		entsteht und die Spinstruktur erhalten bleibt.
 		
 		Diese Chirugie gestaltet sich wie folgt. Wir wählen auf
-		$ [0,1] \times \S^1 $ eine der beiden möglichen Spinstrukturen \footnote{hieran erkennt man schon das man \textbf{nicht} alle $ 4 $ verschiedenen Spinstrukturen auf dem $ 2 $-Torus damit erhalten kann.} und betrachten 
+		$ [0,1] \times \S^1 $ eine der beiden möglichen Spinstrukturen \footnote{hieran erkennt man schon das auf diese Art \textbf{nicht} alle $ 4 $ verschiedenen Spinstrukturen auf dem $ 2 $-Torus damit erhalten kann.} und betrachten 
 		\begin{gather*}
 		 \left. \left( \S^2 \setminus (B_p \cup B_q) \amalg [0,1]\times \S^1 \right) \right/_{\sim}  ~= \TT^2.
 		\end{gather*}
@@ -189,8 +190,7 @@ Sei $\S M$ definiert als $\set{(p,v) \in \TT M}{ \norm{v} = 1}$, wobei
 die Norm gegeben ist als $ \norm{(p,v)} \coloneqq \sqrt{g_p(v,v)} $
 und wir der einfachheithalber lediglich $ \norm{v} $ schreiben werden.
 
-Für den nächsten Satz benötigen wir miteinander verträgliche $ \S^1 $-Gruppenwirkungen auf der $ \S M $ und $ \so_3 $. Es wird der
-Zusammenhang $ \S^1 \simeq \so_2 $ vorausgesetzt. Für die erste
+Für den nächsten Satz benötigen wir miteinander verträgliche $ \S^1 $-Gruppenwirkungen auf der $ \S M $ und $ \so_3 $. Es wird die Identifizierung der Liegruppen $ \S^1 \simeq \so_2 $ vorausgesetzt. Für die erste
 Gruppenwirkung wählen wir eine positiv orientierte Orthonormalbasis
 $ (v,w) $ von $ \tang{p}{M} $ und betrachte den davon induzierten
 Vektorraumisomorphismus $ \abb{\phi}{\R^2}{\tang{p}{M}},e_1 \mapsto v, e_2\mapsto w $. Diese
@@ -351,6 +351,7 @@ der letzte Schritt. Wir können nun folgenden Satz zeigen.
 %          Spinstruktur zu erhalten. Schließlich zeigen wir noch das
 %          diese Konstruktion eine Bijektion liefert.
 		Wir wollen zunächst die Abbildung angeben.
+		
           \textbf{Konstruktion der Abbildung $\psi$}
 		
           Sei eine $\S^1$-invariante Abbildung
